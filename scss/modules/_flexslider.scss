@@ -1,0 +1,152 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+// Browser Resets
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+// FlexSlider Styles
+.flexslider {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  zoom: 1;
+  z-index: 0;
+  @include clearfix();
+  .slides {
+    zoom: 1;
+    img {display: block;}
+    & > li { // Hide slides before JS is loaded
+      display: none;
+      position: relative;
+      -webkit-backface-visibility: hidden;
+    }
+  }
+}
+* html .slides {height: 1%;}
+.flex-viewport {
+  max-height: 1000px;
+  @include transition(0.5s ease all);
+  @include translateZ(0); // prevent flashing text when transitions occur
+}
+
+// No JavaScript Fallback
+.no-js .slides > li:first-child {display: block;}
+
+// Direction Nav
+.flex-direction-nav {
+  *height: 0;
+  a {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    margin: 0;
+    background: $gray url('../images/bg_direction_nav.png') no-repeat 0 50%;
+    background-color: rgba($gray, 0.3);
+    z-index: 10;
+    cursor: pointer;
+    @include transition(0.25s ease-out all);
+    @include hide-text();
+  }
+  .flex-next {
+    right: 0;
+    background-position: -288px 50%;
+  }
+  .flex-prev {
+    left: 0;
+    background-position: 10px 50%;
+  }
+  .flex-disabled {
+    opacity: 0.3 !important;
+    filter:alpha(opacity=30);
+    cursor: default;
+  }
+}
+.flexslider:hover .flex-next,
+.flexslider:hover .flex-prev {
+  opacity: 1;
+}
+.flexslider:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover {
+  background-color: rgba($gray, 0.6);
+}
+
+// Control Nav
+.flex-control-nav {
+  position: absolute;
+  width: 100%;
+  bottom: 1em;
+  text-align: center;
+  li {
+    margin: 0 8px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+}
+.flex-control-paging li a {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: $gray;
+  background: rgba($black,0.5);
+  cursor: pointer;
+  @include hide-text();
+  @include border-radius(20px);
+}
+.flex-control-paging li a:hover {
+  background: $grayDark;
+  background: rgba($black,0.7);
+}
+.flex-control-paging li a.flex-active {
+  background: $black;
+  background: rgba($black,0.9);
+  cursor: default;
+}
+
+// Thumbnail Nav
+.flex-control-thumbs {
+  position: static;
+  margin: 5px 0 0;
+  overflow: hidden;
+  li {
+    float: left;
+    width: 25%;
+    margin: 0;
+  }
+  img {
+    display: block;
+    width: 100%;
+    opacity: .7;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .flex-active {
+    opacity: 1;
+    cursor: default;
+  }
+}
+
+// Hide buttons on mobile
+.touch .flex-direction-nav {
+  display: none;
+}

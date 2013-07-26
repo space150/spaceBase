@@ -1,0 +1,57 @@
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+
+html {
+  font: #{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-body;
+  color: $black;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+h1, .h1 {
+  @include font-size(30px);
+  line-height: 1;
+}
+h2, .h2 {
+  @include font-size(16px);
+  line-height: 1.2;
+}
+h3, .h3 {
+  @include font-size(14px);
+  line-height: 1.4;
+}
+h4, .h4 {
+  @include font-size(12px);
+}
+
+@include media-query(lap-and-up) {
+  
+  html {
+    font-size: #{($lg-base-font-size/16px)*1em};
+  }
+
+  h1, .h1 {
+    @include font-size(54px, $lg-base-font-size);
+  }
+  h2, .h2 {
+    @include font-size(36px, $lg-base-font-size);
+  }
+  h3, .h3 {
+    @include font-size(21px, $lg-base-font-size);
+  }
+  h4, .h4 {
+    @include font-size(18px, $lg-base-font-size);
+  }
+
+}

@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+
+// Harry Robert's "island"
+.island,
+.islet {
+  display: block;
+  @include clearfix();
+}
+.island { padding: $base-spacing-unit; }
+
+.island > :last-child,
+.islet > :last-child { margin-bottom: 0; }
+
+.islet { padding: $half-spacing-unit; }

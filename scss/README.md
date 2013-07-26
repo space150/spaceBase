@@ -1,0 +1,82 @@
+# CSS Architecture Overview
+
+## Compiling
+
+Running `compass watch` (while in the parent directory of `scss/`) will watch for changes and compile your CSS properly.
+
+
+## Directories
+
+The `scss/` directory contains three folders: Base, Global, and Modules.
+
+- **Base** contains things like the normalize reset, mixins, helpers, and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes. The grid, widths, lists, blocks, and basic spacing content objects are in here.
+- **Global** contains all design-specific styles shared across the site. This includes outer-layout styles, fonts, typography, buttons, generic print styles, etc.
+- **Modules** contains all module-specific styles. This includes unique features, "vendor" stylesheets, slideshows, accordions, etc.
+
+
+## Legacy IE Support
+
+All partials are compiled into two CSS files in the main `stylesheets/` directory, `application.css` and `application-ie.css`. These should be loaded into the site via conditional comments.
+
+Example:
+~~~html
+<!--[if (gt IE 8) | (IEMobile)]><!-->
+  <link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+  <link href="/stylesheets/application-ie.css" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+~~~
+
+The only difference between these files is the `$legacy-ie` variable. When set to true, the `media-query()` mixin will only render the content inside the media query breakpoints. The site will thereby display the desktop layout in legacy IE browsers.
+
+
+## Variables
+
+Global variables are kept in the `_vars.scss` partial. This includes things like base font styles, colors, breakpoints, and some misc. sizing measurements. All of these variables are used throughout most of the partials. There are a few spots where having some "local" variables are helpful for math and reuse in that particular section. These variables I've prefixed with an underscore so you know that those variables aren't used outside that partial.
+
+
+## The Grid
+
+The grid structure comes almost directly from [inuit.css](http://inuitcss.com/2012/12/building-grid-systems-with-inuit-css/) with some minor modifications. It works on proportional sizes, not "columns" and "rows".
+
+Example:
+~~~html
+<div class="grid-wrapper">
+
+    <div class="grid two-thirds">
+        ...
+    </div>
+
+    <div class="grid one-third">
+        ...
+    </div>
+
+</div>
+~~~
+
+### The `$responsive` Variable
+
+If $responsive is set to false, the grid will collapse to 100% on mobile and use the same proportions for all wider breakpoints.
+
+If $responsive is set to true, the grid proportions will change at different breakpoints with the addition of classes prefixed with the breakpoint.
+
+Example:
+~~~html
+<div class="grid-wrapper">
+
+    <div class="grid one-whole lap-one-half desk-three-quarters">
+        ...
+    </div>
+
+    <div class="grid one-whole lap-one-half desk-one-quarters">
+        ...
+    </div>
+
+</div>
+~~~
+
+### The `$base-sizing-unit` Variable
+
+As a means for consistency and good vertical rhythm as many "measurements" are based off the base-spacing-unit, which is equal to the base line-height. This way if we need to adjust down the road, all proportions are preserved.

@@ -1,0 +1,129 @@
+form {
+  margin: 0;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+}
+
+// Inputs, Textareas, Selects
+input,
+button,
+textarea,
+select,
+.uneditable-input {
+  display: inline-block;
+  height: $base-line-height;
+  width: 200px;
+  padding: 4px 6px;
+  color: $black;
+  font-family: $font-body;
+  @include font-size($base-font-size);
+  line-height: $base-line-height;
+  vertical-align: middle;
+  border: 1px solid $gray;
+  @include border-radius(0);
+  -webkit-appearance: none;
+}
+
+// Mini reset for unique input types
+input[type="file"],
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+}
+
+// Help out input buttons
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  width: auto;
+  height: auto;
+  // Firefox 3.6 only
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Make textarea height behave
+textarea {
+  height: auto;
+  vertical-align: top;
+}
+
+// Hidden inputs
+input[type="hidden"] {
+  display: none;
+}
+
+// Disabled and read-only inputs
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  cursor: not-allowed;
+}
+
+// For text that needs to appear as an input but should not be an input
+.uneditable-input,
+.uneditable-textarea {
+  display: block;
+  cursor: not-allowed;
+}
+
+// Prevent text from wrapping, but still cut it off like an input does
+.uneditable-input {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// Make uneditable textareas behave like a textarea
+.uneditable-textarea {
+  width: auto;
+  height: auto;
+}
+
+// Placeholder text
+input,
+textarea {
+  @include placeholder($grayDark);
+}
+
+// No Style
+input.nostyle,
+textarea.nostyle {
+  padding:0;
+  margin:0;
+  border:none;
+  outline:none;
+  resize:none;
+  @include border-radius(0);
+  @include box-sizing('content-box');
+  @include box-shadow(0);
+  @include appearance(none);
+}

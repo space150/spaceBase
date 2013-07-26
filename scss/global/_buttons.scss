@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+.btn {
+  display: inline-block;
+  *display: inline;
+  margin: 0;
+  padding: 0.5em 1em;
+  @include font-size($base-font-size);
+  line-height: $base-line-height;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid $gray;
+  @include border-radius(0);
+  cursor: pointer;
+
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    @include opacity(65);
+  }
+}

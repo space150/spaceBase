@@ -1,0 +1,105 @@
+/*------------------------------------*\
+    $HELPERS
+\*------------------------------------*/
+
+
+// Clearfix
+.cf {
+  @include clearfix();
+}
+
+// Image replacement
+.ir {
+  @include hide-text();
+}
+
+
+// Hide from screenreaders and browsers
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+
+// Responsive visibility
+.hidden-hand {
+  display: none !important;
+}
+.visible-desk {
+  display: none !important;
+}
+@include media-query(lap-and-up) {
+  .hidden-hand {
+    display: block !important;
+  }
+  .visible-hand {
+    display: none !important;
+  }
+  .visible-desk {
+    display: none !important;
+  }
+}
+@include media-query(desk-and-up) {
+  .visible-hand {
+    display: none !important;
+  }
+  .hidden-desk {
+    display: none !important;
+  }
+  .visible-desk {
+    display: block !important;
+  }
+}
+
+
+// Hiding w/o display:none; for accessibility
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+
+// Helpers only if it doesn't already have a class to use
+.float--right { float: right !important; }
+.float--left { float: left !important; }
+
+.text--left { text-align: left !important; }
+.text--center { text-align: center !important; }
+.text--right { text-align: right !important; }
+
+.flush { margin: 0 !important; }
+.flush--top { margin-top: 0 !important; }
+.flush--right { margin-right: 0 !important; }
+.flush--bottom { margin-bottom: 0 !important; }
+.flush--left { margin-left: 0 !important; }
+.flush--ends { margin-top: 0 !important; margin-bottom: 0 !important; }
+.flush--sides { margin-right: 0 !important; margin-left: 0 !important; }
+
+
+// Pull items full width of `.island` parents.
+.full-bleed {
+  margin-right:-$base-spacing-unit!important;
+  margin-left: -$base-spacing-unit!important;
+  .islet & {
+    margin-right:-($half-spacing-unit)!important;
+    margin-left: -($half-spacing-unit)!important;
+  }
+}
