@@ -1,4 +1,4 @@
-/* normalize.css v1.1.2 | MIT License | git.io/normalize */
+/*! normalize.css v1.1.2 | MIT License | git.io/normalize */
 article,
 aside,
 details,
@@ -126,7 +126,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 
@@ -207,7 +207,7 @@ form {
 }
 
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -1492,32 +1492,32 @@ ul, ol, dd {
 \*------------------------------------*/
 @font-face {
   font-family: 'PatuaOne';
-  src: url("fonts/patuaone-regular-webfont.eot");
-  src: url("fonts/patuaone-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/patuaone-regular-webfont.woff") format("woff"), url("fonts/patuaone-regular-webfont.ttf") format("truetype"), url("fonts/patuaone-regular-webfont.svg#patua_oneregular") format("svg");
+  src: url("../fonts/patuaone-regular-webfont.eot");
+  src: url("../fonts/patuaone-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/patuaone-regular-webfont.woff") format("woff"), url("../fonts/patuaone-regular-webfont.ttf") format("truetype"), url("../fonts/patuaone-regular-webfont.svg#patua_oneregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lobster';
-  src: url("fonts/lobster_1.3-webfont.eot");
-  src: url("fonts/lobster_1.3-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lobster_1.3-webfont.woff") format("woff"), url("fonts/lobster_1.3-webfont.ttf") format("truetype"), url("fonts/lobster_1.3-webfont.svg#lobster_1.3regular") format("svg");
+  src: url("../fonts/lobster_1.3-webfont.eot");
+  src: url("../fonts/lobster_1.3-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lobster_1.3-webfont.woff") format("woff"), url("../fonts/lobster_1.3-webfont.ttf") format("truetype"), url("../fonts/lobster_1.3-webfont.svg#lobster_1.3regular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AllerBold';
-  src: url("fonts/aller_std_bd-webfont.eot");
-  src: url("fonts/aller_std_bd-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/aller_std_bd-webfont.woff") format("woff"), url("fonts/aller_std_bd-webfont.ttf") format("truetype"), url("fonts/aller_std_bd-webfont.svg#allerbold") format("svg");
+  src: url("../fonts/aller_std_bd-webfont.eot");
+  src: url("../fonts/aller_std_bd-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aller_std_bd-webfont.woff") format("woff"), url("../fonts/aller_std_bd-webfont.ttf") format("truetype"), url("../fonts/aller_std_bd-webfont.svg#allerbold") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Aller';
-  src: url("fonts/aller_std_rg-webfont.eot");
-  src: url("fonts/aller_std_rg-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/aller_std_rg-webfont.woff") format("woff"), url("fonts/aller_std_rg-webfont.ttf") format("truetype"), url("fonts/aller_std_rg-webfont.svg#allerregular") format("svg");
+  src: url("../fonts/aller_std_rg-webfont.eot");
+  src: url("../fonts/aller_std_rg-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aller_std_rg-webfont.woff") format("woff"), url("../fonts/aller_std_rg-webfont.ttf") format("truetype"), url("../fonts/aller_std_rg-webfont.svg#allerregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -2000,7 +2000,7 @@ body {
 @media print {
   * {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     box-shadow: none !important;
     filter: none !important;
     text-shadow: none !important;
@@ -2026,7 +2026,7 @@ body {
 
   pre,
   blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid;
   }
 
