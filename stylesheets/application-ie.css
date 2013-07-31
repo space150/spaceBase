@@ -319,9 +319,9 @@ table {
 .grid-wrapper--full {
   margin-left: 0;
 }
-.gw--full > .g, .gw--full .grid,
+.gw--full > .g, .gw--full > .grid,
 .grid-wrapper--full > .g,
-.grid-wrapper--full .grid {
+.grid-wrapper--full > .grid {
   padding-left: 0;
 }
 
