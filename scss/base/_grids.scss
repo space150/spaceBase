@@ -49,18 +49,4 @@
   }
 }
 
-//
-// Responsive grid
-//
-// If you have set `$responsive` to ‘false’ in `_vars.scss` then the grid 
-// would only be used at laptop sizes and above.
-//
-
-@if $responsive == true {
-  @include grid();
-}
-@else {
-  @include media-query("lap-and-up"){
-    @include grid();
-  }
-}
+@include grid();

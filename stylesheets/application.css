@@ -1697,12 +1697,20 @@ textarea[readonly] {
   height: auto;
 }
 
-input :-moz-placeholder,
-textarea :-moz-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #4c4c4c;
 }
-input ::-webkit-input-placeholder,
-textarea ::-webkit-input-placeholder {
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #4c4c4c;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #4c4c4c;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   color: #4c4c4c;
 }
 
