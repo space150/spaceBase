@@ -27,11 +27,11 @@
   // Quarters
   .push--#{$namespace}one-quarter,
   .push--#{$namespace}two-eighths,
-  .push--#{$namespace}three-twelfths,
-  .push--#{$namespace}nine-twelfths { left: 25%; }
+  .push--#{$namespace}three-twelfths { left: 25%; }
 
   .push--#{$namespace}three-quarters,
-  .push--#{$namespace}six-eighths { left: 75%; }
+  .push--#{$namespace}six-eighths,
+  .push--#{$namespace}nine-twelfths { left: 75%; }
 
   // Fifths
   .push--#{$namespace}one-fifth,

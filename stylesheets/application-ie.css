@@ -953,13 +953,13 @@ table {
 
 .push--one-quarter,
 .push--two-eighths,
-.push--three-twelfths,
-.push--nine-twelfths {
+.push--three-twelfths {
   left: 25%;
 }
 
 .push--three-quarters,
-.push--six-eighths {
+.push--six-eighths,
+.push--nine-twelfths {
   left: 75%;
 }
 
