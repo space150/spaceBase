@@ -1199,6 +1199,15 @@ table {
   padding: 12.5px;
 }
 
+.full-bleed {
+  margin-right: -25px !important;
+  margin-left: -25px !important;
+}
+.islet .full-bleed {
+  margin-right: -12.5px !important;
+  margin-left: -12.5px !important;
+}
+
 /*------------------------------------*\
     $LISTS
 \*------------------------------------*/
@@ -1476,15 +1485,6 @@ ul, ol, dd {
 .flush--sides {
   margin-right: 0 !important;
   margin-left: 0 !important;
-}
-
-.full-bleed {
-  margin-right: -25px !important;
-  margin-left: -25px !important;
-}
-.islet .full-bleed {
-  margin-right: -12.5px !important;
-  margin-left: -12.5px !important;
 }
 
 /*------------------------------------*\
@@ -1786,7 +1786,7 @@ body {
 }
 @media only screen and (min-width: 1200px) {
   .container {
-    width: 1100px;
+    width: 1200px;
   }
 }
 @media only screen and (max-width: 479px) {

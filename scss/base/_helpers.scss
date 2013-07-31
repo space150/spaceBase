@@ -92,14 +92,3 @@
 .flush--left { margin-left: 0 !important; }
 .flush--ends { margin-top: 0 !important; margin-bottom: 0 !important; }
 .flush--sides { margin-right: 0 !important; margin-left: 0 !important; }
-
-
-// Pull items full width of `.island` parents.
-.full-bleed {
-  margin-right:-$base-spacing-unit!important;
-  margin-left: -$base-spacing-unit!important;
-  .islet & {
-    margin-right:-($half-spacing-unit)!important;
-    margin-left: -($half-spacing-unit)!important;
-  }
-}
