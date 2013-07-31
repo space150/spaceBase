@@ -1324,6 +1324,7 @@ pre,
 .media,
 .island,
 .islet {
+  margin-top: 0;
   margin-bottom: 25px;
   margin-bottom: 1.66667rem;
 }

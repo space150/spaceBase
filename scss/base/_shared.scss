@@ -43,6 +43,7 @@ pre,
 .media,
 .island,
 .islet {
+    margin-top: 0;
     margin-bottom:$base-spacing-unit;
     margin-bottom:($base-spacing-unit / $base-font-size)*1rem;
     .islet & {
