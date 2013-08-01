@@ -3,7 +3,7 @@ spaceBase
 
 Front-end starter files for new projects.
 
-For development purposes, we are using a Ruby compilers for our SCSS and CoffeeScript assets.
+For development purposes, we are using a Ruby compiler for our SCSS and CoffeeScript assets.
 
 ## SCSS
 
@@ -13,17 +13,21 @@ Instructions:
 
 - Run the following commands:
 
-ruby -v    (confirms ruby is working and added to your path)
+```shell
+    ruby -v    (confirms ruby is working and added to your path)
 
-gem -v    (confirms ruby gem is working and added to your path)
+    gem -v    (confirms ruby gem is working and added to your path)
 
-gem update --system    (updates all gems to current versions)
+    gem update --system    (updates all gems to current versions)
 
-gem install compass    (adds the compass gem)
+    gem install compass    (adds the compass gem)
+```
 
 - From the command line, access the /public directory and run the following command:
 
-compass watch    (monitors .scss files for changes and compiles them)
+```shell
+    compass watch    (monitors .scss files for changes and compiles them)
+```
 
 At this point, if you modify a .scss file, the command prompt should log the compilation of any modified .scss files.
 
@@ -35,11 +39,15 @@ NOTE: If you rebuild the solution, it will also call compass to rebuild the styl
 
 Instructions:
 
-gem install coffee-script    (adds the coffee gem)
+```shell
+    gem install coffee-script    (adds the coffee gem)
+```
 
 - From the command line, access the /public directory and run the following command:
 
-coffee -w -o javascripts/compiled/ -c coffee/
+```shell
+    coffee -w -o javascripts/compiled/ -c coffee/
+```
 
 At this point, if you modify a .coffee file, the command prompt should log the compilation of any modified .coffee files.
 
