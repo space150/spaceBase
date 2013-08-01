@@ -22,17 +22,16 @@ textarea,
 select,
 .uneditable-input {
   display: inline-block;
-  height: $base-line-height;
+  height: 2em;
   width: 200px;
-  padding: 4px 6px;
+  padding: 0.2em 1em;
   color: $black;
   font-family: $font-body;
   @include font-size($base-font-size);
-  line-height: $base-line-height;
+  line-height: 1.2;
   vertical-align: middle;
   border: 1px solid $gray;
   @include border-radius(0);
-  -webkit-appearance: none;
 }
 
 // Mini reset for unique input types

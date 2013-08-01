@@ -1614,14 +1614,14 @@ textarea,
 select,
 .uneditable-input {
   display: inline-block;
-  height: 25px;
+  height: 2em;
   width: 200px;
-  padding: 4px 6px;
+  padding: 0.2em 1em;
   color: black;
   font-family: "PatuaOne", Georgia, Times, "Times New Roman", serif;
   font-size: 15px;
   font-size: 1rem;
-  line-height: 25px;
+  line-height: 1.2;
   vertical-align: middle;
   border: 1px solid #999999;
   -webkit-border-radius: 0;
@@ -1629,7 +1629,6 @@ select,
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
-  -webkit-appearance: none;
 }
 
 input[type="file"],
@@ -1745,10 +1744,10 @@ textarea.nostyle {
   display: inline-block;
   *display: inline;
   margin: 0;
-  padding: 0.5em 1em;
+  padding: 0.4em 1em;
   font-size: 15px;
   font-size: 1rem;
-  line-height: 25px;
+  line-height: 1.6em;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;

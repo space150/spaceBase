@@ -6,9 +6,9 @@
   display: inline-block;
   *display: inline;
   margin: 0;
-  padding: 0.5em 1em;
+  padding: 0.4em 1em;
   @include font-size($base-font-size);
-  line-height: $base-line-height;
+  line-height: 1.6em;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
