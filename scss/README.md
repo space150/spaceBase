@@ -13,9 +13,9 @@ Running `compass watch` (while in the parent directory of `scss/`) will watch fo
 
 The `scss/` directory contains three folders: Base, Global, and Modules.
 
-- **Base** contains things like the normalize reset, mixins, helpers, and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes. The grid, widths, lists, blocks, and basic spacing content objects are in here.
-- **Global** contains all design-specific styles shared across the site. This includes outer-layout styles, fonts, typography, buttons, generic print styles, etc.
-- **Modules** contains all module-specific styles. This includes unique features, "vendor" stylesheets, slideshows, accordions, etc.
+- **Base** [avoid editing] contains things like the normalize reset, mixins, helpers, and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes. The grid, widths, lists, blocks, and basic spacing content objects are in here.
+- **Global** [customize this] contains all design-specific styles shared across the site. This includes outer-layout styles, fonts, typography, buttons, generic print styles, etc.
+- **Modules** [customize this] contains all module-specific styles. This includes unique features, "vendor" stylesheets, slideshows, accordions, etc.
 
 
 ## Legacy IE Support
