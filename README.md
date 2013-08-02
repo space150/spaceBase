@@ -5,6 +5,19 @@ Front-end starter files for new projects.
 
 For development purposes, we are using a Ruby compiler for our SCSS and CoffeeScript assets.
 
+### Installing spaceBase with Bower
+
+    $ bower init
+    $ bower install git@github.com:space150/spaceBase.git --save
+
+To update if spaceBase changes:
+    
+    $ bower update spaceBase
+
+SIDE NOTE: For Middleman projects, you might want bower to install components in `vendor/component`. If so, set your project's `.bowerrc` as follows before doing an install:
+
+    $ echo '{"directory": "vendor/components"}' >> .bowerrc
+
 ## SCSS
 
 Instructions:
