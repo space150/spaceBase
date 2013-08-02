@@ -1,5 +1,9 @@
 # CSS Architecture Overview
 
+## Philosophy
+
+Mobile first. Fallback for legacy IE.
+
 ## Compiling
 
 Running `compass watch` (while in the parent directory of `scss/`) will watch for changes and compile your CSS properly.
