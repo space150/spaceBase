@@ -1,1 +1,3 @@
+# never commit compiled things
 javascripts/compiled/*
+stylesheets/*
