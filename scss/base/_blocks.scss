@@ -2,6 +2,15 @@
     $BLOCKS
 \*------------------------------------*/
 
+/*
+
+blocks are 2,3,4-column grids (like gallery thumbnails)
+
+use if you want rows to clear each other
+blocks will be the same height
+
+*/
+
 @include media-query(hand-and-up) {
   
   .blocks {
