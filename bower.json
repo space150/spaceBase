@@ -1,0 +1,12 @@
+{
+  "name": "spaceBase",
+  "version": "0.0.1",
+  "main": "scss/application.css.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
