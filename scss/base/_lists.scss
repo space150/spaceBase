@@ -18,10 +18,15 @@
   margin-right: 0;
 }
 
-.h-list--piped > li + li {
-  margin-left: $half-spacing-unit;
-  padding-left: $half-spacing-unit;
-  border-left: solid 1px;
+.h-list--piped {
+  > li {
+    margin-right: 0;
+  }
+  > li + li {
+    margin-left: $half-spacing-unit;
+    padding-left: $half-spacing-unit;
+    border-left: solid 1px;
+  }
 }
 
 .v-list > li {
