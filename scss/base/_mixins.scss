@@ -121,13 +121,17 @@
   @if $legacy-ie == true {
     //render styles without media queries
     
-    @if $media-query == "hand-and-up" { @content; }
+    @if $media-query == "hand-and-down" {}
+    
+    @else if $media-query == "hand-and-up" { @content; }
     
     @else if $media-query == "lap-and-up" { @content; }
     
+    @else if $media-query == "lap-and-down" {}
+    
     @else if $media-query == "desk-and-up" { @content; }
     
-    // exclude "wall and up", "lap-and-down", "hand-and-down"
+    @else if $media-query == "wall-and-up" {}
      
     // include custom breakpoints
     @else {
