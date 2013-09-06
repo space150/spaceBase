@@ -121,7 +121,7 @@
   @if $legacy-ie == true {
     //render styles without media queries
     
-    @else if $media-query == "hand-and-up" { @content; }
+    @if $media-query == "hand-and-up" { @content; }
     
     @else if $media-query == "lap-and-up" { @content; }
     
@@ -131,7 +131,7 @@
     
     @else if $media-query == "lap-and-down" {}
     
-    @if $media-query == "hand-and-down" {}
+    @else if $media-query == "hand-and-down" {}
      
     // include custom breakpoints
     @else {
