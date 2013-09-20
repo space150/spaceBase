@@ -43,13 +43,16 @@ pre,
 .media,
 .island,
 .islet {
-    margin-top: 0;
-    margin-bottom:$base-spacing-unit;
-    margin-bottom:($base-spacing-unit / $base-font-size)*1rem;
-    .islet & {
-        margin-bottom:$base-spacing-unit / 2;
-        margin-bottom:(($base-spacing-unit / $base-font-size) / 2)*1rem;
-    }
+  margin-top: 0;
+  margin-bottom:$base-spacing-unit;
+  margin-bottom:($base-spacing-unit / $base-font-size)*1rem;
+  .islet & {
+      margin-bottom:$base-spacing-unit / 2;
+      margin-bottom:(($base-spacing-unit / $base-font-size) / 2)*1rem;
+  }
+  ul,ol {
+    margin-bottom: 0;
+  }
 }
 
 
