@@ -63,7 +63,6 @@
   position: absolute;
   width: 1px;
 }
-
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
 .visuallyhidden.focusable:active,
@@ -84,11 +83,6 @@
 .text--left { text-align: left !important; }
 .text--center { text-align: center !important; }
 .text--right { text-align: right !important; }
-
-.flush { margin: 0 !important; }
-.flush--top { margin-top: 0 !important; }
-.flush--right { margin-right: 0 !important; }
-.flush--bottom { margin-bottom: 0 !important; }
-.flush--left { margin-left: 0 !important; }
-.flush--ends { margin-top: 0 !important; margin-bottom: 0 !important; }
-.flush--sides { margin-right: 0 !important; margin-left: 0 !important; }
+.text--caps { text-transform: uppercase !important; }
+.text--strong { font-weight: bold !important; }
+.text--small { font-size: 80%; }

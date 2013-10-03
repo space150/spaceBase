@@ -20,10 +20,6 @@ i {
   font-style: normal;
 }
 
-.caps {
-  text-transform: uppercase;
-}
-
 h1, .h1 {
   @include font-size(30px);
   line-height: 1;
