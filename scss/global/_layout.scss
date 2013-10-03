@@ -30,7 +30,8 @@ body {
     padding: 0 $base-spacing-unit;
   }
 
+  // max-width for non-responsive layouts
   .lt-ie9 & {
-    width: 940px;
+    max-width: 1200px;
   }
 }
