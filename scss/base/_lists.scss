@@ -2,20 +2,11 @@
     $LISTS
 \*------------------------------------*/
 
-.c-list,
 .h-list,
 .v-list {
   list-style: none;
   margin: 0;
   overflow: hidden;
-}
-
-.c-list {
-  text-align: center;
-  > li {
-    @include inline-block();
-    margin: 0  $half-spacing-unit;
-  }
 }
 
 .h-list > li {
@@ -25,6 +16,15 @@
 
 .h-list > li:last-child {
   margin-right: 0;
+}
+
+.h-list--centered {
+  text-align: center;
+  > li {
+    float: none;
+    @include inline-block();
+    margin: 0  $half-spacing-unit;
+  }
 }
 
 .h-list--piped {
