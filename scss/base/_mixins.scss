@@ -1,8 +1,8 @@
-//
-// $MIXINS
-//
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
 
-//Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
+// Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
 @mixin clearfix() {
   *zoom: 1;
   &:before,
@@ -13,6 +13,12 @@
   &:after {
     clear: both;
   }
+}
+
+@mixin inline-block() {
+ 	display: inline-block;
+ 	*display: inline;
+ 	zoom: 1;
 }
 
 @mixin font-size($font-size, $base:$base-font-size) {
@@ -52,6 +58,62 @@
   }
 }
 
+// ***************************************************************************
+// Rem conversion mixin
+//
+// Converts pixels to rems for whatever property is passed to it. It returns 
+// two lines of code — one of the regular pixel values (for IE), and another 
+// with the converted rem values (for everyone else).
+// via https://gist.github.com/bitmanic/1134548
+//
+// USAGE:
+//
+// .element {
+//    @include rem('padding', 10px 0 2px 5px);
+// }
+//  
+// OUTPUTS TO:
+//
+// .element {
+//    padding: 10px 0 2px 5px;
+//    padding: 1rem 0 0.2rem 0.5rem;
+// }
+//
+// ***************************************************************************
+
+@mixin rem($property, $px_values) {
+
+  // Convert the baseline into rems
+  $baseline_rem: ($lg-base-font-size / 1rem);
+
+  // Print the first line in pixel values for browsers that don't support rems
+  #{$property}: $px_values;
+
+  // If there is only one (numeric) value, return the property/value for it
+  @if type-of($px_values) == 'number' {
+    #{$property}: $px_values / $baseline_rem;
+  }
+
+  // If there is more than one value, create a list and perform equations on each value
+  @else {
+    // Create an empty list that we can dump values into
+    $rem_values: ();
+
+    @each $value in $px_values {
+      // If the value is zero, return 0
+      @if $value == 0 {
+        $rem_values: append($rem_values, $value);
+      }
+      // If the value is not zero, convert it from px to rem
+      @else {
+        $rem_values: append($rem_values, ($value / $baseline_rem) );
+      }
+    }
+    // Return the property and its list of converted values
+    #{$property}: $rem_values;
+  }
+}
+
 
 // ***************************************************************************
 // Retina images mixin
@@ -74,10 +136,11 @@
 // }
 //
 // If dimensions are omitted, the mixin will try to guess them using 
-// image-width andimage-height helpers. This only works if compass can find 
+// image-width and image-height helpers. This only works if compass can find 
 // the image file locally, however.
 //
 // ***************************************************************************
+
 @mixin image-2x($image, $width:"", $height:"") {
   @media (min--moz-device-pixel-ratio: 1.3),
          (-o-min-device-pixel-ratio: 2.6/2),
@@ -88,10 +151,10 @@
     background-image: url($image);
 
     @if $width != "" {
-      // dimensions ARE passed in, use them.
+      // dimensions ARE passed in, use them
       @include background-size($width $height);
     } @else {
-      // dimensions NOT passed in, try to calculate them automatically.
+      // dimensions NOT passed in, try to calculate them automatically
       @include background-size(floor(image-width($image)/2) floor(image-height($image)/2));
     }
   }
@@ -106,20 +169,21 @@
 //
 // Our options are:
 //
-// hand-and-down  -  isolates "phones"
-// hand-and-up    -  bigger-than-phone and-up
-// lap-and-up     -  "laptops" and-up
-// desk-and-up    -  "desktops" and-up
-// wall-and-up    -  widescreen desktops and-up
+// hand-and-up    -  bigger-than-phone and up
+// lap-and-up     -  laptops and up
+// desk-and-up    -  desktops and up
+// wall-and-up    -  widescreen desktops and up
+// lap-and-down   -  smaller than laptops
+// hand-and-down  -  isolates phones
 //
-// Without one of these parameters the mixin will accept a custom media query
+// Without one of these parameters the mixin will accept a custom media query.
 //
 // ***************************************************************************
-  
-@mixin media-query($media-query){
+
+@mixin media-query($media-query) {
   
   @if $legacy-ie == true {
-    //render styles without media queries
+    // render styles without media queries
     
     @if $media-query == "hand-and-up" { @content; }
     

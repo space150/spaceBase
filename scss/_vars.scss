@@ -1,6 +1,6 @@
-//
-// $VARS
-//
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
 
 // Include push/pull styles?
 $push: true!default;
@@ -13,16 +13,18 @@ $responsive-push-pull: false!default;
 // All elements to adopt box-sizing:border-box;?
 $global-border-box: true!default;
 
-// Base Measurements
+// Base measurements
 $base-font-size:       15px;
 $base-line-height:     25px;
 $lg-base-font-size:    18px;
-$lg-base-line-height:  30px;
 
-// Calculated Measurements
+// Calculated measurements
 $base-spacing-unit: $base-line-height;
 $half-spacing-unit: $base-spacing-unit / 2;
 $line-height-ratio: $base-line-height / $base-font-size;
+
+// Grid
+$gutter: $base-spacing-unit;
 
 // Breakpoints
 $hand-start:   480px;
