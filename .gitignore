@@ -1,3 +1,5 @@
-# never commit compiled things
+# never commit compiled code
 javascripts/compiled/*
 stylesheets/*
+
+.sass-cache/
