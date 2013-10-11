@@ -6,6 +6,7 @@ sass_dir = "scss"
 images_dir = "images"
 fonts_dir = "fonts"
 javascripts_dir = "javascripts"
+generated_images_dir = "images/compass-sprites"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :nested (could also be :expanded, :compact, or :compressed)

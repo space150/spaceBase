@@ -1,5 +1,6 @@
 # never commit compiled code
 javascripts/compiled/*
 stylesheets/*
+images/compass-sprites
 
 .sass-cache/
