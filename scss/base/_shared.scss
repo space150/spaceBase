@@ -46,7 +46,7 @@ pre {
 
 // `hr` elements only take up a few pixels, so give them special treatment
 hr {
-  @include rem2(margin, $base-spacing-unit - 2px $base-spacing-unit + 2px);
+  @include rem(margin, $base-spacing-unit - 2px $base-spacing-unit + 2px);
 }
 
 
