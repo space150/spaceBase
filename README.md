@@ -18,7 +18,7 @@ Instructions:
 
     gem -v    (confirms ruby gem is working and added to your path)
 
-    gem update --system    (updates all gems to current versions)
+    gem update    (updates all gems to current versions)
 
     gem install compass    (adds the compass gem)
 ```
