@@ -9,471 +9,438 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>spaceBase</title>
-    
+
     <!--[if (gt IE 8) | (IEMobile)]><!-->
     <link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
     <!--[if (lt IE 9) & (!IEMobile)]>
     <link href="stylesheets/application-ie.css" media="all" rel="stylesheet" type="text/css" />
     <![endif]-->
-    
-    <style>
-      .sg-heading {
-        padding: 1em 0 0.5em;
-        border-bottom: 2px solid #ccc;
-      }
-      .sg-demo-block {
-        background-color: #999;
-        color: #fff;
-        margin: 0 0 1.5em;
-        padding: 1em;
-      }
-      .sg-colors li {
-        padding: 5px;
-        border: 1px solid #ccc;
-      }
-      .sg-swatch {
-        display: block;
-        height: 80px;
-        width: 80px;
-      }
-      .sg-field-container {
-        margin-bottom: 1em;
-      }
-      .sg-field-container label {
-        display: block;
-      }
-    </style>
+
+    <link rel="stylesheet" href="stylesheets/styleguide.css" type="text/css">
 </head>
 <body>
-
   <div class="container">
-
     <div class="island text--center">
       <h1>spaceBase</h1>
       <p><a href="https://github.com/space150/">View on GitHub</a></p>
     </div>
-
-    <h2 class="sg-heading">Basic Grid</h2>
-    <p>The grid below shows a combination of nested, reversed, and gutterless grids. Each integer represents the high-level grid item you are looking at, and each decimal represents the grid item’s level of nesting (if any), e.g. Grid 2.3 represents the third nested grid inside of the second major grid.</p>
-    <div class="grid-wrapper">
-      <div class="grid  one-half">
-      
-        <div class="grid-wrapper"> 
-          <div class="grid">
-            <p class="sg-demo-block">Grid 1.1</p>
-          </div>
-          <div class="grid  one-third">
-            <p class="sg-demo-block">Grid 1.2</p>
-          </div>
-          <div class="grid  two-thirds">
-            <p class="sg-demo-block">Grid 1.3</p>
-          </div>
-        </div>
-      </div> 
-      <div class="grid  one-half">
-      
-        <div class="grid-wrapper">
-          <div class="grid  one-quarter">
-            <p class="sg-demo-block">Grid 2.1</p>
-          </div>
-          <div class="grid  three-quarters">
-            <p class="sg-demo-block">Grid 2.2</p>
-          </div>
-          <div class="grid">
-            <p class="sg-demo-block">Grid 2.3</p>
-          </div>
-        </div>
-      </div>
-      <div class="grid">
-      
-        <h3 class="sg-heading">Reverse Grid</h3>
-
-        <div class="grid-wrapper  grid-wrapper--rev">
-          <div class="grid  one-third">
-            <p class="sg-demo-block">Grid 3.1</p>
-          </div>
-          <div class="grid  one-third">
-            <p class="sg-demo-block">Grid 3.2</p>
-          </div>
-          <div class="grid  one-third">
-            <p class="sg-demo-block">Grid 3.3</p>
-          </div>
-        </div>
-      </div>
-      <div class="grid">
-      
-        <h3 class="sg-heading">Full Grid</h3>
-
-        <div class="grid-wrapper  grid-wrapper--full">
-          <div class="grid  one-eighth">
-            <p class="sg-demo-block">Grid 4.1</p>
-          </div>
-          <div class="grid  two-eighths">
-            <p class="sg-demo-block">Grid 4.2</p>
-          </div>
-          <div class="grid  three-eighths">
-            <p class="sg-demo-block">Grid 4.3</p>
-          </div>
-          <div class="grid  two-eighths">
-            <p class="sg-demo-block">Grid 4.4</p>
-          </div>
-        </div>
-      </div>
-      <div class="grid">
-      
-        <h3 class="sg-heading">Push and Pull</h3>
-
-        <div class="grid-wrapper">
-          <div class="grid  one-quarter  push--one-quarter">
-            <p class="sg-demo-block">Grid 5.1</p>
-          </div>
-          <div class="grid  one-quarter  push--one-quarter">
-            <p class="sg-demo-block">Grid 5.2</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <h2 class="sg-heading">Responsive Grid</h2>
-    <p>The grid below shows a combination of nested, fully-responsive grids using breakpoint-specific classes.</p>
-    <div class="grid-wrapper">
-      <div class="grid  one-half">
-      
-        <div class="grid-wrapper"> 
-          <div class="grid">
-            <p class="sg-demo-block">Grid 1.1</p>
-          </div>
-          <div class="grid  lap-one-whole  desk-one-third">
-            <p class="sg-demo-block">Grid 1.2</p>
-          </div>
-          <div class="grid  lap-one-whole  desk-two-thirds">
-            <p class="sg-demo-block">Grid 1.3</p>
-          </div>
-        </div>
-      </div> 
-      <div class="grid  one-half">
-      
-        <div class="grid-wrapper">
-          <div class="grid  one-half">
-            <p class="sg-demo-block">Grid 2.1</p>
-          </div>
-          <div class="grid  one-half">
-            <p class="sg-demo-block">Grid 2.2</p>
-          </div>
-          <div class="grid  lap-one-half  desk-one-third">
-            <p class="sg-demo-block">Grid 2.3</p>
-          </div>
-          <div class="grid  lap-one-half  desk-one-third">
-            <p class="sg-demo-block">Grid 2.4</p>
-          </div>
-          <div class="grid  desk-one-third">
-            <p class="sg-demo-block">Grid 2.5</p>
-          </div>
-        </div>
-      </div>
-      <div class="grid  hand-one-half  lap-one-quarter desk-two-fifths">
-        <p class="sg-demo-block">Grid 3.0</p>
-      </div>
-      <div class="grid  hand-one-half  lap-three-quarters desk-three-fifths">
-        <p class="sg-demo-block">Grid 4.0</p>
-      </div>
-    </div>
-    
-    <h2 class="sg-heading">Colors</h2>
-    <ul class="h-list sg-colors">
-    	<li>
-    		<span style="background: #000000;" class="sg-swatch"></span>
-    		<span class="sg-label">#000000<br>$black</span>
-    	</li>
-    	<li>
-    		<span style="background: #4c4c4c;" class="sg-swatch"></span>
-    		<span class="sg-label">#4c4c4c<br>$grayDark</span>
-    	</li>
-    	<li>
-    		<span style="background: #999999;" class="sg-swatch"></span>
-    		<span class="sg-label">#999999<br>$gray</span>
-    	</li>
-    	<li>
-    		<span style="background: #f0f0f0;" class="sg-swatch"></span>
-    		<span class="sg-label">#f0f0f0<br>$grayLight</span>
-    	</li>
-    	<li>
-    		<span style="background: #ffffff;" class="sg-swatch"></span>
-    		<span class="sg-label">#ffffff<br>$white</span>
-    	</li>
-    	<li>
-    		<span style="background: #203c7b;" class="sg-swatch"></span>
-    		<span class="sg-label">#203c7b<br>$primary</span>
-    	</li>
-    	<li>
-    		<span style="background: #0084cb;" class="sg-swatch"></span>
-    		<span class="sg-label">#0084cb<br>$secondary</span>
-    	</li>
-    	<li>
-    		<span style="background: #4f2683;" class="sg-swatch"></span>
-    		<span class="sg-label">#4f2683<br>$tertiary</span>
-    	</li>
-    	<li>
-    		<span style="background: #fff5a9;" class="sg-swatch"></span>
-    		<span class="sg-label">#fff5a9<br>$quaternary</span>
-    	</li>
-    </ul>
-    
-    <h2 class="sg-heading">Typography</h2>
-    <div class="grid-wrapper">
-      <div class="grid">
-        <h1>h1.Heading 1</h1>
-        <h2>h2.Heading 2</h2>
-        <h3>h3.Heading 3</h3>
-        <h4>h4.Heading 4</h4>
-        <h3 class="sg-heading">Unordered List</h3>
-        <ul>
-          <li>list item 1</li>
-          <li>list item 1
-            <ul>
-              <li>list item 2</li>
-              <li>list item 2
-                <ul>
-                  <li>list item 3</li>
-                  <li>list item 3</li>
-                </ul>
-              </li>
-              <li>list item 2</li>
-              <li>list item 2</li>
-            </ul>
-          </li>
-          <li>list item 1</li>
-          <li>list item 1</li>
-        </ul>
-        <h3 class="sg-heading">Ordered List</h3>
-        <ol>
-          <li>list item 1</li>
-          <li>list item 1
-            <ol>
-              <li>list item 2</li>
-              <li>list item 2
-                <ol>
-                  <li>list item 3</li>
-                  <li>list item 3</li>
-                </ol>
-              </li>
-              <li>list item 2</li>
-              <li>list item 2</li>
-            </ol>
-          </li>
-          <li>list item 1</li>
-          <li>list item 1</li>
-        </ol>
-        <h3 class="sg-heading">Definition List</h3>
-        <dl>
-          <dt>Description name</dt>
-          <dd>Description value</dd>
-          <dt>Description name</dt>
-          <dd>Description value</dd>
-          <dd>Description value</dd>
-          <dt>Description name</dt>
-          <dt>Description name</dt>
-          <dd>Description value</dd>
-        </dl>
-        <h3 class="sg-heading">Table</h3>
-        <table>
-          <thead>
-          	<tr>
-          		<th>Table Heading 1</th>
-          		<th>Table Heading 2</th>
-          		<th>Table Heading 3</th>
-          		<th>Table Heading 3</th>
-          		<th>Table Heading 4</th>
-          	</tr>
-          </thead>
-          <tbody>
-            <tr>
-            	<td>Table Cell 1</td>
-            	<td>Table Cell 2</td>
-            	<td>Table Cell 3</td>
-            	<td>Table Cell 4</td>
-            	<td>Table Cell 5</td>
-            </tr>
-            <tr>
-            	<td>Table Cell 1</td>
-            	<td>Table Cell 2</td>
-            	<td>Table Cell 3</td>
-            	<td>Table Cell 4</td>
-            	<td>Table Cell 5</td>
-            </tr>
-            <tr>
-            	<td>Table Cell 1</td>
-            	<td>Table Cell 2</td>
-            	<td>Table Cell 3</td>
-            	<td>Table Cell 4</td>
-            	<td>Table Cell 5</td>
-            </tr>
-            <tr>
-            	<td>Table Cell 1</td>
-            	<td>Table Cell 2</td>
-            	<td>Table Cell 3</td>
-            	<td>Table Cell 4</td>
-            	<td>Table Cell 5</td>
-            </tr>
-          </tbody>
-          <tfoot>
-          	<tr>
-          		<th>Table Footer 1</th>
-          		<th>Table Footer 2</th>
-          		<th>Table Footer 3</th>
-          		<th>Table Footer 3</th>
-          		<th>Table Footer 4</th>
-          	</tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-    
-    <h2 class="sg-heading">Sample Content Block</h2>
-    <div class="grid-wrapper">
-      <div class="grid">
-        <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <blockquote>
-          <p>Some sort of famous witty quote marked up with a &lt;blockquote> and a child &lt;p> element.</p>
-        </blockquote>
-        <ul>
-          <li>Superscript item<sup>sup</sup></li>
-          <li>Subscript item<sub>sub</sub></li>
-          <li><small>Small text for fine print.</small></li>
-        </ul>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-      </div>
-    </div>
-    
-    <h2 class="sg-heading">Form Buttons</h2>
-    <form>
+    <div class="sg-landmark">
+      <h2 class="sg-heading">Basic Grid</h2>
+      <p>The grid below shows a combination of nested, reversed, and gutterless grids. Each integer represents the high-level grid item you are looking at, and each decimal represents the grid item’s level of nesting (if any), e.g. Grid 2.3 represents the third nested grid inside of the second major grid.</p>
       <div class="grid-wrapper">
-        <div class="grid one-quarter">
-          <p><input type="button" value="Input type button"></p>
-          <p><input type="submit" value="Input type submit"></p>
-          <p><input type="submit" value="Input type submit disabled" disabled></p>
-          <p><a class="btn">Link type button</a></p>
+        <div class="grid  one-half">
+          <div class="grid-wrapper">
+            <div class="grid">
+              <p class="sg-demo-block">Grid 1.1</p>
+            </div>
+            <div class="grid  one-third">
+              <p class="sg-demo-block">Grid 1.2</p>
+            </div>
+            <div class="grid  two-thirds">
+              <p class="sg-demo-block">Grid 1.3</p>
+            </div>
+          </div>
         </div>
-        <div class="grid one-quarter">
-          <p><button type="button">Button type button</button></p>
-          <p><button type="submit">Button type submit</button></p>
-          <p><button type="button" disabled>Button type button disabled</button></p>
+        <div class="grid  one-half">
+          <div class="grid-wrapper">
+            <div class="grid  one-quarter">
+              <p class="sg-demo-block">Grid 2.1</p>
+            </div>
+            <div class="grid  three-quarters">
+              <p class="sg-demo-block">Grid 2.2</p>
+            </div>
+            <div class="grid">
+              <p class="sg-demo-block">Grid 2.3</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <h3 class="sg-heading">Reverse Grid</h3>
+          <div class="grid-wrapper  grid-wrapper--rev">
+            <div class="grid  one-third">
+              <p class="sg-demo-block">Grid 3.1</p>
+            </div>
+            <div class="grid  one-third">
+              <p class="sg-demo-block">Grid 3.2</p>
+            </div>
+            <div class="grid  one-third">
+              <p class="sg-demo-block">Grid 3.3</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <h3 class="sg-heading">Full Grid</h3>
+          <div class="grid-wrapper  grid-wrapper--full">
+            <div class="grid  one-eighth">
+              <p class="sg-demo-block">Grid 4.1</p>
+            </div>
+            <div class="grid  two-eighths">
+              <p class="sg-demo-block">Grid 4.2</p>
+            </div>
+            <div class="grid  three-eighths">
+              <p class="sg-demo-block">Grid 4.3</p>
+            </div>
+            <div class="grid  two-eighths">
+              <p class="sg-demo-block">Grid 4.4</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <h3 class="sg-heading">Push and Pull</h3>
+          <div class="grid-wrapper">
+            <div class="grid  one-quarter  push--one-quarter">
+              <p class="sg-demo-block">Grid 5.1</p>
+            </div>
+            <div class="grid  one-quarter  push--one-quarter">
+              <p class="sg-demo-block">Grid 5.2</p>
+            </div>
+          </div>
         </div>
       </div>
-    </form>
-    
-    <h2 class="sg-heading">Form Fields</h2>
-    <form>
-      <fieldset class="sg-field-container">
-        <div class="sg-field-container">
-          <label for="text">Text Input</label>
-          <input type="text" placeholder="Text Input" id="text">
+    </div>
+    <div class="sg-landmark">
+      <h2 class="sg-heading">Responsive Grid</h2>
+      <p>The grid below shows a combination of nested, fully-responsive grids using breakpoint-specific classes.</p>
+      <div class="grid-wrapper">
+        <div class="grid  one-half">
+          <div class="grid-wrapper">
+            <div class="grid">
+              <p class="sg-demo-block">Grid 1.1</p>
+            </div>
+            <div class="grid  lap-one-whole  desk-one-third">
+              <p class="sg-demo-block">Grid 1.2</p>
+            </div>
+            <div class="grid  lap-one-whole  desk-two-thirds">
+              <p class="sg-demo-block">Grid 1.3</p>
+            </div>
+          </div>
         </div>
-        <div class="sg-field-container">
-          <label for="text">Readonly Text Input</label>
-          <input type="text" placeholder="Readonly Text Input" id="text" readonly>
+        <div class="grid  one-half">
+          <div class="grid-wrapper">
+            <div class="grid  one-half">
+              <p class="sg-demo-block">Grid 2.1</p>
+            </div>
+            <div class="grid  one-half">
+              <p class="sg-demo-block">Grid 2.2</p>
+            </div>
+            <div class="grid  lap-one-half  desk-one-third">
+              <p class="sg-demo-block">Grid 2.3</p>
+            </div>
+            <div class="grid  lap-one-half  desk-one-third">
+              <p class="sg-demo-block">Grid 2.4</p>
+            </div>
+            <div class="grid  desk-one-third">
+              <p class="sg-demo-block">Grid 2.5</p>
+            </div>
+          </div>
         </div>
-        <div class="sg-field-container">
-          <label for="text">Disabled Text Input</label>
-          <input type="text" placeholder="Disabled Text Input" id="text" disabled>
+        <div class="grid  hand-one-half  lap-one-quarter desk-two-fifths">
+          <p class="sg-demo-block">Grid 3.0</p>
         </div>
-        <div class="sg-field-container">
-          <label for="password">Password</label>
-          <input type="password" placeholder="Type your Password" id="password">
+        <div class="grid  hand-one-half  lap-three-quarters desk-three-fifths">
+          <p class="sg-demo-block">Grid 4.0</p>
         </div>
-        <div class="sg-field-container">
-          <label for="password">Web Address</label>
-          <input type="url" placeholder="http://yoursite.com" id="password">
+      </div>
+    </div>
+    <div class="sg-landmark">
+      <h2 class="sg-heading">Colors</h2>
+      <ul class="h-list sg-colors">
+        <li>
+          <span style="background: #000000;" class="sg-swatch"></span>
+          <span class="sg-label">#000000<br>$black</span>
+        </li>
+        <li>
+          <span style="background: #4c4c4c;" class="sg-swatch"></span>
+          <span class="sg-label">#4c4c4c<br>$grayDark</span>
+        </li>
+        <li>
+          <span style="background: #999999;" class="sg-swatch"></span>
+          <span class="sg-label">#999999<br>$gray</span>
+        </li>
+        <li>
+          <span style="background: #f0f0f0;" class="sg-swatch"></span>
+          <span class="sg-label">#f0f0f0<br>$grayLight</span>
+        </li>
+        <li>
+          <span style="background: #ffffff;" class="sg-swatch"></span>
+          <span class="sg-label">#ffffff<br>$white</span>
+        </li>
+        <li>
+          <span style="background: #203c7b;" class="sg-swatch"></span>
+          <span class="sg-label">#203c7b<br>$primary</span>
+        </li>
+        <li>
+          <span style="background: #0084cb;" class="sg-swatch"></span>
+          <span class="sg-label">#0084cb<br>$secondary</span>
+        </li>
+        <li>
+          <span style="background: #4f2683;" class="sg-swatch"></span>
+          <span class="sg-label">#4f2683<br>$tertiary</span>
+        </li>
+        <li>
+          <span style="background: #fff5a9;" class="sg-swatch"></span>
+          <span class="sg-label">#fff5a9<br>$quaternary</span>
+        </li>
+      </ul>
+    </div>
+    <div class="sg-landmark">
+      <h2 class="sg-heading">Typography</h2>
+      <h1>h1.Heading 1</h1>
+      <h2>h2.Heading 2</h2>
+      <h3>h3.Heading 3</h3>
+      <h4>h4.Heading 4</h4>
+      <div class="grid-wrapper">
+        <div class="grid one-half">
+          <h3 class="sg-heading">Unordered List</h3>
+          <ul>
+            <li>list item 1</li>
+            <li>list item 1
+              <ul>
+                <li>list item 2</li>
+                <li>list item 2
+                  <ul>
+                    <li>list item 3</li>
+                    <li>list item 3</li>
+                  </ul>
+                </li>
+                <li>list item 2</li>
+                <li>list item 2</li>
+              </ul>
+            </li>
+            <li>list item 1</li>
+            <li>list item 1</li>
+          </ul>
         </div>
-        <div class="sg-field-container">
-          <label for="password">Email Address</label>
-          <input type="email" placeholder="name@email.com" id="password">
+        <div class="grid one-half">
+          <h3 class="sg-heading">Ordered List</h3>
+          <ol>
+            <li>list item 1</li>
+            <li>list item 1
+              <ol>
+                <li>list item 2</li>
+                <li>list item 2
+                  <ol>
+                    <li>list item 3</li>
+                    <li>list item 3</li>
+                  </ol>
+                </li>
+                <li>list item 2</li>
+                <li>list item 2</li>
+              </ol>
+            </li>
+            <li>list item 1</li>
+            <li>list item 1</li>
+          </ol>
         </div>
-        <div class="sg-field-container">
-          <label for="search">Search</label>
-          <input type="search" placeholder="Enter Search Term" id="search">
+      </div>
+      <h3 class="sg-heading">Definition List</h3>
+      <dl>
+        <dt>Description name</dt>
+        <dd>Description value</dd>
+        <dt>Description name</dt>
+        <dd>Description value</dd>
+        <dd>Description value</dd>
+        <dt>Description name</dt>
+        <dt>Description name</dt>
+        <dd>Description value</dd>
+      </dl>
+      <h3 class="sg-heading">Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Table Heading 1</th>
+            <th>Table Heading 2</th>
+            <th>Table Heading 3</th>
+            <th>Table Heading 3</th>
+            <th>Table Heading 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table Cell 1</td>
+            <td>Table Cell 2</td>
+            <td>Table Cell 3</td>
+            <td>Table Cell 4</td>
+            <td>Table Cell 5</td>
+          </tr>
+          <tr>
+            <td>Table Cell 1</td>
+            <td>Table Cell 2</td>
+            <td>Table Cell 3</td>
+            <td>Table Cell 4</td>
+            <td>Table Cell 5</td>
+          </tr>
+          <tr>
+            <td>Table Cell 1</td>
+            <td>Table Cell 2</td>
+            <td>Table Cell 3</td>
+            <td>Table Cell 4</td>
+            <td>Table Cell 5</td>
+          </tr>
+          <tr>
+            <td>Table Cell 1</td>
+            <td>Table Cell 2</td>
+            <td>Table Cell 3</td>
+            <td>Table Cell 4</td>
+            <td>Table Cell 5</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Table Footer 1</th>
+            <th>Table Footer 2</th>
+            <th>Table Footer 3</th>
+            <th>Table Footer 3</th>
+            <th>Table Footer 4</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="sg-landmark">
+      <h2 class="sg-heading">Sample Content Block</h2>
+      <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <blockquote>
+        <p>Some sort of famous witty quote marked up with a &lt;blockquote> and a child &lt;p> element.</p>
+      </blockquote>
+      <ul>
+        <li>Superscript item<sup>sup</sup></li>
+        <li>Subscript item<sub>sub</sub></li>
+        <li><small>Small text for fine print.</small></li>
+      </ul>
+      <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+    </div>
+    <div class="sg-landmark">
+      <h2 class="sg-heading">Form Buttons</h2>
+      <form>
+        <div class="grid-wrapper">
+          <div class="grid one-half">
+            <p><input type="button" value="Input type button"></p>
+            <p><input type="submit" value="Input type submit"></p>
+            <p><input type="submit" value="Input type submit disabled" disabled></p>
+            <p><a class="btn">Link type button</a></p>
+          </div>
+          <div class="grid one-half">
+            <p><button type="button">Button type button</button></p>
+            <p><button type="submit">Button type submit</button></p>
+            <p><button type="button" disabled>Button type button disabled</button></p>
+          </div>
         </div>
-        <div class="sg-field-container">
-          <label for="text">Number Input</label>
-          <input type="number" pattern="[0-9]*" placeholder="Enter a Number" id="text">
+      </form>
+    </div>
+    <div class="sg-landmark">
+      <h2 class="sg-heading">Form Fields</h2>
+      <form>
+        <div class="grid-wrapper">
+          <div class="grid one-third">
+            <div class="sg-field-container">
+              <label for="text">Text Input</label>
+              <input type="text" placeholder="Text Input" id="text">
+            </div>
+            <div class="sg-field-container">
+              <label for="text">Readonly Text Input</label>
+              <input type="text" placeholder="Readonly Text Input" id="text" readonly>
+            </div>
+            <div class="sg-field-container">
+              <label for="text">Disabled Text Input</label>
+              <input type="text" placeholder="Disabled Text Input" id="text" disabled>
+            </div>
+            <div class="sg-field-container">
+              <label for="password">Password</label>
+              <input type="password" placeholder="Type your Password" id="password">
+            </div>
+            <div class="sg-field-container">
+              <label for="password">Web Address</label>
+              <input type="url" placeholder="http://yoursite.com" id="password">
+            </div>
+            <div class="sg-field-container">
+              <label for="password">Email Address</label>
+              <input type="email" placeholder="name@email.com" id="password">
+            </div>
+            <div class="sg-field-container">
+              <label for="search">Search</label>
+              <input type="search" placeholder="Enter Search Term" id="search">
+            </div>
+            <div class="sg-field-container">
+              <label for="text">Number Input</label>
+              <input type="number" pattern="[0-9]*" placeholder="Enter a Number" id="text">
+            </div>
+          </div>
+          <div class="grid one-third">
+            <div class="sg-field-container">
+              <label for="textarea">Textarea</label>
+              <textarea placeholder="Enter your message here" cols="48" rows="4" id="textarea"></textarea>
+            </div>
+            <div class="sg-field-container">
+              <label for="textarea">Readonly Textarea</label>
+              <textarea placeholder="Readonly message" cols="48" rows="4" id="textarea" readonly></textarea>
+            </div>
+            <div class="sg-field-container">
+              <label for="textarea">Disabled Textarea</label>
+              <textarea placeholder="Disabled message" cols="48" rows="4" id="textarea" disabled></textarea>
+            </div>
+            <div class="sg-field-container">
+              <label class="error">Error Input</label>
+              <input type="text" placeholder="Text Input" class="is-error">
+            </div>
+            <div class="sg-field-container">
+              <label class="valid">Valid</label>
+              <input type="text" placeholder="Text Input" class="is-valid">
+            </div>
+            <div class="sg-field-container">
+              <label for="select">Select</label>
+              <select id="select">
+                <optgroup label="Option Group">
+                  <option>Option One</option>
+                  <option>Option Two</option>
+                  <option>Option Three</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="sg-field-container">
+              <label for="select">Disabled Select</label>
+              <select id="select" disabled>
+                <option>Option One</option>
+                <option>Option Two</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid one-third">
+            <div class="sg-field-container">
+              <label for="multi-select">Multiple Select</label>
+              <select id="multi-select" multiple size="4"><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option><option>Option 5</option><option>Option 6</option><option>Option 7</option><option>Option 8</option><option>Option 9</option></select>
+            </div>
+            <div class="sg-field-container">
+              <label for="file">File input</label> <input type="file" id="file">
+            </div>
+            <legend>Checkbox</legend>
+            <ul class="v-list">
+              <li><label for="checkbox1"><input type="checkbox" checked="checked" name="checkbox" id="checkbox1"> Choice A</label></li>
+              <li><label for="checkbox2"><input type="checkbox" name="checkbox" id="checkbox2"> Choice B</label></li>
+              <li><label for="checkbox3"><input type="checkbox" name="checkbox" id="checkbox3"> Choice C</label></li>
+              <li><label for="checkbox4"><input type="checkbox" name="checkbox" id="checkbox4" disabled> Choice Disabled</label></li>
+            </ul>
+            <legend>Radio</legend>
+            <ul class="v-list">
+              <li><label for="radio1"><input type="radio" checked="checked" class="radio" name="radio" id="radio1"> Option 1</label></li>
+              <li><label for="radio2"><input type="radio" class="radio" name="radio" id="radio2"> Option 2</label></li>
+              <li><label for="radio3"><input type="radio" class="radio" name="radio" id="radio3"> Option 3</label></li>
+              <li><label for="radio4"><input type="radio" class="radio" name="radio" id="radio4" disabled> Option Disabled</label></li>
+            </ul>
+          </div>
         </div>
-        <div class="sg-field-container">
-          <label for="textarea">Textarea</label>
-          <textarea placeholder="Enter your message here" cols="48" rows="4" id="textarea"></textarea>
-        </div>
-        <div class="sg-field-container">
-          <label for="textarea">Readonly Textarea</label>
-          <textarea placeholder="Readonly message" cols="48" rows="4" id="textarea" readonly></textarea>
-        </div>
-        <div class="sg-field-container">
-          <label for="textarea">Disabled Textarea</label>
-          <textarea placeholder="Disabled message" cols="48" rows="4" id="textarea" disabled></textarea>
-        </div>
-        <div class="sg-field-container">
-          <label class="error">Error Input</label>
-          <input type="text" placeholder="Text Input" class="is-error">
-        </div>
-        <div class="sg-field-container">
-          <label class="valid">Valid</label>
-          <input type="text" placeholder="Text Input" class="is-valid">
-        </div>
-        <div class="sg-field-container">
-          <label for="select">Select</label>
-          <select id="select">
-            <optgroup label="Option Group">
-              <option>Option One</option>
-              <option>Option Two</option>
-              <option>Option Three</option>
-            </optgroup>
-          </select>
-        </div>
-        <div class="sg-field-container">
-          <label for="select">Disabled Select</label>
-          <select id="select" disabled>
-            <option>Option One</option>
-            <option>Option Two</option>
-          </select>
-        </div>
-        <div class="sg-field-container">
-          <label for="multi-select">Multiple Select</label>
-          <select id="multi-select" multiple size="4"><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option><option>Option 5</option><option>Option 6</option><option>Option 7</option><option>Option 8</option><option>Option 9</option></select>
-        </div>
-        <div class="sg-field-container">
-          <label for="file">File input</label> <input type="file" id="file">
-        </div>
-      </fieldset>
-      <fieldset class="sg-field-container">
-        <legend>Checkbox</legend>
-        <ul class="v-list">
-          <li><label for="checkbox1"><input type="checkbox" checked="checked" name="checkbox" id="checkbox1"> Choice A</label></li>
-          <li><label for="checkbox2"><input type="checkbox" name="checkbox" id="checkbox2"> Choice B</label></li>
-          <li><label for="checkbox3"><input type="checkbox" name="checkbox" id="checkbox3"> Choice C</label></li>
-          <li><label for="checkbox4"><input type="checkbox" name="checkbox" id="checkbox4" disabled> Choice Disabled</label></li>
-        </ul>
-      </fieldset>
-      <fieldset class="sg-field-container">
-        <legend>Radio</legend>
-        <ul class="v-list">
-          <li><label for="radio1"><input type="radio" checked="checked" class="radio" name="radio" id="radio1"> Option 1</label></li>
-          <li><label for="radio2"><input type="radio" class="radio" name="radio" id="radio2"> Option 2</label></li>
-          <li><label for="radio3"><input type="radio" class="radio" name="radio" id="radio3"> Option 3</label></li>
-          <li><label for="radio4"><input type="radio" class="radio" name="radio" id="radio4" disabled> Option Disabled</label></li>
-        </ul>
-      </fieldset>
-      
-      <h3 class="sg-heading">HTML5 Inputs</h3>
-      <fieldset>
-        <div class="sg-field-container"><label for="ic">Color input</label> <input type="color" value="#000000" id="ic"></div>
-        <div class="sg-field-container"><label for="in">Number input</label> <input type="number" value="5" max="10" min="0" id="in"></div>
-        <div class="sg-field-container"><label for="ir">Range input</label> <input type="range" value="10" id="ir"></div>
-        <div class="sg-field-container"><label for="idd">Date input</label> <input type="date" value="1970-01-01" id="idd"></div>
-        <div class="sg-field-container"><label for="idm">Month input</label> <input type="month" value="1970-01" id="idm"></div>
-        <div class="sg-field-container"><label for="idw">Week input</label> <input type="week" value="1970-W01" id="idw"></div>
-      </fieldset>
-    </form>
-
+        <h3 class="sg-heading">HTML5 Inputs</h3>
+        <fieldset>
+          <div class="sg-field-container"><label for="ic">Color input</label> <input type="color" value="#000000" id="ic"></div>
+          <div class="sg-field-container"><label for="in">Number input</label> <input type="number" value="5" max="10" min="0" id="in"></div>
+          <div class="sg-field-container"><label for="ir">Range input</label> <input type="range" value="10" id="ir"></div>
+          <div class="sg-field-container"><label for="idd">Date input</label> <input type="date" value="1970-01-01" id="idd"></div>
+          <div class="sg-field-container"><label for="idm">Month input</label> <input type="month" value="1970-01" id="idm"></div>
+          <div class="sg-field-container"><label for="idw">Week input</label> <input type="week" value="1970-W01" id="idw"></div>
+        </fieldset>
+      </form>
+    </div>
   </div>
 </body>
 </html>
