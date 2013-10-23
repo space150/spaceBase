@@ -3,15 +3,15 @@
 \*------------------------------------*/
 
 // Include push/pull styles?
-$push: true!default;
-$pull: true!default;
+$push: true;
+$pull: true;
 
 // Include responsive grid widths w/breakpoint namespace?
-$responsive: true!default;
-$responsive-push-pull: false!default;
+$responsive: true;
+$responsive-push-pull: false;
 
 // All elements to adopt box-sizing:border-box;?
-$global-border-box: true!default;
+$global-border-box: true;
 
 // Base measurements
 $base-font-size:       15px;
