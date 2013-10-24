@@ -1,0 +1,41 @@
+@import "compass";
+@import "vars";
+@import "base/mixins";
+
+.sg-landmark {
+  @include rem(margin-bottom, 3 * $base-spacing-unit);
+}
+
+.sg-heading {
+  padding: 0 0 0.5em;
+  border-bottom: 2px solid $gray;
+  // Add your project's font-styles here.
+}
+
+.sg-demo-block {
+  background-color: $gray;
+  color: $white;
+  @include rem(padding, $half-spacing-unit);
+  @include rem(margin, 0 0 $base-spacing-unit);
+}
+
+.sg-colors li {
+  border: 1px solid #ccc;
+  background: $white;
+  @include rem(padding, 5px);
+  @include rem(margin-bottom, $half-spacing-unit);
+}
+
+.sg-swatch {
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+
+.sg-field-container {
+  margin-bottom: 1em;
+}
+
+.sg-field-container label {
+  display: block;
+}
