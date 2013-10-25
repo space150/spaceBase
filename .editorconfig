@@ -10,10 +10,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 charset = utf-8
 
-[**.{js, json}]
-indent_size = 4
-
-[**.{html, scss, css, rb, erb, aspx, cshtml, coffee}]
+[**.{html, scss, css, rb, erb, aspx, cshtml, coffee, js, json}]
 indent_size = 2
 
 # Two spaces at EOL inserts <br>
