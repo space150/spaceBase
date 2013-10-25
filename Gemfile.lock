@@ -12,6 +12,7 @@ GEM
       sass (~> 3.1)
     execjs (2.0.2)
     fssm (0.2.10)
+    rake (10.1.0)
     redcarpet (2.3.0)
     sass (3.2.12)
 
@@ -21,4 +22,5 @@ PLATFORMS
 DEPENDENCIES
   coffee-script
   compass
+  rake
   redcarpet
