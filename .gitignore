@@ -3,6 +3,8 @@ javascripts/compiled/*
 stylesheets/*
 images/compass-sprites
 
+# Temporary Sass files
 .sass-cache/
 
+# Compiled source for deployment
 dist/
