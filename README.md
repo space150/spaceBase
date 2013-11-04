@@ -5,6 +5,13 @@ Front-end starter files for new projects.
 
 For development purposes, we are using a Ruby compiler for our SCSS and CoffeeScript assets.
 
+## EditorConfig
+
+Your editor should be setup with an [EditorConfig](http://editorconfig.org/)
+plugin, so that certain basic code style standards are enforced automatically.
+See [http://editorconfig.org/#download](http://editorconfig.org/#download) and
+install the plugin for your editor of choice.
+
 ## SCSS
 
 Instructions:

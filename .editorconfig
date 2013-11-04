@@ -1,0 +1,19 @@
+# editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+[**.{html, scss, css, rb, erb, aspx, cshtml, coffee, js, json}]
+indent_size = 2
+
+# Two spaces at EOL inserts <br>
+[**.md]
+trim_trailing_whitespace = false
+
