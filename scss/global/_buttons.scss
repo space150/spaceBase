@@ -25,6 +25,6 @@
   &.disabled,
   &[disabled] {
     cursor: default;
-    @include opacity(65);
+    @include opacity(.65);
   }
 }

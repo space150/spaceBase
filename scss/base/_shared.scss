@@ -3,27 +3,28 @@
 \*------------------------------------*/
 
 @if $global-border-box == true {
-    // All elements will adopt `box-sizing:border-box;` 
-    // as per paulirish.com/2012/box-sizing-border-box-ftw
-    *{
-        &,
-        &:before,
-        &:after{
-            @include box-sizing(border-box);
-        }
+  // All elements will adopt `box-sizing:border-box;` 
+  // as per paulirish.com/2012/box-sizing-border-box-ftw
+  *{
+    &,
+    &:before,
+    &:after {
+      @include box-sizing(border-box);
     }
+  }
 }
 
 
 // Fluid images
 img {
-  max-width:100%;
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
 }
 
 // Non-fluid images if you specify `width` and/or `height` attributes
 img[width],
 img[height] {
-  max-width:none;
+  max-width: none;
 }
 
 
