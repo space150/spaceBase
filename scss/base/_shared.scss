@@ -15,6 +15,15 @@
 }
 
 
+// Remove gap between elements and the bottom of their containers
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
 // Fluid images
 img {
   max-width: 100%;
