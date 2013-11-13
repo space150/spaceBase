@@ -17,50 +17,23 @@ legend {
   width: 100%;
 }
 
-// Inputs, Textareas, Selects
-input,
-button,
-textarea,
-select,
-.uneditable-input {
-  display: inline-block;
-  height: 2em;
-  width: 200px;
-  padding: 0.2em 1em;
-  color: $black;
-  font-family: $font-body;
-  @include font-size($base-font-size);
-  line-height: 1.2;
-  vertical-align: middle;
-  border: 1px solid $gray;
-  @include border-radius(0);
+// Override content-box in Normalize (* isn't specific enough)
+input[type="search"] {
+  @include box-sizing(border-box);
 }
 
-// Mini reset for unique input types
-input[type="file"],
-input[type="image"],
-input[type="checkbox"],
-input[type="radio"] {
-  width: auto;
-  height: auto;
-  padding: 0;
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; /* IE8-9 */
   line-height: normal;
-  border: none;
-  cursor: pointer;
 }
 
-// Help out input buttons
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  width: auto;
-  height: auto;
-  // Firefox 3.6 only
-  &::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-  }
+// Set the size of file controls to match text inputs
+input[type="file"] {
+  display: block;
+  width: 100%;
 }
 
 // Make multiple select elements height not fixed
@@ -69,62 +42,124 @@ select[size] {
   height: auto;
 }
 
-// Make textarea height behave
-textarea {
-  height: auto;
-  vertical-align: top;
+// Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611
+select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
 }
 
-// Hidden inputs
-input[type="hidden"] {
-  display: none;
+// Focus for file, radio, and checkbox
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  @include tab-focus();
 }
 
-// Disabled and read-only inputs
-input[disabled],
-select[disabled],
-textarea[disabled],
-input[readonly],
-select[readonly],
-textarea[readonly] {
-  cursor: not-allowed;
+// Fix for Chrome number input
+// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button. See https://github.com/twbs/bootstrap/issues/8350
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    height: auto;
+  }
 }
 
-// For text that needs to appear as an input but should not be an input
-.uneditable-input,
-.uneditable-textarea {
+
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls:
+//
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+.form-control {
   display: block;
-  cursor: not-allowed;
-}
+  width: 100%;
+  height: 2.5em;
+  padding: 0.2em 1em;
+  font-family: $font-body;
+  @include font-size($base-font-size);
+  line-height: $base-line-height;
+  color: $grayDark;
+  vertical-align: middle;
+  background-color: $white;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid $gray;
+  @include border-radius(0);
+  @include transition(border-color ease-in-out .15s);
 
-// Prevent text from wrapping, but still cut it off like an input does
-.uneditable-input {
-  overflow: hidden;
-  white-space: nowrap;
-}
+  // Customize the `:focus` state to imitate native WebKit styles
+  @include form-control-focus();
 
-// Make uneditable textareas behave like a textarea
-.uneditable-textarea {
-  width: auto;
+  // Placeholder
+  @include placeholder($primary);
+
+  // Disabled and read-only inputs
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $grayLight;
+  }
+}
+// Reset height for `textarea`s
+textarea.form-control {
   height: auto;
 }
 
-// Placeholder text
-input,
-textarea {
-  @include placeholder($grayDark);
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls
+.radio,
+.checkbox {
+  display: block;
+  min-height: $base-line-height; // clear the floating input if there is no label text
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  vertical-align: middle;
+  label {
+    display: inline;
+    cursor: pointer;
+  }
+}
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
 }
 
-// No Style
-input.nostyle,
-textarea.nostyle {
-  padding:0;
-  margin:0;
-  border:none;
-  outline:none;
-  resize:none;
-  @include border-radius(0);
-  @include box-sizing('content-box');
-  @include box-shadow(0);
-  @include appearance(none);
+// Disabled inputs
+input[type="radio"],
+input[type="checkbox"],
+.radio,
+.checkbox {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+
+// Form control validation states
+.has-error {
+  @include form-control-validation($state-error, darken($state-error, 5%));
+}
+.has-success {
+  @include form-control-validation($state-success, darken($state-success, 5%));
 }
