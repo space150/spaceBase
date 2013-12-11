@@ -112,7 +112,9 @@ textarea[readonly] {
 // Placeholder text
 input,
 textarea {
-  @include placeholder($grayDark);
+  @include placeholder() {
+    color: $gray;
+  }
 }
 
 // No Style
