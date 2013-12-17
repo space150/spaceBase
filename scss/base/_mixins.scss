@@ -50,11 +50,11 @@
 }
 
 // Placeholder text
-@mixin placeholder($color: $gray) {
-  &:-moz-placeholder { color: $color; } // Firefox 4-18
-  &::-moz-placeholder { color: $color; } // Firefox 19+
-  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
-  &::-webkit-input-placeholder { color: $color; } // Safari and Chrome
+@mixin placeholder() {
+  &:-moz-placeholder { @content; } // Firefox 4-18
+  &::-moz-placeholder { @content; } // Firefox 19+
+  &:-ms-input-placeholder { @content; } // Internet Explorer 10+
+  &::-webkit-input-placeholder { @content; } // Safari and Chrome
 }
 
 // Form validation states

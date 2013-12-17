@@ -107,7 +107,9 @@ input[type="number"] {
   @include form-control-focus();
 
   // Placeholder
-  @include placeholder($primary);
+  @include placeholder() {
+    color: $primary;
+  }
 
   // Disabled and read-only inputs
   &[disabled],
