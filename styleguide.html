@@ -318,15 +318,15 @@
       <form>
         <div class="grid-wrapper">
           <div class="grid one-half">
-            <p><input type="button" value="Input type button"></p>
-            <p><input type="submit" value="Input type submit"></p>
-            <p><input type="submit" value="Input type submit disabled" disabled></p>
+            <p><input class="btn" type="button" value="Input type button"></p>
+            <p><input class="btn" type="submit" value="Input type submit"></p>
+            <p><input class="btn" type="submit" value="Input type submit disabled" disabled></p>
             <p><a class="btn">Link type button</a></p>
           </div>
           <div class="grid one-half">
-            <p><button type="button">Button type button</button></p>
-            <p><button type="submit">Button type submit</button></p>
-            <p><button type="button" disabled>Button type button disabled</button></p>
+            <p><button class="btn" type="button">Button type button</button></p>
+            <p><button class="btn" type="submit">Button type submit</button></p>
+            <p><button class="btn" type="button" disabled>Button type button disabled</button></p>
           </div>
         </div>
       </form>
@@ -337,62 +337,62 @@
         <div class="grid-wrapper">
           <div class="grid lap-one-third">
             <div class="sg-field-container">
-              <label for="text">Text Input</label>
-              <input type="text" placeholder="Text Input" id="text">
+              <label for="text1">Text Input</label>
+              <input type="text" placeholder="Text Input" id="text1" class="form-control">
             </div>
             <div class="sg-field-container">
-              <label for="text">Readonly Text Input</label>
-              <input type="text" placeholder="Readonly Text Input" id="text" readonly>
+              <label for="text2">Readonly Text Input</label>
+              <input type="text" placeholder="Readonly Text Input" id="text2" readonly class="form-control">
             </div>
             <div class="sg-field-container">
-              <label for="text">Disabled Text Input</label>
-              <input type="text" placeholder="Disabled Text Input" id="text" disabled>
+              <label for="text3">Disabled Text Input</label>
+              <input type="text" placeholder="Disabled Text Input" id="text3" disabled class="form-control">
+            </div>
+            <div class="sg-field-container has-error">
+              <label class="error">Error Input</label>
+              <input type="text" placeholder="Text Input" id="error" class="form-control">
+            </div>
+            <div class="sg-field-container has-success">
+              <label class="success">Valid</label>
+              <input type="text" placeholder="Text Input" id="success" class="form-control">
             </div>
             <div class="sg-field-container">
               <label for="password">Password</label>
-              <input type="password" placeholder="Type your Password" id="password">
+              <input type="password" placeholder="Type your Password" id="password" class="form-control">
             </div>
             <div class="sg-field-container">
-              <label for="password">Web Address</label>
-              <input type="url" placeholder="http://yoursite.com" id="password">
+              <label for="url">Web Address</label>
+              <input type="url" placeholder="http://yoursite.com" id="url" class="form-control">
             </div>
             <div class="sg-field-container">
-              <label for="password">Email Address</label>
-              <input type="email" placeholder="name@email.com" id="password">
+              <label for="email">Email Address</label>
+              <input type="email" placeholder="name@email.com" id="email" class="form-control">
             </div>
             <div class="sg-field-container">
               <label for="search">Search</label>
-              <input type="search" placeholder="Enter Search Term" id="search">
+              <input type="search" placeholder="Enter Search Term" id="search" class="form-control">
             </div>
             <div class="sg-field-container">
               <label for="text">Number Input</label>
-              <input type="number" pattern="[0-9]*" placeholder="Enter a Number" id="text">
+              <input type="number" pattern="[0-9]*" placeholder="Enter a Number" id="text" class="form-control">
             </div>
           </div>
           <div class="grid lap-one-third">
             <div class="sg-field-container">
-              <label for="textarea">Textarea</label>
-              <textarea placeholder="Enter your message here" cols="48" rows="4" id="textarea"></textarea>
+              <label for="textarea1">Textarea</label>
+              <textarea placeholder="Enter your message here" cols="40" rows="3" id="textarea1" class="form-control"></textarea>
             </div>
             <div class="sg-field-container">
-              <label for="textarea">Readonly Textarea</label>
-              <textarea placeholder="Readonly message" cols="48" rows="4" id="textarea" readonly></textarea>
+              <label for="textarea2">Readonly Textarea</label>
+              <textarea placeholder="Readonly message" cols="40" rows="3" id="textarea2" readonly class="form-control"></textarea>
             </div>
             <div class="sg-field-container">
-              <label for="textarea">Disabled Textarea</label>
-              <textarea placeholder="Disabled message" cols="48" rows="4" id="textarea" disabled></textarea>
+              <label for="textarea3">Disabled Textarea</label>
+              <textarea placeholder="Disabled message" cols="40" rows="3" id="textarea3" disabled class="form-control"></textarea>
             </div>
             <div class="sg-field-container">
-              <label class="error">Error Input</label>
-              <input type="text" placeholder="Text Input" class="is-error">
-            </div>
-            <div class="sg-field-container">
-              <label class="valid">Valid</label>
-              <input type="text" placeholder="Text Input" class="is-valid">
-            </div>
-            <div class="sg-field-container">
-              <label for="select">Select</label>
-              <select id="select">
+              <label for="select1">Select</label>
+              <select id="select1" class="form-control">
                 <optgroup label="Option Group">
                   <option>Option One</option>
                   <option>Option Two</option>
@@ -401,46 +401,78 @@
               </select>
             </div>
             <div class="sg-field-container">
-              <label for="select">Disabled Select</label>
-              <select id="select" disabled>
+              <label for="select2">Disabled Select</label>
+              <select id="select2" disabled class="form-control">
                 <option>Option One</option>
                 <option>Option Two</option>
+              </select>
+            </div>
+            <div class="sg-field-container">
+              <label for="multi-select">Multiple Select</label>
+              <select id="multi-select" multiple size="4" class="form-control">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+                <option>Option 6</option>
               </select>
             </div>
           </div>
           <div class="grid lap-one-third">
             <div class="sg-field-container">
-              <label for="multi-select">Multiple Select</label>
-              <select id="multi-select" multiple size="4"><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option><option>Option 5</option><option>Option 6</option><option>Option 7</option><option>Option 8</option><option>Option 9</option></select>
-            </div>
-            <div class="sg-field-container">
-              <label for="file">File input</label> <input type="file" id="file">
+              <label for="file">File input</label>
+              <input type="file" id="file">
             </div>
             <legend>Checkbox</legend>
             <ul class="v-list">
-              <li><label for="checkbox1"><input type="checkbox" checked="checked" name="checkbox" id="checkbox1"> Choice A</label></li>
-              <li><label for="checkbox2"><input type="checkbox" name="checkbox" id="checkbox2"> Choice B</label></li>
-              <li><label for="checkbox3"><input type="checkbox" name="checkbox" id="checkbox3"> Choice C</label></li>
-              <li><label for="checkbox4"><input type="checkbox" name="checkbox" id="checkbox4" disabled> Choice Disabled</label></li>
+              <li class="checkbox"><label for="checkbox1"><input type="checkbox" checked="checked" name="checkbox" id="checkbox1"> Choice A</label></li>
+              <li class="checkbox"><label for="checkbox2"><input type="checkbox" name="checkbox" id="checkbox2"> Choice B</label></li>
+              <li class="checkbox"><label for="checkbox3"><input type="checkbox" name="checkbox" id="checkbox3"> Choice C</label></li>
+              <li class="checkbox"><label for="checkbox4"><input type="checkbox" name="checkbox" id="checkbox4" disabled> Choice Disabled</label></li>
+              <li class="checkbox has-error"><label for="checkbox5"><input type="checkbox" name="checkbox" id="checkbox5"> Choice Error</label></li>
+              <li class="checkbox has-success"><label for="checkbox6"><input type="checkbox" name="checkbox" id="checkbox6"> Choice Valid</label></li>
             </ul>
             <legend>Radio</legend>
             <ul class="v-list">
-              <li><label for="radio1"><input type="radio" checked="checked" class="radio" name="radio" id="radio1"> Option 1</label></li>
-              <li><label for="radio2"><input type="radio" class="radio" name="radio" id="radio2"> Option 2</label></li>
-              <li><label for="radio3"><input type="radio" class="radio" name="radio" id="radio3"> Option 3</label></li>
-              <li><label for="radio4"><input type="radio" class="radio" name="radio" id="radio4" disabled> Option Disabled</label></li>
+              <li class="radio"><label for="radio1"><input type="radio" checked="checked" name="radio" id="radio1"> Option 1</label></li>
+              <li class="radio"><label for="radio2"><input type="radio" name="radio" id="radio2"> Option 2</label></li>
+              <li class="radio"><label for="radio3"><input type="radio" name="radio" id="radio3"> Option 3</label></li>
+              <li class="radio"><label for="radio4"><input type="radio" name="radio" id="radio4" disabled> Option Disabled</label></li>
+              <li class="radio has-error"><label for="radio5"><input type="radio" name="radio" id="radio5"> Option Error</label></li>
+              <li class="radio has-success"><label for="radio6"><input type="radio" name="radio" id="radio6"> Option Valid</label></li>
             </ul>
           </div>
         </div>
-        <h3 class="sg-heading">HTML5 Inputs</h3>
-        <fieldset>
-          <div class="sg-field-container"><label for="ic">Color input</label> <input type="color" value="#000000" id="ic"></div>
-          <div class="sg-field-container"><label for="in">Number input</label> <input type="number" value="5" max="10" min="0" id="in"></div>
-          <div class="sg-field-container"><label for="ir">Range input</label> <input type="range" value="10" id="ir"></div>
-          <div class="sg-field-container"><label for="idd">Date input</label> <input type="date" value="1970-01-01" id="idd"></div>
-          <div class="sg-field-container"><label for="idm">Month input</label> <input type="month" value="1970-01" id="idm"></div>
-          <div class="sg-field-container"><label for="idw">Week input</label> <input type="week" value="1970-W01" id="idw"></div>
-        </fieldset>
+        <div class="grid-wrapper">
+          <div class="grid lap-one-third">
+            <h3 class="sg-heading">HTML5 Inputs</h3>
+            <div class="sg-field-container">
+              <label for="ic">Color input</label>
+              <input type="color" value="#000000" id="ic" class="form-control">
+            </div>
+            <div class="sg-field-container">
+              <label for="in">Number input</label>
+              <input type="number" value="5" max="10" min="0" id="in" class="form-control">
+            </div>
+            <div class="sg-field-container">
+              <label for="ir">Range input</label>
+              <input type="range" value="10" id="ir">
+            </div>
+            <div class="sg-field-container">
+              <label for="idd">Date input</label>
+              <input type="date" value="1970-01-01" id="idd" class="form-control">
+            </div>
+            <div class="sg-field-container">
+              <label for="idm">Month input</label>
+              <input type="month" value="1970-01" id="idm" class="form-control">
+            </div>
+            <div class="sg-field-container">
+              <label for="idw">Week input</label>
+              <input type="week" value="1970-W01" id="idw" class="form-control">
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
