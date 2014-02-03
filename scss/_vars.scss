@@ -2,6 +2,10 @@
     $VARIABLES
 \*------------------------------------*/
 
+// Include CSS Reset or normalize?
+$reset: false;
+$normalize: true;
+
 // Include push/pull styles?
 $push: true;
 $pull: true;

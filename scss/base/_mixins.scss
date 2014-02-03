@@ -88,8 +88,8 @@
 // Rem conversion mixin
 //
 // Converts pixels to rems for whatever property is passed to it. It returns 
-// two lines of code — one of the regular pixel values (for IE), and another 
-// with the converted rem values (for everyone else).
+// two lines of code — one of the regular pixel values (as fallback for 
+// non-rem support), and another with the converted rem values.
 // via https://gist.github.com/bitmanic/1134548
 //
 // USAGE:

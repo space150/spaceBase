@@ -2,9 +2,10 @@ $legacy-ie: false;
 
 @import "compass";
 @import "vars";
+@import "base/reset";
 @import "base/normalize";
-@import "base/mixins";
 
+@import "base/mixins";
 @import "base/grids";
 @import "base/widths";
 @import "base/push";
@@ -20,8 +21,5 @@ $legacy-ie: false;
 @import "global/forms";
 @import "global/buttons";
 @import "global/layout";
-
-@import "modules/header";
-@import "modules/footer";
 
 @import "global/print";
