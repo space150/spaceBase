@@ -30,7 +30,7 @@ Instructions:
     gem install compass    (adds the compass gem)
 ```
 
-- From the command line, access the /public directory and run the following command:
+- From the command line, access the root directory and run the following command:
 
 ```shell
     compass watch    (monitors .scss files for changes and compiles them)
@@ -50,7 +50,7 @@ Instructions:
     gem install coffee-script    (adds the coffee gem)
 ```
 
-- From the command line, access the /public directory and run the following command:
+- From the command line, access the root directory and run the following command:
 
 ```shell
     coffee -w -o javascripts/compiled/ -c coffee/
