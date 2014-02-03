@@ -11,11 +11,10 @@ Running `compass watch` (while in the parent directory of `scss/`) will watch fo
 
 ## Directories
 
-The `scss/` directory contains three folders: Base, Global, and Modules.
+The `scss/` directory contains two folders: Base and UI.
 
-- **Base** [avoid editing] contains things like the normalize reset, mixins, helpers, and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes. The grid, widths, lists, blocks, and basic spacing content objects are in here.
-- **Global** [customize this] contains all design-specific styles shared across the site. This includes outer-layout styles, fonts, typography, buttons, generic print styles, etc.
-- **Modules** [customize this] contains all module-specific styles. This includes unique features, "vendor" stylesheets, slideshows, accordions, etc.
+- **Base** [avoid editing] contains things like normalize/CSS reset, mixins, helpers, and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes. The grid, widths, lists, blocks, and basic spacing content objects are in here.
+- **UI** [customize this] contains all design-specific styles shared across the application. This folder is free to organize however the project demands. To start, it includes layout, fonts, typography, buttons, and generic print styles.
 
 
 ## Legacy IE Support
@@ -38,7 +37,7 @@ The only difference between these files is the `$legacy-ie` variable. When set t
 
 ## Variables
 
-Global variables are kept in the `_vars.scss` partial. This includes things like base font styles, colors, breakpoints, and some misc. sizing measurements. All of these variables are used throughout most of the partials. There are a few spots where having some "local" variables are helpful for math and reuse in that particular section. These variables I've prefixed with an underscore so you know that those variables aren't used outside that partial.
+Global variables are kept in the `_vars.scss` partial. This includes things like base font styles, colors, breakpoints, and some misc. sizing measurements. All of these variables are used throughout most of the partials. There are a few spots where having some "local" variables are helpful for math and reuse in that particular section. These variables have been prefixed with an underscore so you know that those variables aren't used outside that partial.
 
 
 ## The Grid

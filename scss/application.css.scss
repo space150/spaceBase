@@ -16,10 +16,10 @@ $legacy-ie: false;
 @import "base/shared";
 @import "base/helpers";
 
-@import "global/fonts";
-@import "global/typography";
-@import "global/forms";
-@import "global/buttons";
-@import "global/layout";
+@import "ui/fonts";
+@import "ui/typography";
+@import "ui/forms";
+@import "ui/buttons";
+@import "ui/layout";
 
-@import "global/print";
+@import "ui/print";
