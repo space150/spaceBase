@@ -108,35 +108,44 @@
 // ***************************************************************************
 
 @mixin rem($property, $px_values) {
-
-  // Convert the baseline into rems
-  $baseline_rem: ($lg-base-font-size / 1rem);
-
-  // Print the first line in pixel values for browsers that don't support rems
-  #{$property}: $px_values;
-
-  // If there is only one (numeric) value, return the property/value for it
-  @if type-of($px_values) == 'number' {
-    #{$property}: $px_values / $baseline_rem;
+  
+  @if $legacy-ie == true {
+  
+    // Return the property and its pixel values for legacy IE
+    #{$property}: $px_values;
+  
   }
-
-  // If there is more than one value, create a list and perform equations on each value
   @else {
-    // Create an empty list that we can dump values into
-    $rem_values: ();
 
-    @each $value in $px_values {
-      // If the value is zero, return 0
-      @if $value == 0 {
-        $rem_values: append($rem_values, $value);
-      }
-      // If the value is not zero, convert it from px to rem
-      @else {
-        $rem_values: append($rem_values, ($value / $baseline_rem) );
-      }
+    // Convert the baseline into rems
+    $baseline_rem: ($lg-base-font-size / 1rem);
+  
+    // Print the first line in pixel values for browsers that don't support rems
+    #{$property}: $px_values;
+  
+    // If there is only one (numeric) value, return the property/value for it
+    @if type-of($px_values) == 'number' {
+      #{$property}: $px_values / $baseline_rem;
     }
-    // Return the property and its list of converted values
-    #{$property}: $rem_values;
+  
+    // If there is more than one value, create a list and perform equations on each value
+    @else {
+      // Create an empty list that we can dump values into
+      $rem_values: ();
+  
+      @each $value in $px_values {
+        // If the value is zero, return 0
+        @if $value == 0 {
+          $rem_values: append($rem_values, $value);
+        }
+        // If the value is not zero, convert it from px to rem
+        @else {
+          $rem_values: append($rem_values, ($value / $baseline_rem) );
+        }
+      }
+      // Return the property and its list of converted values
+      #{$property}: $rem_values;
+    }
   }
 }
 
