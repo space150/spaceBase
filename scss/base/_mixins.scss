@@ -118,7 +118,7 @@
   @else {
 
     // Convert the baseline into rems
-    $baseline_rem: ($lg-base-font-size / 1rem);
+    $baseline_rem: ($base-font-size / 1rem);
   
     // Print the first line in pixel values for browsers that don't support rems
     #{$property}: $px_values;
