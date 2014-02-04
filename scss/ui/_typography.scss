@@ -22,34 +22,34 @@ i {
 }
 
 h1, .h1 {
-  @include font-size(30px);
+  @include rem(font-size, 30px);
   line-height: 1;
 }
 h2, .h2 {
-  @include font-size(16px);
+  @include rem(font-size, 16px);
   line-height: 1.2;
 }
 h3, .h3 {
-  @include font-size(14px);
+  @include rem(font-size, 14px);
   line-height: 1.4;
 }
 h4, .h4 {
-  @include font-size(12px);
+  @include rem(font-size, 12px);
 }
 
 @include media-query(lap-and-up) {
 
   h1, .h1 {
-    @include font-size(54px);
+    @include rem(font-size, 54px);
   }
   h2, .h2 {
-    @include font-size(36px);
+    @include rem(font-size, 36px);
   }
   h3, .h3 {
-    @include font-size(21px);
+    @include rem(font-size, 22px);
   }
   h4, .h4 {
-    @include font-size(18px);
+    @include rem(font-size, 18px);
   }
 
 }

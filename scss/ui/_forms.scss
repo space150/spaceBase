@@ -93,7 +93,7 @@ input[type="number"] {
   height: 2.5em;
   padding: 0.2em 1em;
   font-family: $font-body;
-  @include font-size($base-font-size);
+  @include rem(font-size, $base-font-size);
   color: $grayDark;
   vertical-align: middle;
   background-color: $white;

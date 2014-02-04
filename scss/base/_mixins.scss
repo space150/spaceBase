@@ -21,11 +21,6 @@
  	zoom: 1;
 }
 
-@mixin font-size($font-size, $base:$base-font-size) {
-  font-size: $font-size;
-  font-size: ($font-size / $base) * 1rem;
-}
-
 // Image replacement
 @mixin hide-text() {
   border: 0;
