@@ -7,14 +7,16 @@ Front-end starter files for new projects.
 
 For development purposes, we are using a Ruby compiler for our SCSS and CoffeeScript assets.
 
-## EditorConfig
+## Getting Started
+
+### EditorConfig
 
 Your editor should be setup with an [EditorConfig](http://editorconfig.org/)
 plugin, so that certain basic code style standards are enforced automatically.
 See [http://editorconfig.org/#download](http://editorconfig.org/#download) and
 install the plugin for your editor of choice.
 
-## SCSS
+### SCSS
 
 Instructions:
 
@@ -44,7 +46,7 @@ At this point, if you modify a .scss file, the command prompt should log the com
 
 NOTE: If you rebuild the solution, it will also call compass to rebuild the stylesheets.
 
-## CoffeeScript
+### CoffeeScript
 
 Instructions:
 
