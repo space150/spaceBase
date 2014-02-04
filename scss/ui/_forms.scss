@@ -94,7 +94,6 @@ input[type="number"] {
   padding: 0.2em 1em;
   font-family: $font-body;
   @include font-size($base-font-size);
-  line-height: $base-line-height;
   color: $grayDark;
   vertical-align: middle;
   background-color: $white;
@@ -119,9 +118,20 @@ input[type="number"] {
     background-color: $grayLight;
   }
 }
+
 // Reset height for `textarea`s
 textarea.form-control {
   height: auto;
+  line-height: $line-height-ratio;
+}
+// Remove inner shadow on webkit and mobile firefox
+input.form-control,
+textarea.form-control {
+  -webkit-appearance: caret;
+  -moz-appearance: caret;
+}
+select.form-control {
+  padding-right: 0.2em;
 }
 
 
