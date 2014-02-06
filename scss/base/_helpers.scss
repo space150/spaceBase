@@ -21,37 +21,6 @@
 }
 
 
-// Responsive visibility
-.hidden-hand {
-  display: none !important;
-}
-.visible-desk {
-  display: none !important;
-}
-@include media-query(lap-and-up) {
-  .hidden-hand {
-    display: block !important;
-  }
-  .visible-hand {
-    display: none !important;
-  }
-  .visible-desk {
-    display: none !important;
-  }
-}
-@include media-query(desk-and-up) {
-  .visible-hand {
-    display: none !important;
-  }
-  .hidden-desk {
-    display: none !important;
-  }
-  .visible-desk {
-    display: block !important;
-  }
-}
-
-
 // Hiding w/o display:none; for accessibility
 .visuallyhidden {
   border: 0;
@@ -87,3 +56,29 @@
 .text--strong { font-weight: bold !important; }
 
 .nowrap { display: inline-block; }
+
+
+/**
+ * Resonsive Visibility Helpers
+ */
+// Hand
+@include media-query(hand-and-down){
+  .hide-below-hand { display: none; }
+}
+@include media-query(hand-and-up){
+  .hide-above-hand { display: none; }
+}
+// Lap
+@include media-query(lap-and-down){
+  .hide-below-lap { display: none; }
+}
+@include media-query(lap-and-up){
+  .hide-above-lap { display: none; }
+}
+// Desk
+@include media-query(desk-and-down){
+  .hide-below-desk { display: none; }
+}
+@include media-query(desk-and-up){
+  .hide-above-desk { display: none; }
+}

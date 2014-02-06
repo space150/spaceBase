@@ -82,8 +82,8 @@
 // ***************************************************************************
 // Rem conversion mixin
 //
-// Converts pixels to rems for whatever property is passed to it. It returns 
-// two lines of code — one of the regular pixel values (as fallback for 
+// Converts pixels to rems for whatever property is passed to it. It returns
+// two lines of code — one of the regular pixel values (as fallback for
 // non-rem support), and another with the converted rem values.
 // via https://gist.github.com/bitmanic/1134548
 //
@@ -92,7 +92,7 @@
 // .element {
 //    @include rem('padding', 10px 0 2px 5px);
 // }
-//  
+//
 // OUTPUTS TO:
 //
 // .element {
@@ -103,31 +103,31 @@
 // ***************************************************************************
 
 @mixin rem($property, $px_values) {
-  
+
   @if $legacy-ie == true {
-  
+
     // Return the property and its pixel values for legacy IE
     #{$property}: $px_values;
-  
+
   }
   @else {
 
     // Convert the baseline into rems
     $baseline_rem: ($base-font-size / 1rem);
-  
+
     // Print the first line in pixel values for browsers that don't support rems
     #{$property}: $px_values;
-  
+
     // If there is only one (numeric) value, return the property/value for it
     @if type-of($px_values) == 'number' {
       #{$property}: $px_values / $baseline_rem;
     }
-  
+
     // If there is more than one value, create a list and perform equations on each value
     @else {
       // Create an empty list that we can dump values into
       $rem_values: ();
-  
+
       @each $value in $px_values {
         // If the value is zero, return 0
         @if $value == 0 {
@@ -157,7 +157,7 @@
 //    background: image-url("logo_32x32.png") no-repeat;
 //    @include image-2x("logo_32x32@2x.png", 64px, 64px);
 // }
-//  
+//
 // OR
 //
 // .logo {
@@ -165,8 +165,8 @@
 //    @include image-2x("logo_32x32@2x.png"); // no dimensions passed in
 // }
 //
-// If dimensions are omitted, the mixin will try to guess them using 
-// image-width and image-height helpers. This only works if compass can find 
+// If dimensions are omitted, the mixin will try to guess them using
+// image-width and image-height helpers. This only works if compass can find
 // the image file locally, however.
 //
 // ***************************************************************************
@@ -211,30 +211,32 @@
 // ***************************************************************************
 
 @mixin media-query($media-query) {
-  
+
   @if $legacy-ie == true {
     // render styles without media queries
-    
+
     @if $media-query == "hand-and-up" { @content; }
-    
+
     @else if $media-query == "lap-and-up" { @content; }
-    
+
     @else if $media-query == "desk-and-up" { @content; }
-    
+
     @else if $media-query == "wall-and-up" {}
-    
+
+    @else if $media-query == "desk-and-down" {}
+
     @else if $media-query == "lap-and-down" {}
-    
+
     @else if $media-query == "hand-and-down" {}
-     
+
     // include custom breakpoints
     @else {
       @content;
     }
-  
+
   }
   @else {
-  
+
     @if $media-query == "hand-and-up" {
       @media only screen and (min-width:$hand-start) { @content; }
     }
@@ -246,23 +248,27 @@
     @else if $media-query == "desk-and-up" {
       @media only screen and (min-width:$desk-start) { @content; }
     }
-    
+
     @else if $media-query == "wall-and-up" {
       @media only screen and (min-width: $wall-start) { @content; }
     }
-     
+
+    @else if $media-query == "desk-and-down" {
+      @media only screen and (max-width:$desk-start - 1px) { @content; }
+    }
+
     @else if $media-query == "lap-and-down" {
       @media only screen and (max-width: ($lap-start - 1px)) { @content; }
     }
-     
+
     @else if $media-query == "hand-and-down" {
       @media only screen and (max-width: ($hand-start - 1px)) { @content; }
     }
-    
+
     // custom breakpoints
     @else {
       @media only screen and ($media-query) { @content; }
     }
-  
+
   }
 }
