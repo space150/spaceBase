@@ -20,7 +20,6 @@
   visibility: hidden;
 }
 
-
 // Hiding w/o display:none; for accessibility
 .visuallyhidden {
   border: 0;
@@ -45,6 +44,27 @@
 }
 
 
+// Responsive visibility helpers
+@include media-query(hand-and-down){
+  .hidden-hand-and-down { display: none; }
+}
+@include media-query(hand-and-up){
+  .hidden-hand-and-up { display: none; }
+}
+@include media-query(lap-and-down){
+  .hidden-lap-and-down { display: none; }
+}
+@include media-query(lap-and-up){
+  .hidden-lap-and-up { display: none; }
+}
+@include media-query(desk-and-down){
+  .hidden-desk-and-down { display: none; }
+}
+@include media-query(desk-and-up){
+  .hidden-desk-and-up { display: none; }
+}
+
+
 // Helpers only if it doesn't already have a class to use
 .float--right { float: right !important; }
 .float--left { float: left !important; }
@@ -56,29 +76,3 @@
 .text--strong { font-weight: bold !important; }
 
 .nowrap { display: inline-block; }
-
-
-/**
- * Resonsive Visibility Helpers
- */
-// Hand
-@include media-query(hand-and-down){
-  .hide-below-hand { display: none; }
-}
-@include media-query(hand-and-up){
-  .hide-above-hand { display: none; }
-}
-// Lap
-@include media-query(lap-and-down){
-  .hide-below-lap { display: none; }
-}
-@include media-query(lap-and-up){
-  .hide-above-lap { display: none; }
-}
-// Desk
-@include media-query(desk-and-down){
-  .hide-below-desk { display: none; }
-}
-@include media-query(desk-and-up){
-  .hide-above-desk { display: none; }
-}
