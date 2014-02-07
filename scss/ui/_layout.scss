@@ -22,8 +22,8 @@ body {
     width: 90%;
   }
 
-  @include media-query(wall-and-up) {
-    width: 1200px;
+  @include media-query(desk-and-up) {
+    max-width: 1200px;
   }
 
   @include media-query(hand-and-down) {
