@@ -66,13 +66,12 @@
 
 
 // Helpers only if it doesn't already have a class to use
-.float--right { float: right !important; }
-.float--left { float: left !important; }
+.float-right { float: right !important; }
+.float-left { float: left !important; }
 
-.text--left { text-align: left !important; }
-.text--center { text-align: center !important; }
-.text--right { text-align: right !important; }
-.text--upper { text-transform: uppercase !important; }
-.text--strong { font-weight: bold !important; }
-
-.nowrap { display: inline-block; }
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-upper { text-transform: uppercase !important; }
+.text-strong { font-weight: bold !important; }
+.text-nowrap { white-space: nowrap !important; }
