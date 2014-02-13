@@ -236,34 +236,42 @@
 
   }
   @else {
-
-    @if $media-query == "hand-and-up" {
+    // render styles without media queries if those breakpoints are false
+    
+    @if $media-query == "hand-and-up" and $hand-start != false {
       @media only screen and (min-width:$hand-start) { @content; }
     }
+    @else { @content; }
 
-    @else if $media-query == "lap-and-up" {
+    @else if $media-query == "lap-and-up" and $lap-start != false {
       @media only screen and (min-width:$lap-start) { @content; }
     }
+    @else { @content; }
 
-    @else if $media-query == "desk-and-up" {
+    @else if $media-query == "desk-and-up" and $desk-start != false {
       @media only screen and (min-width:$desk-start) { @content; }
     }
+    @else { @content; }
 
-    @else if $media-query == "wall-and-up" {
+    @else if $media-query == "wall-and-up" and $wall-start != false {
       @media only screen and (min-width: $wall-start) { @content; }
     }
+    @else { @content; }
 
-    @else if $media-query == "desk-and-down" {
+    @else if $media-query == "desk-and-down" and $desk-start != false {
       @media only screen and (max-width:$desk-start - 1px) { @content; }
     }
+    @else {}
 
-    @else if $media-query == "lap-and-down" {
+    @else if $media-query == "lap-and-down" and $lap-start != false {
       @media only screen and (max-width: ($lap-start - 1px)) { @content; }
     }
-
-    @else if $media-query == "hand-and-down" {
+    @else {}
+ 
+    @else if $media-query == "hand-and-down" and $hand-start != false {
       @media only screen and (max-width: ($hand-start - 1px)) { @content; }
     }
+    @else {}
 
     // custom breakpoints
     @else {

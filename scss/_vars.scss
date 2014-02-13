@@ -30,6 +30,7 @@ $line-height-ratio: $base-line-height / $base-font-size;
 $gutter: $base-spacing-unit;
 
 // Breakpoints
+// Set to false to exclude breakpoints
 $hand-start:   480px;
 $lap-start:    768px;
 $desk-start:   1024px;

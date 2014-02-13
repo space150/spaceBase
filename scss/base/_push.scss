@@ -82,20 +82,28 @@
     
     @if $responsive-push-pull == true {
       
-      @include media-query("hand-and-up"){
-        @include push-setup("hand-");
+      @if $hand-start != false {
+        @include media-query("hand-and-up"){
+          @include push-setup("hand-");
+        }
       }
       
-      @include media-query("lap-and-up"){
-        @include push-setup("lap-");
+      @if $lap-start != false {
+        @include media-query("lap-and-up"){
+          @include push-setup("lap-");
+        }
       }
       
-      @include media-query("desk-and-up"){
-        @include push-setup("desk-");
+      @if $desk-start != false {
+        @include media-query("desk-and-up"){
+          @include push-setup("desk-");
+        }
       }
       
-      @include media-query("wall-and-up"){
-        @include push-setup("wall-");
+      @if $wall-start != false {
+        @include media-query("wall-and-up"){
+          @include push-setup("wall-");
+        }
       }
     }
   }
