@@ -20,38 +20,6 @@
   visibility: hidden;
 }
 
-
-// Responsive visibility
-.hidden-hand {
-  display: none !important;
-}
-.visible-desk {
-  display: none !important;
-}
-@include media-query(lap-and-up) {
-  .hidden-hand {
-    display: block !important;
-  }
-  .visible-hand {
-    display: none !important;
-  }
-  .visible-desk {
-    display: none !important;
-  }
-}
-@include media-query(desk-and-up) {
-  .visible-hand {
-    display: none !important;
-  }
-  .hidden-desk {
-    display: none !important;
-  }
-  .visible-desk {
-    display: block !important;
-  }
-}
-
-
 // Hiding w/o display:none; for accessibility
 .visuallyhidden {
   border: 0;
@@ -73,6 +41,27 @@
   overflow: visible;
   position: static;
   width: auto;
+}
+
+
+// Responsive visibility helpers
+@include media-query(hand-and-down){
+  .hidden-hand-and-down { display: none; }
+}
+@include media-query(hand-and-up){
+  .hidden-hand-and-up { display: none; }
+}
+@include media-query(lap-and-down){
+  .hidden-lap-and-down { display: none; }
+}
+@include media-query(lap-and-up){
+  .hidden-lap-and-up { display: none; }
+}
+@include media-query(desk-and-down){
+  .hidden-desk-and-down { display: none; }
+}
+@include media-query(desk-and-up){
+  .hidden-desk-and-up { display: none; }
 }
 
 
