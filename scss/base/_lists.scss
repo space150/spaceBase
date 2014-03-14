@@ -23,7 +23,10 @@
   > li {
     float: none;
     @include inline-block();
-    margin: 0  $half-spacing-unit;
+    margin: 0 $half-spacing-unit;
+    &:last-child {
+      margin-right: $half-spacing-unit;
+    }
   }
 }
 
