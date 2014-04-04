@@ -57,7 +57,7 @@ img[height] {
   
   // `hr` elements only take up a few pixels, so give them special treatment
   hr {
-    @include rem(margin, $base-spacing-unit - 2px $base-spacing-unit + 2px);
+    @include rem(margin, $base-spacing-unit - 2px 0);
   }
   
   // Where `margin-left` is concerned, we want to try and indent certain elements
