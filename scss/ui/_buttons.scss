@@ -7,7 +7,7 @@
   *display: inline;
   margin: 0;
   padding: 0.4em 1em;
-  @include rem(font-size, $base-font-size);
+  @include rem(font-size, 1);
   line-height: 1.6em;
   text-align: center;
   vertical-align: middle;

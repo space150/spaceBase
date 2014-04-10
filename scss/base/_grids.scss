@@ -9,7 +9,7 @@
   .grid-wrapper {
     list-style: none;
     margin-bottom: 0;
-    @include rem(margin-left, -$gutter);
+    @include rem(margin-left, -$gutter, $base-font-size--mobile);
     @include clearfix();
   }
 
@@ -39,7 +39,7 @@
   .grid {
     float: left;
     width: 100%;
-    @include rem(padding-left, $gutter);
+    @include rem(padding-left, $gutter, $base-font-size--mobile);
     @include transition(width .15s ease);
     @if $global-border-box == false {
       @include box-sizing(border-box);

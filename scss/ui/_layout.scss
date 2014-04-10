@@ -27,7 +27,7 @@ body {
   }
 
   @include media-query(hand-and-down) {
-    padding: 0 $base-spacing-unit;
+    @include rem(padding, 0 $base-spacing-unit);
   }
 
   // max-width for non-responsive layouts
