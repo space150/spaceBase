@@ -18,7 +18,7 @@
   p, h2, h3 { orphans: 3; widows: 3; }
   h1, h2, h3, h4 { page-break-after: avoid; }
   a, a:visited { text-decoration: underline; }
-  
+
   /*
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
@@ -26,7 +26,7 @@
   a[href^="javascript:"]:after,
   a[href^="#"]:after { content: ""; }
   */
-  
+
   .visible-print { display: inherit !important; }
   .hidden-print { display: none !important; }
 }

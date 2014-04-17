@@ -75,7 +75,7 @@
 //
 // Responsive widths w/breakpoint namespace
 //
-// If you have set `$responsive` to ‘true’ in `_vars.scss` then you can define at 
+// If you have set `$responsive` to ‘true’ in `_vars.scss` then you can define at
 // which breakpoint you’d like an element to be a certain size, e.g.:
 //
 // <div class="g one-quarter lap-one-half palm-one-whole"> ... </div>
@@ -89,25 +89,25 @@
 
 @if $responsive == true {
   @include grid-setup();
-  
+
   @if $hand-start != false {
     @include media-query("hand-and-up"){
       @include grid-setup("hand-");
     }
   }
-  
+
   @if $lap-start != false {
     @include media-query("lap-and-up"){
       @include grid-setup("lap-");
     }
   }
-  
+
   @if $desk-start != false {
     @include media-query("desk-and-up"){
       @include grid-setup("desk-");
     }
   }
-  
+
   @if $wall-start != false {
     @include media-query("wall-and-up"){
       @include grid-setup("wall-");
