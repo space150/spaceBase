@@ -57,3 +57,5 @@ scss/
   application.css.scss
   styleguide.css.scss
 ```
+
+[Read more about the SCSS structure](scss/README.md) in that folder's readme.
