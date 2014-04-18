@@ -58,4 +58,4 @@ scss/
   styleguide.css.scss
 ```
 
-[Read more about the SCSS structure](scss/README.md) in that folder's readme.
+Read the [CSS Architecture Overview](scss/README.md) for details on these files.
