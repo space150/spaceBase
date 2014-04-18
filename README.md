@@ -17,11 +17,14 @@ After you download the latest spaceBase ZIP from the repo, you'll unzip it and c
 
 #### Stylesheets
 
-* Copy the following folders to your project:
-** `fonts/`
-** `images/`
-** `scss/`
-** `.editorconfig`
+Copy the following to your project:
+
+```
+fonts/
+images/
+scss/
+.editorconfig
+```
 
 spaceBase is built with Sass and Compass, so you'll need a Sass compiler and the Compass gem. A Compass `config.rb` is included in the spaceBase folder you can use for reference.
 
