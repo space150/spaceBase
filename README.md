@@ -48,9 +48,9 @@ fonts/
 images/
 scss/
   base/
-    ..
+    ...
   ui/
-    ..
+    ...
   _manifest.scss
   _vars.scss
   application-ie.css.scss
