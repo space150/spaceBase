@@ -5,61 +5,52 @@ spaceBase
 
 Front-end starter files for new projects.
 
-For development purposes, we are using a Ruby compiler for our SCSS and CoffeeScript assets.
+### spaceBase is a boilerplate
 
-## Getting Started
+Unlike many other SCSS libraries, spaceBase is not intended to be included once and never touched. The goal with spaceBase is a boilerplate layer that you can build on, modify, tweak, and tailor to your needs.
 
-### EditorConfig
+spaceBase is meant to be copied into your project for further modifications. The SCSS files in `scss/base/` are usually not modified much, but the files in `scss/ui/` are meant to be completely tailored to your project.
 
-Your editor should be setup with an [EditorConfig](http://editorconfig.org/)
-plugin, so that certain basic code style standards are enforced automatically.
-See [http://editorconfig.org/#download](http://editorconfig.org/#download) and
-install the plugin for your editor of choice.
+### Setting Up spaceBase
 
-### SCSS
+After you download the latest spaceBase ZIP from the repo, you'll unzip it and copy folders into your own project.
 
-Instructions:
+#### Stylesheets
 
-- Install the latest Ruby v1.9.3 from http://rubyinstaller.org/downloads/
+* Copy the following folders to your project:
+** `fonts/`
+** `images/`
+** `scss/`
+** `.editorconfig`
 
-- Run the following commands:
+spaceBase is built with Sass and Compass, so you'll need a Sass compiler and the Compass gem. A Compass `config.rb` is included in the spaceBase folder you can use for reference.
 
-```shell
-    ruby -v    (confirms ruby is working and added to your path)
+Installing Ruby, Sass, and Compass is outside the scope of this document.
 
-    gem -v    (confirms ruby gem is working and added to your path)
+spaceBase works well with static web tools like Middleman or Jekyll, or simple build tools (like a simple Gruntfile).
 
-    gem update    (updates all gems to current versions)
+Your editor should be setup with an EditorConfig plugin, so that certain basic code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 
-    gem install compass    (adds the compass gem)
+You can remove `scss/README.md`.
+
+#### JavaScripts
+
+spaceBase has some opinions on JavaScript setup. You can copy the starter folder `javascripts/` if you like.
+
+
+### The spaceBase structure
+
 ```
-
-- From the command line, access the root directory and run the following command:
-
-```shell
-    compass watch    (monitors .scss files for changes and compiles them)
+fonts/
+images/
+scss/
+  base/
+    ..
+  ui/
+    ..
+  _manifest.scss
+  _vars.scss
+  application-ie.css.scss
+  application.css.scss
+  styleguide.css.scss
 ```
-
-At this point, if you modify a .scss file, the command prompt should log the compilation of any modified .scss files.
-
-- To stop running compass, use Ctrl+C and enter Y to terminate the batch job.
-
-NOTE: If you rebuild the solution, it will also call compass to rebuild the stylesheets.
-
-### CoffeeScript
-
-Instructions:
-
-```shell
-    gem install coffee-script    (adds the coffee gem)
-```
-
-- From the command line, access the root directory and run the following command:
-
-```shell
-    coffee -w -o javascripts/compiled/ -c coffee/
-```
-
-At this point, if you modify a .coffee file, the command prompt should log the compilation of any modified .coffee files.
-
-- To stop running coffee, use Ctrl+C and enter Y to terminate the batch job.
