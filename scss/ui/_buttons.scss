@@ -3,18 +3,17 @@
 \*------------------------------------*/
 
 .btn {
-  display: inline-block;
-  *display: inline;
   margin: 0;
   padding: 0.4em 1em;
-  @include rem(font-size, $base-font-size);
   line-height: 1.6em;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
   border: 1px solid $gray;
-  @include border-radius(0);
   cursor: pointer;
+  @include inline-block;
+  @include rem(font-size, $base-font-size);
+  @include border-radius(0);
 
   &,
   &:hover,
@@ -24,7 +23,7 @@
 
   &.disabled,
   &[disabled] {
-    cursor: default;
+    cursor: not-allowed;
     @include opacity(.65);
   }
 }
