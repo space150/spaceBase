@@ -2,36 +2,18 @@
     $LAYOUT
 \*------------------------------------*/
 
-body {
-  margin: 0 auto;
-  max-width: 1440px;
-
-  // min-width for non-responsive layouts
-  .lt-ie9 & {
-    min-width: 1024px;
-  }
-}
+body { min-width: 320px; }
 
 .container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  @include box-sizing(border-box);
-
-  @include media-query(hand-and-up) {
-    width: 90%;
-  }
-
-  @include media-query(desk-and-up) {
-    max-width: 1200px;
-  }
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left:  auto;
 
   @include media-query(hand-and-down) {
-    padding: 0 $base-spacing-unit;
+    padding: 0 $gutter;
   }
 
   // max-width for non-responsive layouts
-  .lt-ie9 & {
-    max-width: 1200px;
-  }
+  .lt-ie9 & { max-width: $container-width; }
 }
+
