@@ -2,18 +2,16 @@
     $LAYOUT
 \*------------------------------------*/
 
-body { min-width: 320px; }
+body { min-width: $site-min-width; }
 
-.container {
-  max-width: $container-width;
+.site-wrapper {
+  max-width: $site-wrapper-max-width;
+  margin-left: auto;
   margin-right: auto;
-  margin-left:  auto;
-
-  @include media-query(hand-and-down) {
-    padding: 0 $gutter;
-  }
+  padding-left: $gutter;
+  padding-right: $gutter;
 
   // max-width for non-responsive layouts
-  .lt-ie9 & { max-width: $container-width; }
+  .lt-ie9 & { max-width: $site-wrapper-max-width - $gutter * 2; }
 }
 
