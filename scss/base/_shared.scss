@@ -2,15 +2,13 @@
     $SHARED
 \*------------------------------------*/
 
-@if $global-border-box == true {
-  // All elements will adopt `box-sizing:border-box;`
-  // as per paulirish.com/2012/box-sizing-border-box-ftw
-  *{
-    &,
-    &:before,
-    &:after {
-      @include box-sizing(border-box);
-    }
+// All elements will adopt `box-sizing:border-box;`
+// as per paulirish.com/2012/box-sizing-border-box-ftw
+*{
+  &,
+  &:before,
+  &:after {
+    @include box-sizing(border-box);
   }
 }
 

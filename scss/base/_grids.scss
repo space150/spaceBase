@@ -41,9 +41,6 @@
     width: 100%;
     @include rem(padding-left, $gutter);
     @include transition(width .15s ease);
-    @if $global-border-box == false {
-      @include box-sizing(border-box);
-    }
   }
 }
 
