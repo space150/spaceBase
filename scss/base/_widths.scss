@@ -1,75 +1,87 @@
 /*------------------------------------*\
     $WIDTHS
 \*------------------------------------*/
+$grid-widths: (
+  1:
+  one-whole,
 
-@mixin grid-setup($namespace: "") {
+  1/2:
+  one-half
+  two-quarters
+  three-sixths
+  four-eighths
+  five-tenths
+  six-twelfths,
 
-  // Whole
-  .#{$namespace}one-whole { width: 100%; }
+  1/3:
+  one-third
+  two-sixths
+  four-twelfths,
 
-  // Halves
-  .#{$namespace}one-half,
-  .#{$namespace}two-quarters,
-  .#{$namespace}three-sixths,
-  .#{$namespace}four-eighths,
-  .#{$namespace}five-tenths,
-  .#{$namespace}six-twelfths { width: 50%; }
+  2/3:
+  two-thirds
+  four-sixths
+  eight-twelfths,
 
-  // Thirds
-  .#{$namespace}one-third,
-  .#{$namespace}two-sixths,
-  .#{$namespace}four-twelfths { width: 33.333%; }
+  1/4:
+  one-quarter
+  two-eighths
+  three-twelfths,
 
-  .#{$namespace}two-thirds,
-  .#{$namespace}four-sixths,
-  .#{$namespace}eight-twelfths { width: 66.666%; }
+  3/4:
+  three-quarters
+  six-eighths
+  nine-twelfths,
 
-  // Quarters
-  .#{$namespace}one-quarter,
-  .#{$namespace}two-eighths,
-  .#{$namespace}three-twelfths { width: 25%; }
+  1/5:
+  one-fifth
+  two-tenths,
 
-  .#{$namespace}three-quarters,
-  .#{$namespace}six-eighths,
-  .#{$namespace}nine-twelfths { width: 75%; }
+  2/5:
+  two-fifths
+  four-tenths,
 
-  // Fifths
-  .#{$namespace}one-fifth,
-  .#{$namespace}two-tenths { width: 20%; }
+  3/5:
+  three-fifths
+  six-tenths,
 
-  .#{$namespace}two-fifths,
-  .#{$namespace}four-tenths { width: 40%; }
+  4/5:
+  four-fifths
+  eight-tenths,
 
-  .#{$namespace}three-fifths,
-  .#{$namespace}six-tenths { width: 60%; }
+  1/6:
+  one-sixth
+  two-twelfths,
 
-  .#{$namespace}four-fifths,
-  .#{$namespace}eight-tenths { width: 80%; }
-
-  // Sixths
-  .#{$namespace}one-sixth,
-  .#{$namespace}two-twelfths { width: 16.666%; }
-
-  .#{$namespace}five-sixths,
-  .#{$namespace}ten-twelfths { width: 83.333%; }
+  5/6:
+  five-sixths
+  ten-twelfths,
 
   // Eighths
-  .#{$namespace}one-eighth { width: 12.5%; }
-  .#{$namespace}three-eighths { width: 37.5%; }
-  .#{$namespace}five-eighths { width: 62.5%; }
-  .#{$namespace}seven-eighths { width: 87.5%; }
+  1/8: one-eighth,
+  3/8: three-eighths,
+  5/8: five-eighths,
+  7/8: seven-eighths,
 
   // Tenths
-  .#{$namespace}one-tenth { width: 10%; }
-  .#{$namespace}three-tenths { width: 30%; }
-  .#{$namespace}seven-tenths { width: 70%; }
-  .#{$namespace}nine-tenths { width: 90%; }
+  1/10: one-tenth,
+  3/10: three-tenths,
+  7/10: seven-tenths,
+  9/10: nine-tenths,
 
-  // Twelfths
-  .#{$namespace}one-twelfth { width: 8.333%; }
-  .#{$namespace}five-twelfths { width: 41.666% }
-  .#{$namespace}seven-twelfths { width: 58.333%; }
-  .#{$namespace}eleven-twelfths { width: 91.666%; }
+  //Twelfths
+  1/12: one-twelfth,
+  5/12: five-twelfths,
+  7/12: seven-twelfths,
+  11/12: eleven-twelfths
+);
+
+@mixin grid-setup($namespace: "") {
+  @each $fraction, $widths in $grid-widths {
+    @each $width in $widths {
+      .#{$namespace}#{$width} { width: 100% /(1 / $fraction); }
+    }
+  }
 }
 
 //
