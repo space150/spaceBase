@@ -72,7 +72,7 @@
   .push--#{$namespace}eleven-twelfths { left: 91.666%; }
 }
 
-@if $pull == true {
+@if $push == true {
 
   [class*="push--"]{ position:relative; }
 
