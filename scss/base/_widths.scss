@@ -76,10 +76,10 @@ $grid-widths: (
   11/12: eleven-twelfths
 );
 
-@mixin grid-setup($namespace: "") {
+@mixin grid-setup($namespace: "", $prop: width) {
   @each $fraction, $widths in $grid-widths {
     @each $width in $widths {
-      .#{$namespace}#{$width} { width: 100% /(1 / $fraction); }
+      .#{$namespace}#{$width} { #{$prop}: 100% /(1 / $fraction); }
     }
   }
 }
