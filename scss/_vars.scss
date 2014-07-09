@@ -26,6 +26,10 @@ $line-height-ratio: $base-line-height / $base-font-size;
 // Grid
 $gutter: $base-spacing-unit;
 
+// Layout
+$site-min-width:          320px;
+$site-wrapper-max-width:  1440px;
+
 // Breakpoints
 // Set to false to exclude breakpoints
 $hand-start:   480px;
