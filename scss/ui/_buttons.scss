@@ -12,7 +12,7 @@
   border: 1px solid $gray;
   cursor: pointer;
   @include inline-block;
-  @include rem(font-size, $base-font-size);
+  @include rem(font-size, 1);
   @include border-radius(0);
 
   &,

@@ -79,7 +79,7 @@ input[type="checkbox"]:focus {
   height: 2.5em;
   padding: 0.2em 1em;
   font-family: $font-body;
-  @include rem(font-size, $base-font-size);
+  @include rem(font-size, 1);
   color: $grayDark;
   vertical-align: middle;
   background-color: $white;

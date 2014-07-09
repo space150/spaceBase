@@ -40,28 +40,23 @@ img[height] {
   // Where `margin-bottom` is concerned, this value will be the same as the
   // base line-height. This allows us to keep a consistent vertical rhythm.
   // As per: csswizardry.com/2012/06/single-direction-margin-declarations
-  h1,h2,h3,h4,h5,h6,hgroup,
+  h1,h2,h3,h4,h5,h6,hgroup,hr,
   ul,ol,dl,
   blockquote,p,address,
   table,
   fieldset,figure,figcaption,
   pre {
     margin-top: 0;
-    @include rem(margin-bottom, $base-spacing-unit);
+    @include rem(margin-bottom, $base-spacing-unit, $base-font-size--mobile);
     ul,ol {
       margin-bottom: 0;
     }
   }
 
-  // `hr` elements only take up a few pixels, so give them special treatment
-  hr {
-    @include rem(margin, $base-spacing-unit - 2px 0);
-  }
-
   // Where `margin-left` is concerned, we want to try and indent certain elements
   // by a consistent amount
   ul,ol,dd {
-    @include rem(margin-left, $base-spacing-unit);
+    @include rem(margin-left, $base-spacing-unit, $base-font-size--mobile);
     padding: 0;
   }
 

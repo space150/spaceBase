@@ -15,13 +15,15 @@ $responsive: true;
 $responsive-push-pull: false;
 
 // Base measurements
-$base-font-size:       15px;
-$base-line-height:     25px;
+$base-font-size:         15px;
+$base-line-height:       25px;
+$base-font-size--mobile: $base-font-size;
+// Set to px value if mobile requires different font size
 
 // Calculated measurements
-$base-spacing-unit: $base-line-height;
-$half-spacing-unit: $base-spacing-unit / 2;
 $line-height-ratio: $base-line-height / $base-font-size;
+$base-spacing-unit: $line-height-ratio;
+$half-spacing-unit: $base-spacing-unit / 2;
 
 // Grid
 $gutter: $base-spacing-unit;
