@@ -23,7 +23,7 @@ $legacy-ie: true;
 .sg-colors li {
   border: 1px solid #ccc;
   background: $white;
-  @include rem(padding, 5px);
+  @include rem(padding, 0.4);
   @include rem(margin-bottom, $half-spacing-unit);
 }
 

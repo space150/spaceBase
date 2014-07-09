@@ -14,9 +14,6 @@ $pull: true;
 $responsive: true;
 $responsive-push-pull: false;
 
-// All elements to adopt box-sizing:border-box;?
-$global-border-box: true;
-
 // Base measurements
 $base-font-size:         15px;
 $base-line-height:       25px;
@@ -30,6 +27,10 @@ $half-spacing-unit: $base-spacing-unit / 2;
 
 // Grid
 $gutter: $base-spacing-unit;
+
+// Layout
+$site-min-width:          320px;
+$site-wrapper-max-width:  1440px;
 
 // Breakpoints
 // Set to false to exclude breakpoints
@@ -56,7 +57,7 @@ $state-success:  #468847;
 $state-error:    #b94a48;
 
 // Fonts
-$font-body:		Georgia, Times, "Times New Roman", serif;
+$font-body: Georgia, Times, "Times New Roman", serif;
 
 // Examples for custom @font-face (see _fonts.scss for declaration)
 // $font-body:    "PatuaOne", Georgia, Times, "Times New Roman", serif;

@@ -16,9 +16,9 @@
 }
 
 @mixin inline-block() {
- 	display: inline-block;
- 	*display: inline;
- 	zoom: 1;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
 
 // Image replacement
@@ -265,7 +265,7 @@
   }
   @else {
     // render styles without media queries if those breakpoints are false
-    
+
     @if $media-query == "hand-and-up" {
       @if $hand-start != false {
         @media only screen and (min-width:$hand-start) { @content; }
@@ -307,7 +307,7 @@
       }
       @else {}
     }
- 
+
     @else if $media-query == "hand-and-down" {
       @if $hand-start != false {
         @media only screen and (max-width: ($hand-start - 1px)) { @content; }

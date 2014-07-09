@@ -2,36 +2,12 @@
     $LAYOUT
 \*------------------------------------*/
 
-body {
-  margin: 0 auto;
-  max-width: 1440px;
+body { min-width: $site-min-width; }
 
-  // min-width for non-responsive layouts
-  .lt-ie9 & {
-    min-width: 1024px;
-  }
-}
-
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  @include box-sizing(border-box);
-
-  @include media-query(hand-and-up) {
-    width: 90%;
-  }
-
-  @include media-query(desk-and-up) {
-    max-width: 1200px;
-  }
-
-  @include media-query(hand-and-down) {
-    @include rem(padding, 0 $base-spacing-unit);
-  }
-
-  // max-width for non-responsive layouts
-  .lt-ie9 & {
-    max-width: 1200px;
-  }
+.site-wrapper {
+  max-width: $site-wrapper-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  @include rem(padding-left, $gutter, $base-font-size--mobile);
+  @include rem(padding-right, $gutter, $base-font-size--mobile);
 }

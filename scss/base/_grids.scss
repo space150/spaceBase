@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 @mixin grid() {
-      
+
   // Grid wrapper
   .gw,
   .grid-wrapper {
@@ -17,8 +17,8 @@
   // Reverse grid
   .gw--rev > .g,
   .grid-wrapper--rev > .grid { float: right; }
-  
-  
+
+
   // Gutterless grid
   .gw--full,
   .grid-wrapper--full {
@@ -27,13 +27,13 @@
       padding-left: 0;
     }
   }
-  
-  
+
+
   // Very infrequently occuring grid wrappers as children of grid wrappers
   .gw > .gw,
   .grid-wrapper > .grid-wrapper { margin-left: 0; }
-  
-  
+
+
   // Grid
   .g,
   .grid {
@@ -41,9 +41,6 @@
     width: 100%;
     @include rem(padding-left, $gutter, $base-font-size--mobile);
     @include transition(width .15s ease);
-    @if $global-border-box == false {
-      @include box-sizing(border-box);
-    }
   }
 }
 

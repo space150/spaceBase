@@ -2,15 +2,13 @@
     $SHARED
 \*------------------------------------*/
 
-@if $global-border-box == true {
-  // All elements will adopt `box-sizing:border-box;` 
-  // as per paulirish.com/2012/box-sizing-border-box-ftw
-  *{
-    &,
-    &:before,
-    &:after {
-      @include box-sizing(border-box);
-    }
+// All elements will adopt `box-sizing:border-box;`
+// as per paulirish.com/2012/box-sizing-border-box-ftw
+*{
+  &,
+  &:before,
+  &:after {
+    @include box-sizing(border-box);
   }
 }
 
@@ -54,7 +52,7 @@ img[height] {
       margin-bottom: 0;
     }
   }
-  
+
   // Where `margin-left` is concerned, we want to try and indent certain elements
   // by a consistent amount
   ul,ol,dd {
