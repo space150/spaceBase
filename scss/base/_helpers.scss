@@ -31,6 +31,7 @@
   position: absolute;
   width: 1px;
 }
+
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
 .visuallyhidden.focusable:active,
@@ -45,22 +46,27 @@
 
 
 // Responsive visibility helpers
-@include media-query(hand-and-down){
+@include media-query(hand-and-down) {
   .hidden-hand-and-down { display: none; }
 }
-@include media-query(hand-and-up){
+
+@include media-query(hand-and-up) {
   .hidden-hand-and-up { display: none; }
 }
-@include media-query(lap-and-down){
+
+@include media-query(lap-and-down) {
   .hidden-lap-and-down { display: none; }
 }
-@include media-query(lap-and-up){
+
+@include media-query(lap-and-up) {
   .hidden-lap-and-up { display: none; }
 }
-@include media-query(desk-and-down){
+
+@include media-query(desk-and-down) {
   .hidden-desk-and-down { display: none; }
 }
-@include media-query(desk-and-up){
+
+@include media-query(desk-and-up) {
   .hidden-desk-and-up { display: none; }
 }
 

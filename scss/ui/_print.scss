@@ -8,11 +8,12 @@
   * {
     background: transparent !important;
     color: #000 !important;
-    box-shadow:none !important;
+    box-shadow: none !important;
     filter: none !important;
     text-shadow: none !important;
   }
-  @page { margin: 0.5cm; }
+
+  @page { margin: .5cm; }
   thead { display: table-header-group; }
   table, tr, img { page-break-inside: avoid; }
   p, h2, h3 { orphans: 3; widows: 3; }

@@ -23,7 +23,9 @@
   .gw--full,
   .grid-wrapper--full {
     margin-left: 0;
-    > .g, > .grid {
+
+    > .g,
+    > .grid {
       padding-left: 0;
     }
   }

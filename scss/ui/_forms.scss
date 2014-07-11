@@ -77,10 +77,10 @@ input[type="checkbox"]:focus {
   display: block;
   width: 100%;
   height: 2.5em;
-  padding: 0.2em 1em;
+  padding: .2em 1em;
   font-family: $font-body;
   @include rem(font-size, 1);
-  color: $grayDark;
+  color: $gray-dark;
   vertical-align: middle;
   background-color: $white;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
@@ -101,7 +101,7 @@ input[type="checkbox"]:focus {
   &[readonly],
   fieldset[disabled] & {
     cursor: not-allowed;
-    background-color: $grayLight;
+    background-color: $gray-light;
   }
 }
 
@@ -110,10 +110,11 @@ textarea.form-control {
   height: auto;
   line-height: $line-height-ratio;
 }
+
 // Remove inner shadow on webkit, see http://zomigi.com/blog/bug-fixes-for-removing-the-inner-shadow-on-ios-inputs
 input.form-control,
 textarea.form-control {
-  background-image: -webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
+  background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0));
 }
 
 
@@ -128,11 +129,13 @@ textarea.form-control {
   margin-bottom: 10px;
   padding-left: 20px;
   vertical-align: middle;
+
   label {
     display: inline;
     cursor: pointer;
   }
 }
+
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   float: left;
@@ -154,6 +157,7 @@ input[type="checkbox"],
 .has-error {
   @include form-control-validation($state-error, darken($state-error, 5%));
 }
+
 .has-success {
   @include form-control-validation($state-success, darken($state-success, 5%));
 }

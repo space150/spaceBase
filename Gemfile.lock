@@ -26,6 +26,7 @@ GEM
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
     multi_json (1.10.1)
+    rainbow (2.0.0)
     rake (10.3.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
@@ -33,6 +34,9 @@ GEM
     rb-kqueue (0.2.3)
       ffi (>= 0.5.0)
     sass (3.3.8)
+    scss-lint (0.25.1)
+      rainbow (~> 2.0)
+      sass (~> 3.3.0)
 
 PLATFORMS
   ruby
@@ -41,3 +45,4 @@ DEPENDENCIES
   coffee-script
   compass (~> 1.0.0.alpha.19)
   rake
+  scss-lint (= 0.25.1)

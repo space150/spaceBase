@@ -8,7 +8,7 @@ $legacy-ie: true;
 }
 
 .sg-heading {
-  padding: 0 0 0.5em;
+  padding: 0 0 .5em;
   border-bottom: 2px solid $gray;
   // Add your project's font-styles here.
 }
@@ -23,7 +23,7 @@ $legacy-ie: true;
 .sg-colors li {
   border: 1px solid #ccc;
   background: $white;
-  @include rem(padding, 0.4);
+  @include rem(padding, .4);
   @include rem(margin-bottom, $half-spacing-unit);
 }
 
@@ -35,8 +35,9 @@ $legacy-ie: true;
 
 .sg-field-container {
   margin-bottom: 1em;
+
+  label {
+    display: block;
+  }
 }
 
-.sg-field-container label {
-  display: block;
-}

@@ -12,6 +12,7 @@
   .islet & {
     @include rem(margin-bottom, $half-spacing-unit, $base-font-size--mobile);
   }
+
   > :last-child { margin-bottom: 0; }
 }
 

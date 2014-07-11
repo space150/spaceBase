@@ -1,0 +1,14 @@
+---
+exclude:
+  - "scss/base/_reset.scss"
+  - "scss/base/_normalize.scss"
+
+linters:
+  Comment:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
+  SingleLinePerSelector:
+    enabled: false
+  StringQuotes:
+    enabled: false
