@@ -2,6 +2,7 @@
 exclude:
   - "scss/base/_reset.scss"
   - "scss/base/_normalize.scss"
+  - "scss/_tests/*"
 
 linters:
   Comment:

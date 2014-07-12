@@ -1,6 +1,6 @@
-/*------------------------------------*\
-    $FUNCTIONS
-\*------------------------------------*/
+//------------------------------------//
+//  $FUNCTIONS
+//------------------------------------//
 
 // map
 //   Applies the function to each argument in the given list.
@@ -17,19 +17,17 @@
 @function multiply($a, $b) {
   @if type-of($a) == 'number' {
     @return $a * $b;
-  }
-  @else {
+  } @else {
     @return $a;
   }
 }
 
 // add_unit
 //   Adds the unit to the value, if the value is a number.
-@function add_unit($value, $unit) {
+@function add-unit($value, $unit) {
   @if type-of($value) == 'number' {
     @return $value + $unit;
-  }
-  @else {
+  } @else {
     @return $value;
   }
 }
