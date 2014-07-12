@@ -115,63 +115,22 @@
 // ***************************************************************************
 
 @mixin rem($property, $rem-values, $fallback: false) {
-  // Calculate pixel values for legacy IE browsers that don't support rems
-  @if $legacy-ie == true {
-    // If there's only one numeric value, convert the value to px
-    @if type-of($rem-values) == 'number' {
-      // If it's zero, no calculation or unit necessary
-      @if $rem-values == 0 {
-        #{$property}: $rem-values;
-      } @else {
-        #{$property}: $rem-values * $base-font-size;
-      }
-    } @else {
-      // If there is more than one value, create a list and convert each value to px
-      $px-values: ();
-      @each $value in $rem-values {
-        // If it's zero, no calculation or unit necessary
-        @if $value == 0 {
-          $px-values: append($px-values, $value);
-        } @else {
-          $px-values: append($px-values, ($value * $base-font-size));
-        }
-      }
-      // Return the property and its list of converted values
-      #{$property}: $px-values;
-    }
-  } @else {
-    // Print the first line in pixel values for browsers that don't support rems:
-    // IE9/10 when used with psuedo elements or font shorthand property
-    // Possible $fallback values are $base-font-size or $base-font-size--mobile
+  @if $legacy-ie == false {
+    // Pixel fallbacks.
+    // $fallback should be $base-font-size or $base-font-size--mobile.
     @if $fallback != false {
-      $px-values: ();
-      @each $value in $rem-values {
-        // If it's zero, no calculation or unit necessary
-        @if $value == 0 {
-          $px-values: append($px-values, $value);
-        } @else {
-          $px-values: append($px-values, ($value * $fallback));
-        }
-      }
-      // Return the property and its list of converted values
-      #{$property}: $px-values;
+      #{$property}: map(force-unit,
+                        map(multiply, $rem-values, $fallback),
+                        px);
     }
-
-    // Append unit to values
-    $rem-values-with-unit: ();
-    @each $value in $rem-values {
-      // If it's zero, no unit necessary
-      @if $value == 0 {
-        $rem-values-with-unit: append($rem-values-with-unit, $value);
-      } @else {
-        $rem-values-with-unit: append($rem-values-with-unit, $value + rem);
-      }
-    }
-    // Return the property and its list of values
-    #{$property}: $rem-values-with-unit;
+    #{$property}: map(force-unit, $rem-values, rem);
+  } @else {
+    // Calculate pixel values for legacy browsers that don't support rems.
+    #{$property}: map(force-unit,
+                      map(multiply, $rem-values, $base-font-size),
+                      px);
   }
 }
-
 
 // ***************************************************************************
 // Retina images mixin

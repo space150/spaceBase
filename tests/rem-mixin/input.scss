@@ -1,18 +1,16 @@
 @import "vars";
+@import "base/functions";
 @import "base/mixins";
 
 div {
-  @include rem(padding-left, 4);
-}
-
-div {
+  @include rem(margin-left, 4);
   @include rem(padding, 4 0 2 1);
-  @include rem(font-size, 2, $base-font-size);
+  @include rem(font-size, 2, $fallback: $base-font-size);
 }
 
-// Test with legacy-ie: true
 $legacy-ie: true;
-div {
+
+span {
   @include rem(padding, 4 0 2 1);
-  @include rem(font-size, 2, $base-font-size);
+  @include rem(font-size, 2, $fallback: $base-font-size);
 }
