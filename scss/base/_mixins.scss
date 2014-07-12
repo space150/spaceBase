@@ -3,7 +3,7 @@
 //------------------------------------//
 
 // Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
-@mixin clearfix() {
+@mixin clearfix {
   *zoom: 1;
 
   &:before,
@@ -15,14 +15,14 @@
   &:after { clear: both; }
 }
 
-@mixin inline-block() {
+@mixin inline-block {
   display: inline-block;
   *display: inline;
   zoom: 1;
 }
 
 // Image replacement
-@mixin hide-text() {
+@mixin hide-text {
   border: 0;
   font: 0/0 a;
   text-shadow: none;
@@ -31,21 +31,21 @@
 
 // Text overflow
 // Requires inline-block or block for proper styling
-@mixin text-overflow() {
+@mixin text-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 // WebKit-style focus
-@mixin tab-focus() {
+@mixin tab-focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
 // Placeholder text
-@mixin placeholder() {
+@mixin placeholder {
   &:-moz-placeholder { @content; } // Firefox 4-18
   &::-moz-placeholder { opacity: 1; @content; } // Firefox 19+
   &:-ms-input-placeholder { @content; } // Internet Explorer 10+
@@ -262,6 +262,7 @@
       @content;
     }
 
+  // Not legacy-ie
   } @else {
     // render styles without media queries if those breakpoints are false
 
