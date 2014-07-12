@@ -25,6 +25,36 @@
 
 // LEGACY-IE
 $legacy-ie: true;
+
+@include media-query(lap-and-up) {
+  div { display: none; }
+}
+@include media-query(hand-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-up) {
+  div { display: none; }
+}
+@include media-query(wall-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-down) {
+  div { display: none; }
+}
+@include media-query(hand-and-down) {
+  div { display: none; }
+}
+@include media-query(lap-and-down) {
+  div { display: none; }
+}
+
+// BREAKPOINTS SET TO FALSE
+$legacy-ie:  false;
+$hand-start: false;
+$lap-start:  false;
+$desk-start: false;
+$wall-start: false;
+
 @include media-query(lap-and-up) {
   div { display: none; }
 }
