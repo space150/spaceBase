@@ -110,30 +110,30 @@ $grid-widths: (
   @include grid-setup();
 
   @if $hand-start != false {
-    @include media-query("hand-and-up") {
+    @include hand-and-up {
       @include grid-setup("hand-");
     }
   }
 
   @if $lap-start != false {
-    @include media-query("lap-and-up") {
+    @include lap-and-up {
       @include grid-setup("lap-");
     }
   }
 
   @if $desk-start != false {
-    @include media-query("desk-and-up") {
+    @include desk-and-up {
       @include grid-setup("desk-");
     }
   }
 
   @if $wall-start != false {
-    @include media-query("wall-and-up") {
+    @include wall-and-up {
       @include grid-setup("wall-");
     }
   }
 } @else { // Not responsive
-  @include media-query("lap-and-up") {
+  @include lap-and-up {
     // Initializes widths w/o namespace
     @include grid-setup();
   }

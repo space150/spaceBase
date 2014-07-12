@@ -46,27 +46,27 @@
 
 
 // Responsive visibility helpers
-@include media-query(hand-and-down) {
+@include below-hand {
   .hidden-hand-and-down { display: none; }
 }
 
-@include media-query(hand-and-up) {
+@include hand-and-up {
   .hidden-hand-and-up { display: none; }
 }
 
-@include media-query(lap-and-down) {
+@include below-lap {
   .hidden-lap-and-down { display: none; }
 }
 
-@include media-query(lap-and-up) {
+@include lap-and-up {
   .hidden-lap-and-up { display: none; }
 }
 
-@include media-query(desk-and-down) {
+@include below-desk {
   .hidden-desk-and-down { display: none; }
 }
 
-@include media-query(desk-and-up) {
+@include below-desk {
   .hidden-desk-and-up { display: none; }
 }
 

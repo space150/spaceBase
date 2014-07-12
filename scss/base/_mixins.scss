@@ -179,105 +179,62 @@
 
 
 // ***************************************************************************
-// Media query mixin
+// Media query mixins
 //
 // All styles w/o a media-query are assumed to be base, mobile-first styles.
 // All styling "up" from that should be done in media queries.
 //
-// Our options are:
 //
-// hand-and-up    -  bigger-than-phone and up
-// lap-and-up     -  laptops and up
-// desk-and-up    -  desktops and up
-// wall-and-up    -  widescreen desktops and up
-// lap-and-down   -  smaller than laptops
-// hand-and-down  -  isolates phones
+// hand-and-up  -  bigger-than-phone and up
+// lap-and-up   -  tablets and up
+// desk-and-up  -  desktops/laptops and up
+// wall-and-up  -  widescreen desktops and up
+// below-hand   -  isolates phones
+// below-lap    -  smaller than tablets
+// below-desk   -  smaller than desktops/laptops
 //
-// Without one of these parameters the mixin will accept a custom media query.
 //
 // ***************************************************************************
 
-@mixin media-query($media-query) {
-
-  @if $legacy-ie == true {
-    // render styles without media queries
-
-    @if $media-query == "hand-and-up" { @content; }
-
-    @else if $media-query == "lap-and-up" { @content; }
-
-    @else if $media-query == "desk-and-up" { @content; }
-
-    @else if $media-query == "wall-and-up" {}
-
-    @else if $media-query == "desk-and-down" {}
-
-    @else if $media-query == "lap-and-down" {}
-
-    @else if $media-query == "hand-and-down" {}
-
-    // include custom breakpoints
-    @else {
-      @content;
-    }
-
-  // Not legacy-ie
+// Don't call this directly. Use the other mixins below.
+@mixin media-query($breakpoint, $expression, $no-legacy: false) {
+  @if $legacy-ie {
+    @if $no-legacy { } @else { @content; }
   } @else {
-    // render styles without media queries if those breakpoints are false
-
-    @if $media-query == "hand-and-up" {
-      @if $hand-start != false {
-        @media only screen and (min-width:$hand-start) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "lap-and-up" {
-      @if $lap-start != false {
-        @media only screen and (min-width:$lap-start) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "desk-and-up" {
-      @if $desk-start != false {
-        @media only screen and (min-width:$desk-start) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "wall-and-up" {
-      @if $wall-start != false {
-        @media only screen and (min-width:$wall-start) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "desk-and-down" {
-      @if $desk-start != false {
-        @media only screen and (max-width: ($desk-start - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    @else if $media-query == "lap-and-down" {
-      @if $lap-start != false {
-        @media only screen and (max-width: ($lap-start - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    @else if $media-query == "hand-and-down" {
-      @if $hand-start != false {
-        @media only screen and (max-width: ($hand-start - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    // custom breakpoints
-    @else {
-      @media only screen and ($media-query) { @content; }
-    }
-
+    @if $breakpoint {
+      @media only screen and (unquote($expression)) { @content; }
+    } @else { @content; }
   }
 }
+
+@mixin hand-and-up {
+  @include media-query($hand-start,
+                       "min-width:#{$hand-start}") { @content; } }
+
+@mixin lap-and-up {
+  @include media-query($lap-start,
+                       "min-width: #{$lap-start}") { @content; } }
+
+@mixin desk-and-up {
+  @include media-query($desk-start,
+                       "min-width:#{$desk-start}") { @content; } }
+
+@mixin wall-and-up {
+  @include media-query($wall-start,
+                       "min-width:#{$wall-start}",
+                       $no-legacy: true) { @content; } }
+
+@mixin below-hand {
+  @include media-query($hand-start,
+                       "max-width:#{$hand-start - 1}",
+                       $no-legacy: true) { @content; } }
+
+@mixin below-lap {
+  @include media-query($lap-start,
+                       "max-width:#{$lap-start - 1}",
+                       $no-legacy: true) { @content; } }
+
+@mixin below-desk {
+  @include media-query($desk-start,
+                       "max-width:#{$desk-start - 1}",
+                       $no-legacy: true) { @content; } }

@@ -19,32 +19,32 @@
     @if $responsive-push-pull == true {
 
       @if $hand-start != false {
-        @include media-query("hand-and-up") {
+        @include hand-and-up {
           @include pull-setup("hand-");
         }
       }
 
       @if $lap-start != false {
-        @include media-query("lap-and-up") {
+        @include lap-and-up {
           @include pull-setup("lap-");
         }
       }
 
       @if $desk-start != false {
-        @include media-query("desk-and-up") {
+        @include desk-and-up {
           @include pull-setup("desk-");
         }
       }
 
       @if $wall-start != false {
-        @include media-query("wall-and-up") {
+        @include wall-and-up {
           @include pull-setup("wall-");
         }
       }
     }
   }
   @else {
-    @include media-query("lap-and-up") {
+    @include lap-and-up {
       @include pull-setup();
     }
   }

@@ -41,7 +41,7 @@ h4, .h4 {
   @include rem(font-size, .875);
 }
 
-@include media-query(lap-and-up) {
+@include lap-and-up {
   h1, .h1 {
     @include rem(font-size, 3.6);
   }

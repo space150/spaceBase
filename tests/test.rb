@@ -30,7 +30,7 @@ test_dirs.each do |dir|
     next
   end
 
-  diff = `diff #{css.join(" ")} 2>/dev/null`
+  diff = `diff -B #{css.join(" ")} 2>/dev/null`
   if !diff.empty?
     puts "FAILED: " + dir
     puts `diff -y #{css.join(" ")}`
