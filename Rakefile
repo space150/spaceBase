@@ -6,5 +6,5 @@ end
 desc "Run tests"
 task :test do
   Dir.chdir "./tests"
-  puts `ruby test.rb`
+  require_relative "./tests/test"
 end
