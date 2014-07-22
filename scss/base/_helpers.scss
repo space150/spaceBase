@@ -47,7 +47,7 @@
 
 // Responsive visibility helpers
 @include below-hand {
-  .hidden-hand-and-down { display: none; }
+  .hidden-below-hand { display: none; }
 }
 
 @include hand-and-up {
@@ -55,7 +55,7 @@
 }
 
 @include below-lap {
-  .hidden-lap-and-down { display: none; }
+  .hidden-below-lap { display: none; }
 }
 
 @include lap-and-up {
@@ -63,10 +63,10 @@
 }
 
 @include below-desk {
-  .hidden-desk-and-down { display: none; }
+  .hidden-below-desk { display: none; }
 }
 
-@include below-desk {
+@include desk-and-up {
   .hidden-desk-and-up { display: none; }
 }
 
