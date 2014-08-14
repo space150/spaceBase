@@ -106,7 +106,7 @@ $grid-widths: (
 // If `$responsive` is ‘false’ then the grid would only be used at laptop sizes and above.
 //
 
-@if $responsive == true {
+@if $responsive {
   @include grid-setup();
 
   @if $hand-start != false {

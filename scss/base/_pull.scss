@@ -8,15 +8,15 @@
   );
 }
 
-@if $pull == true {
+@if $pull {
 
   [class*="pull--"] { position: relative; }
 
-  @if $responsive == true {
+  @if $responsive {
 
     @include pull-setup();
 
-    @if $responsive-push-pull == true {
+    @if $responsive-push-pull {
 
       @if $hand-start != false {
         @include hand-and-up {
