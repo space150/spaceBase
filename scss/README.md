@@ -32,7 +32,7 @@ Example:
 <![endif]-->
 ~~~
 
-The only difference between these files is the `$legacy-ie` variable. When set to true, the `media-query()` mixin will only render the content inside the media query breakpoints. The site will thereby display the desktop layout in legacy IE browsers.
+The only difference between these files is the `$legacy-ie` variable. When set to true, the media query mixins will not render the content inside of media queries. The site will thereby display the desktop layout in legacy IE browsers.
 
 
 ## Variables

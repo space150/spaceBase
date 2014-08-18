@@ -1,17 +1,13 @@
-/*------------------------------------*\
-    $HELPERS
-\*------------------------------------*/
+//------------------------------------//
+//  $HELPERS
+//------------------------------------//
 
 
 // Clearfix
-.cf {
-  @include clearfix();
-}
+.cf { @include clearfix; }
 
 // Image replacement
-.ir {
-  @include hide-text();
-}
+.ir { @include hide-text; }
 
 
 // Hide from screenreaders and browsers
@@ -31,6 +27,7 @@
   position: absolute;
   width: 1px;
 }
+
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
 .visuallyhidden.focusable:active,
@@ -45,22 +42,27 @@
 
 
 // Responsive visibility helpers
-@include media-query(hand-and-down){
-  .hidden-hand-and-down { display: none; }
+@include below-hand {
+  .hidden-below-hand { display: none; }
 }
-@include media-query(hand-and-up){
+
+@include hand-and-up {
   .hidden-hand-and-up { display: none; }
 }
-@include media-query(lap-and-down){
-  .hidden-lap-and-down { display: none; }
+
+@include below-lap {
+  .hidden-below-lap { display: none; }
 }
-@include media-query(lap-and-up){
+
+@include lap-and-up {
   .hidden-lap-and-up { display: none; }
 }
-@include media-query(desk-and-down){
-  .hidden-desk-and-down { display: none; }
+
+@include below-desk {
+  .hidden-below-desk { display: none; }
 }
-@include media-query(desk-and-up){
+
+@include desk-and-up {
   .hidden-desk-and-up { display: none; }
 }
 

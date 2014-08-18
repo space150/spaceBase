@@ -8,3 +8,4 @@ images/compass-sprites
 
 # Compiled source for deployment
 dist/
+tests/**/*input.css

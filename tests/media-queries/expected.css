@@ -1,0 +1,91 @@
+/* NORMAL */
+/* hand-and-up */
+@media only screen and (min-width: 480px) {
+  div {
+    display: none;
+  }
+}
+/* lap-and-up */
+@media only screen and (min-width: 768px) {
+  div {
+    display: none;
+  }
+}
+/* desk-and-up */
+@media only screen and (min-width: 1024px) {
+  div {
+    display: none;
+  }
+}
+/* wall-and-up */
+@media only screen and (min-width: 1200px) {
+  div {
+    display: none;
+  }
+}
+/* below-lap */
+@media only screen and (max-width: 1023px) {
+  div {
+    display: none;
+  }
+}
+/* below-lap */
+@media only screen and (max-width: 479px) {
+  div {
+    display: none;
+  }
+}
+/* below-lap */
+@media only screen and (max-width: 767px) {
+  div {
+    display: none;
+  }
+}
+
+/* LEGACY-IE */
+/* hand-and-up */
+div {
+  display: none;
+}
+/* lap-and-up */
+div {
+  display: none;
+}
+/* desk-and-up */
+div {
+  display: none;
+}
+/* wall-and-up */
+/* below-lap */
+/* below-lap */
+/* below-lap */
+
+/* BREAKPOINTS SET TO FALSE */
+/* hand-and-up */
+div {
+  display: none;
+}
+/* lap-and-up */
+div {
+  display: none;
+}
+/* desk-and-up */
+div {
+  display: none;
+}
+/* wall-and-up */
+div {
+  display: none;
+}
+/* below-lap */
+div {
+  display: none;
+}
+/* below-lap */
+div {
+  display: none;
+}
+/* below-lap */
+div {
+  display: none;
+}

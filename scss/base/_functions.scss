@@ -1,0 +1,39 @@
+//------------------------------------//
+//  $FUNCTIONS
+//------------------------------------//
+
+// map
+//   Applies the function to each argument in the given list.
+@function map($func, $list, $args...) {
+  $new-list: ();
+  @each $item in $list {
+    $new-list: append($new-list, call($func, $item, $args...));
+  }
+  @return $new-list;
+}
+
+// multiply
+//   Multiplies a and b, if a is a number.
+@function multiply($a, $b) {
+  @if type-of($a) == 'number' {
+    @return $a * $b;
+  } @else {
+    @return $a;
+  }
+}
+
+// strip-unit
+//   Returns
+//   from https://github.com/sass/sass/issues/533#issuecomment-11675408
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// force-unit
+//   Forces the value's unit to the given one.
+//   Returns 0 without units.
+@function force-unit($value, $unit) {
+  // Remove any unit the value may have.
+  $value: strip-unit($value);
+  @return if($value == 0, 0, $value + $unit);
+}

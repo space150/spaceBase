@@ -1,28 +1,28 @@
-/*------------------------------------*\
-    $MIXINS
-\*------------------------------------*/
+//------------------------------------//
+//  $MIXINS
+//------------------------------------//
 
 // Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
-@mixin clearfix() {
+@mixin clearfix {
   *zoom: 1;
+
   &:before,
   &:after {
     display: table;
     content: "";
   }
-  &:after {
-    clear: both;
-  }
+
+  &:after { clear: both; }
 }
 
-@mixin inline-block() {
+@mixin inline-block {
   display: inline-block;
   *display: inline;
   zoom: 1;
 }
 
 // Image replacement
-@mixin hide-text() {
+@mixin hide-text {
   border: 0;
   font: 0/0 a;
   text-shadow: none;
@@ -31,21 +31,21 @@
 
 // Text overflow
 // Requires inline-block or block for proper styling
-@mixin text-overflow() {
+@mixin text-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 // WebKit-style focus
-@mixin tab-focus() {
+@mixin tab-focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
 // Placeholder text
-@mixin placeholder() {
+@mixin placeholder {
   &:-moz-placeholder { @content; } // Firefox 4-18
   &::-moz-placeholder { opacity: 1; @content; } // Firefox 19+
   &:-ms-input-placeholder { @content; } // Internet Explorer 10+
@@ -53,14 +53,14 @@
 }
 
 // Form validation states
-@mixin form-control-validation($text-color: $grayDark, $border-color: $gray) {
+@mixin form-control-validation($text-color: $gray-dark, $border-color: $gray) {
   label,
   .radio,
-  .checkbox {
-    color: $text-color;
-  }
+  .checkbox { color: $text-color; }
+
   .form-control {
     border-color: $border-color;
+
     &:focus {
       border-color: darken($border-color, 10%);
       @include box-shadow(0 0 6px lighten($border-color, 20%));
@@ -71,10 +71,11 @@
 // Form control focus state, based on WebKit's default styles
 @mixin form-control-focus($color: #66afe9) {
   $color-rgba: rgba(red($color), green($color), blue($color), .6);
+
   &:focus {
     border-color: $color;
     outline: 0;
-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
+    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba);
   }
 }
 
@@ -82,9 +83,9 @@
 // ***************************************************************************
 // Rem conversion mixin
 //
-// Converts values to rems for any property passed to it. If optional 
-// $fallback is provided, it returns two lines of code — one of the pixel 
-// values for non-rem support and another with the converted rem values. 
+// Converts values to rems for any property passed to it. If optional
+// $fallback is provided, it returns two lines of code — one of the pixel
+// values for non-rem support and another with the converted rem values.
 // It also returns just the pixel values to the legacy IE CSS file.
 //
 // USAGE:
@@ -111,67 +112,27 @@
 //
 // ***************************************************************************
 
-@mixin rem($property, $rem_values, $fallback: false) {
-  // Calculate pixel values for legacy IE browsers that don't support rems
-  @if $legacy-ie == true {
-    // If there's only one numeric value, convert the value to px
-    @if type-of($rem_values) == 'number' {
-      // If it's zero, no calculation or unit necessary
-      @if $rem_values == 0 {
-        #{$property}: $rem-values;
-      } @else {
-        #{$property}: $rem-values * $base-font-size;
-      }
+@mixin rem($property, $rem-values, $fallback: false) {
+  @if not $legacy-ie {
+    // Pixel fallbacks.
+    // $fallback should be $base-font-size or $base-font-size--mobile.
+    @if $fallback {
+      #{$property}: map(
+        force-unit,
+        map(multiply, $rem-values, $fallback),
+        px
+      );
     }
-    // If there is more than one value, create a list and convert each value to px
-    @else {
-      $px_values: ();
-      @each $value in $rem_values {
-        // If it's zero, no calculation or unit necessary
-        @if $value == 0 {
-          $px_values: append($px_values, $value);
-        } @else {
-          $px_values: append($px_values, ($value * $base-font-size));
-        }
-      }
-      // Return the property and its list of converted values
-      #{$property}: $px_values;
-    }
-  }
-
-  @else {
-    // Print the first line in pixel values for browsers that don't support rems:
-    // IE9/10 when used with psuedo elements or font shorthand property
-    // Possible $fallback values are $base-font-size or $base-font-size--mobile
-    @if $fallback != false {
-      $px_values: ();
-      @each $value in $rem_values {
-        // If it's zero, no calculation or unit necessary
-        @if $value == 0 {
-          $px_values: append($px_values, $value);
-        } @else {
-          $px_values: append($px_values, ($value * $fallback));
-        }
-      }
-      // Return the property and its list of converted values
-      #{$property}: $px_values;
-    }
-
-    // Append unit to values
-    $rem_values_with_unit: ();
-    @each $value in $rem_values {
-      // If it's zero, no unit necessary
-      @if $value == 0 {
-        $rem_values_with_unit: append($rem_values_with_unit, $value);
-      } @else {
-        $rem_values_with_unit: append($rem_values_with_unit, $value + rem);
-      }
-    }
-    // Return the property and its list of values
-    #{$property}: $rem_values_with_unit;
+    #{$property}: map(force-unit, $rem-values, rem);
+  } @else {
+    // Calculate pixel values for legacy browsers that don't support rems.
+    #{$property}: map(
+      force-unit,
+      map(multiply, $rem-values, $base-font-size),
+      px
+    );
   }
 }
-
 
 // ***************************************************************************
 // Retina images mixin
@@ -220,105 +181,83 @@
 
 
 // ***************************************************************************
-// Media query mixin
+// Media query mixins
 //
 // All styles w/o a media-query are assumed to be base, mobile-first styles.
 // All styling "up" from that should be done in media queries.
 //
-// Our options are:
 //
-// hand-and-up    -  bigger-than-phone and up
-// lap-and-up     -  laptops and up
-// desk-and-up    -  desktops and up
-// wall-and-up    -  widescreen desktops and up
-// lap-and-down   -  smaller than laptops
-// hand-and-down  -  isolates phones
+// hand-and-up  -  bigger-than-phone and up
+// lap-and-up   -  tablets and up
+// desk-and-up  -  desktops/laptops and up
+// wall-and-up  -  widescreen desktops and up
+// below-hand   -  isolates phones
+// below-lap    -  smaller than tablets
+// below-desk   -  smaller than desktops/laptops
 //
-// Without one of these parameters the mixin will accept a custom media query.
 //
 // ***************************************************************************
 
-@mixin media-query($media-query) {
-
-  @if $legacy-ie == true {
-    // render styles without media queries
-
-    @if $media-query == "hand-and-up" { @content; }
-
-    @else if $media-query == "lap-and-up" { @content; }
-
-    @else if $media-query == "desk-and-up" { @content; }
-
-    @else if $media-query == "wall-and-up" {}
-
-    @else if $media-query == "desk-and-down" {}
-
-    @else if $media-query == "lap-and-down" {}
-
-    @else if $media-query == "hand-and-down" {}
-
-    // include custom breakpoints
-    @else {
-      @content;
-    }
-
+// Don't call this directly. Use the other mixins below.
+@mixin media-query($breakpoint, $expression, $no-legacy: false) {
+  @if $legacy-ie {
+    @if $no-legacy { } @else { @content; }
+  } @else {
+    @if $breakpoint {
+      @media only screen and (unquote($expression)) { @content; }
+    } @else { @content; }
   }
-  @else {
-    // render styles without media queries if those breakpoints are false
+}
 
-    @if $media-query == "hand-and-up" {
-      @if $hand-start != false {
-        @media only screen and (min-width:$hand-start) { @content; }
-      }
-      @else { @content; }
-    }
+@mixin hand-and-up {
+  @include media-query(
+    $hand-start,
+    "min-width:#{$hand-start}"
+  ) { @content; }
+}
 
-    @else if $media-query == "lap-and-up" {
-      @if $lap-start != false {
-        @media only screen and (min-width:$lap-start) { @content; }
-      }
-      @else { @content; }
-    }
+@mixin lap-and-up {
+  @include media-query(
+    $lap-start,
+    "min-width: #{$lap-start}"
+  ) { @content; }
+}
 
-    @else if $media-query == "desk-and-up" {
-      @if $desk-start != false {
-        @media only screen and (min-width:$desk-start) { @content; }
-      }
-      @else { @content; }
-    }
+@mixin desk-and-up {
+  @include media-query(
+    $desk-start,
+    "min-width:#{$desk-start}"
+  ) { @content; }
+}
 
-    @else if $media-query == "wall-and-up" {
-      @if $wall-start != false {
-        @media only screen and (min-width:$wall-start) { @content; }
-      }
-      @else { @content; }
-    }
+@mixin wall-and-up {
+  @include media-query(
+    $wall-start,
+    "min-width:#{$wall-start}",
+    $no-legacy: true
+  ) { @content; }
+}
 
-    @else if $media-query == "desk-and-down" {
-      @if $desk-start != false {
-        @media only screen and (max-width: ($desk-start - 1px)) { @content; }
-      }
-      @else {}
-    }
+@mixin below-hand {
+  @include media-query(
+    $hand-start,
+    "max-width:#{$hand-start - 1}",
+    $no-legacy: true
+  ) { @content; }
+}
 
-    @else if $media-query == "lap-and-down" {
-      @if $lap-start != false {
-        @media only screen and (max-width: ($lap-start - 1px)) { @content; }
-      }
-      @else {}
-    }
+@mixin below-lap {
+  @include media-query(
+    $lap-start,
+    "max-width:#{$lap-start - 1}",
+    $no-legacy: true
+  ) { @content; }
+}
 
-    @else if $media-query == "hand-and-down" {
-      @if $hand-start != false {
-        @media only screen and (max-width: ($hand-start - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    // custom breakpoints
-    @else {
-      @media only screen and ($media-query) { @content; }
-    }
-
-  }
+@mixin below-desk {
+  @include media-query(
+    $desk-start,
+    "max-width:#{$desk-start - 1}",
+    $no-legacy: true
+  ) { @content; }
 }
