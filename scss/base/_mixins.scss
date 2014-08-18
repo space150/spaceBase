@@ -56,9 +56,7 @@
 @mixin form-control-validation($text-color: $gray-dark, $border-color: $gray) {
   label,
   .radio,
-  .checkbox {
-    color: $text-color;
-  }
+  .checkbox { color: $text-color; }
 
   .form-control {
     border-color: $border-color;
@@ -115,20 +113,24 @@
 // ***************************************************************************
 
 @mixin rem($property, $rem-values, $fallback: false) {
-  @if $legacy-ie == false {
+  @if not $legacy-ie {
     // Pixel fallbacks.
     // $fallback should be $base-font-size or $base-font-size--mobile.
-    @if $fallback != false {
-      #{$property}: map(force-unit,
-                        map(multiply, $rem-values, $fallback),
-                        px);
+    @if $fallback {
+      #{$property}: map(
+        force-unit,
+        map(multiply, $rem-values, $fallback),
+        px
+      );
     }
     #{$property}: map(force-unit, $rem-values, rem);
   } @else {
     // Calculate pixel values for legacy browsers that don't support rems.
-    #{$property}: map(force-unit,
-                      map(multiply, $rem-values, $base-font-size),
-                      px);
+    #{$property}: map(
+      force-unit,
+      map(multiply, $rem-values, $base-font-size),
+      px
+    );
   }
 }
 
@@ -208,33 +210,54 @@
 }
 
 @mixin hand-and-up {
-  @include media-query($hand-start,
-                       "min-width:#{$hand-start}") { @content; } }
+  @include media-query(
+    $hand-start,
+    "min-width:#{$hand-start}"
+  ) { @content; }
+}
 
 @mixin lap-and-up {
-  @include media-query($lap-start,
-                       "min-width: #{$lap-start}") { @content; } }
+  @include media-query(
+    $lap-start,
+    "min-width: #{$lap-start}"
+  ) { @content; }
+}
 
 @mixin desk-and-up {
-  @include media-query($desk-start,
-                       "min-width:#{$desk-start}") { @content; } }
+  @include media-query(
+    $desk-start,
+    "min-width:#{$desk-start}"
+  ) { @content; }
+}
 
 @mixin wall-and-up {
-  @include media-query($wall-start,
-                       "min-width:#{$wall-start}",
-                       $no-legacy: true) { @content; } }
+  @include media-query(
+    $wall-start,
+    "min-width:#{$wall-start}",
+    $no-legacy: true
+  ) { @content; }
+}
 
 @mixin below-hand {
-  @include media-query($hand-start,
-                       "max-width:#{$hand-start - 1}",
-                       $no-legacy: true) { @content; } }
+  @include media-query(
+    $hand-start,
+    "max-width:#{$hand-start - 1}",
+    $no-legacy: true
+  ) { @content; }
+}
 
 @mixin below-lap {
-  @include media-query($lap-start,
-                       "max-width:#{$lap-start - 1}",
-                       $no-legacy: true) { @content; } }
+  @include media-query(
+    $lap-start,
+    "max-width:#{$lap-start - 1}",
+    $no-legacy: true
+  ) { @content; }
+}
 
 @mixin below-desk {
-  @include media-query($desk-start,
-                       "max-width:#{$desk-start - 1}",
-                       $no-legacy: true) { @content; } }
+  @include media-query(
+    $desk-start,
+    "max-width:#{$desk-start - 1}",
+    $no-legacy: true
+  ) { @content; }
+}

@@ -23,7 +23,7 @@
 
   > li {
     float: none;
-    @include inline-block();
+    @include inline-block;
     @include rem(margin, 0 $half-spacing-unit, $base-font-size--mobile);
 
     &:last-child {

@@ -2,7 +2,7 @@
 //  $GRIDS
 //------------------------------------//
 
-@mixin grid() {
+@mixin grid {
 
   // Grid wrapper
   .gw,
@@ -10,7 +10,7 @@
     list-style: none;
     margin-bottom: 0;
     @include rem(margin-left, -$gutter, $base-font-size--mobile);
-    @include clearfix();
+    @include clearfix;
   }
 
 
@@ -46,4 +46,4 @@
   }
 }
 
-@include grid();
+@include grid;

@@ -5,7 +5,7 @@
 $legacy-ie: false !default;
 
 // Include CSS Reset or normalize?
-$reset: false;
+$reset:     false;
 $normalize: true;
 
 // Include push/pull styles?
@@ -13,7 +13,7 @@ $push: true;
 $pull: true;
 
 // Include responsive grid widths w/breakpoint namespace?
-$responsive: true;
+$responsive:           true;
 $responsive-push-pull: false;
 
 // Base measurements
@@ -43,9 +43,9 @@ $wall-start:   1200px;
 
 // Colors
 $black:        #000;
-$gray-dark:     #4c4c4c;
+$gray-dark:    #4c4c4c;
 $gray:         #999;
-$gray-light:    #f0f0f0;
+$gray-light:   #f0f0f0;
 $white:        #fff;
 
 $primary:      #203c7b; // dark blue

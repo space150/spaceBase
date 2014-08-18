@@ -2,77 +2,65 @@
 //  $WIDTHS
 //------------------------------------//
 $grid-widths: (
-  1:
-  one-whole,
+  1:     one-whole,
 
-  1/2:
-  one-half
-  two-quarters
-  three-sixths
-  four-eighths
-  five-tenths
-  six-twelfths,
+  1/2:   one-half
+         two-quarters
+         three-sixths
+         four-eighths
+         five-tenths
+         six-twelfths,
 
-  1/3:
-  one-third
-  two-sixths
-  four-twelfths,
+  1/3:   one-third
+         two-sixths
+         four-twelfths,
 
-  2/3:
-  two-thirds
-  four-sixths
-  eight-twelfths,
+  2/3:   two-thirds
+         four-sixths
+         eight-twelfths,
 
-  1/4:
-  one-quarter
-  two-eighths
-  three-twelfths,
+  1/4:   one-quarter
+         two-eighths
+         three-twelfths,
 
-  3/4:
-  three-quarters
-  six-eighths
-  nine-twelfths,
+  3/4:   three-quarters
+         six-eighths
+         nine-twelfths,
 
-  1/5:
-  one-fifth
-  two-tenths,
+  1/5:   one-fifth
+         two-tenths,
 
-  2/5:
-  two-fifths
-  four-tenths,
+  2/5:   two-fifths
+         four-tenths,
 
-  3/5:
-  three-fifths
-  six-tenths,
+  3/5:   three-fifths
+         six-tenths,
 
-  4/5:
-  four-fifths
-  eight-tenths,
+  4/5:   four-fifths
+         eight-tenths,
 
-  1/6:
-  one-sixth
-  two-twelfths,
+  1/6:   one-sixth
+         two-twelfths,
 
-  5/6:
-  five-sixths
-  ten-twelfths,
+  5/6:   five-sixths
+         ten-twelfths,
 
   // Eighths
-  1/8: one-eighth,
-  3/8: three-eighths,
-  5/8: five-eighths,
-  7/8: seven-eighths,
+  1/8:   one-eighth,
+  3/8:   three-eighths,
+  5/8:   five-eighths,
+  7/8:   seven-eighths,
 
   // Tenths
-  1/10: one-tenth,
-  3/10: three-tenths,
-  7/10: seven-tenths,
-  9/10: nine-tenths,
+  1/10:  one-tenth,
+  3/10:  three-tenths,
+  7/10:  seven-tenths,
+  9/10:  nine-tenths,
 
   //Twelfths
-  1/12: one-twelfth,
-  5/12: five-twelfths,
-  7/12: seven-twelfths,
+  1/12:  one-twelfth,
+  5/12:  five-twelfths,
+  7/12:  seven-twelfths,
   11/12: eleven-twelfths
 );
 
@@ -81,11 +69,7 @@ $grid-widths: (
     $selectors: null;
     $percent: 100% /(1 / $fraction);
     @each $width in $widths {
-      $selectors: append(
-        $selectors,
-        unquote(".#{$namespace}#{$width}"),
-        "comma"
-      );
+      $selectors: append($selectors, ".#{$namespace}#{$width}", "comma");
     }
     #{$selectors} { #{$property}: $percent; }
   }
@@ -107,34 +91,24 @@ $grid-widths: (
 //
 
 @if $responsive {
-  @include grid-setup();
+  @include grid-setup;
 
-  @if $hand-start != false {
-    @include hand-and-up {
-      @include grid-setup("hand-");
-    }
+  @if $hand-start {
+    @include hand-and-up { @include grid-setup("hand-"); }
   }
 
-  @if $lap-start != false {
-    @include lap-and-up {
-      @include grid-setup("lap-");
-    }
+  @if $lap-start {
+    @include lap-and-up { @include grid-setup("lap-"); }
   }
 
-  @if $desk-start != false {
-    @include desk-and-up {
-      @include grid-setup("desk-");
-    }
+  @if $desk-start {
+    @include desk-and-up { @include grid-setup("desk-"); }
   }
 
-  @if $wall-start != false {
-    @include wall-and-up {
-      @include grid-setup("wall-");
-    }
+  @if $wall-start {
+    @include wall-and-up { @include grid-setup("wall-"); }
   }
 } @else { // Not responsive
-  @include lap-and-up {
-    // Initializes widths w/o namespace
-    @include grid-setup();
-  }
+  // Initializes widths w/o namespace
+  @include lap-and-up { @include grid-setup; }
 }

@@ -2,9 +2,7 @@
 //  $FORMS
 //------------------------------------//
 
-form {
-  margin: 0;
-}
+form { margin: 0; }
 
 fieldset {
   padding: 0;
@@ -18,9 +16,7 @@ legend {
 }
 
 // Override content-box in Normalize (* isn't specific enough)
-input[type="search"] {
-  @include box-sizing(border-box);
-}
+input[type="search"] { @include box-sizing(border-box); }
 
 // Position radios and checkboxes better
 input[type="radio"],
@@ -40,16 +36,12 @@ input[type="range"] {
 
 // Make multiple select elements height not fixed
 select[multiple],
-select[size] {
-  height: auto;
-}
+select[size] { height: auto; }
 
 // Focus for file, radio, and checkbox
 input[type="file"]:focus,
 input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  @include tab-focus();
-}
+input[type="checkbox"]:focus { @include tab-focus; }
 
 
 // Common form controls
@@ -89,12 +81,10 @@ input[type="checkbox"]:focus {
   @include transition(border-color ease-in-out .15s);
 
   // Customize the `:focus` state to imitate native WebKit styles
-  @include form-control-focus();
+  @include form-control-focus;
 
   // Placeholder
-  @include placeholder() {
-    color: $primary;
-  }
+  @include placeholder { color: $primary; }
 
   // Disabled and read-only inputs
   &[disabled],
@@ -148,9 +138,7 @@ input[type="checkbox"],
 .radio,
 .checkbox {
   &[disabled],
-  fieldset[disabled] & {
-    cursor: not-allowed;
-  }
+  fieldset[disabled] & { cursor: not-allowed; }
 }
 
 // Form control validation states

@@ -4,14 +4,10 @@
 
 
 // Clearfix
-.cf {
-  @include clearfix();
-}
+.cf { @include clearfix; }
 
 // Image replacement
-.ir {
-  @include hide-text();
-}
+.ir { @include hide-text; }
 
 
 // Hide from screenreaders and browsers

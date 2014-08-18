@@ -3,9 +3,7 @@
 //------------------------------------//
 
 @mixin push-setup($namespace: "") {
-  @include grid-setup(
-    "push--" + $namespace, left
-  );
+  @include grid-setup("push--" + $namespace, left);
 }
 
 @if $push {
@@ -14,38 +12,28 @@
 
   @if $responsive {
 
-    @include push-setup();
+    @include push-setup;
 
     @if $responsive-push-pull {
 
-      @if $hand-start != false {
-        @include hand-and-up {
-          @include push-setup("hand-");
-        }
+      @if $hand-start {
+        @include hand-and-up { @include push-setup("hand-"); }
       }
 
-      @if $lap-start != false {
-        @include lap-and-up {
-          @include push-setup("lap-");
-        }
+      @if $lap-start {
+        @include lap-and-up { @include push-setup("lap-"); }
       }
 
-      @if $desk-start != false {
-        @include desk-and-up {
-          @include push-setup("desk-");
-        }
+      @if $desk-start {
+        @include desk-and-up { @include push-setup("desk-"); }
       }
 
-      @if $wall-start != false {
-        @include wall-and-up {
-          @include push-setup("wall-");
-        }
+      @if $wall-start {
+        @include wall-and-up { @include push-setup("wall-"); }
       }
     }
   }
   @else {
-    @include lap-and-up {
-      @include push-setup();
-    }
+    @include lap-and-up { @include push-setup; }
   }
 }

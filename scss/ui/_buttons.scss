@@ -17,9 +17,7 @@
 
   &,
   &:hover,
-  &:focus {
-    text-decoration: none;
-  }
+  &:focus { text-decoration: none; }
 
   &.disabled,
   &[disabled] {

@@ -13,14 +13,10 @@ a {
   color: $primary;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
+  &:hover { text-decoration: underline; }
 }
 
-i {
-  font-style: normal;
-}
+i { font-style: normal; }
 
 h1, .h1 {
   @include rem(font-size, 1.875);
@@ -42,19 +38,11 @@ h4, .h4 {
 }
 
 @include lap-and-up {
-  h1, .h1 {
-    @include rem(font-size, 3.6);
-  }
+  h1, .h1 { @include rem(font-size, 3.6); }
 
-  h2, .h2 {
-    @include rem(font-size, 2.4);
-  }
+  h2, .h2 { @include rem(font-size, 2.4); }
 
-  h3, .h3 {
-    @include rem(font-size, 1.5);
-  }
+  h3, .h3 { @include rem(font-size, 1.5); }
 
-  h4, .h4 {
-    @include rem(font-size, 1.2);
-  }
+  h4, .h4 { @include rem(font-size, 1.2); }
 }
