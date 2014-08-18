@@ -4,9 +4,9 @@
 
 $legacy-ie: false !default;
 
-// Include CSS Reset or normalize?
-$reset:     false;
-$normalize: true;
+// To select Reset or Normalize, see _manifest.scss.
+$reset:     false !default;
+$normalize: false !default;
 
 // Include push/pull styles?
 $push: true;

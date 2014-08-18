@@ -1,7 +1,10 @@
 @import "compass";
+
 @import "vars";
-@import "base/reset";
-@import "base/normalize";
+
+// Uncomment one of these lines to use either Reset or Normalize:
+// @import "vendor/reset"; $reset: true;
+@import "vendor/normalize"; $normalize: true;
 
 @import "base/functions";
 @import "base/mixins";
