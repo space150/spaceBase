@@ -42,5 +42,5 @@
 }
 
 .v-list > li {
-  margin-top: $half-spacing-unit / 2;
+  @include rem(margin-top, $half-spacing-unit / 2, $base-font-size--mobile);
 }
