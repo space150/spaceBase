@@ -15,6 +15,13 @@
   }
 }
 
+// Clear grid floats
+@mixin n-up($number) {
+  &:nth-child(#{$number}n + 1) {
+    clear: left;
+  }
+}
+
 @mixin inline-block() {
   display: inline-block;
   *display: inline;
