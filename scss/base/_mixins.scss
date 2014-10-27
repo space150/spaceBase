@@ -24,7 +24,7 @@
 // Clear grid float clears
 @mixin clear-n-up($number) {
   &:nth-child(#{$number}n + 1) {
-    clear: initial;
+    clear: none;
   }
 }
 
