@@ -21,6 +21,12 @@
     clear: left;
   }
 }
+// Clear grid float clears
+@mixin clear-n-up($number) {
+  &:nth-child(#{$number}n + 1) {
+    clear: none;
+  }
+}
 
 @mixin inline-block() {
   display: inline-block;
