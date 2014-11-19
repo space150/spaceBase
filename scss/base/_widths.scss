@@ -94,21 +94,21 @@ $grid-widths: (
   @include grid-setup;
 
   @if $hand-start {
-    @include hand-and-up { @include grid-setup("hand-"); }
+    @include media-query(hand-and-up) { @include grid-setup("hand-"); }
   }
 
   @if $lap-start {
-    @include lap-and-up { @include grid-setup("lap-"); }
+    @include media-query(lap-and-up) { @include grid-setup("lap-"); }
   }
 
   @if $desk-start {
-    @include desk-and-up { @include grid-setup("desk-"); }
+    @include media-query(desk-and-up) { @include grid-setup("desk-"); }
   }
 
   @if $wall-start {
-    @include wall-and-up { @include grid-setup("wall-"); }
+    @include media-query(wall-and-up) { @include grid-setup("wall-"); }
   }
 } @else { // Not responsive
   // Initializes widths w/o namespace
-  @include lap-and-up { @include grid-setup; }
+  @include media-query(lap-and-up) { @include grid-setup; }
 }

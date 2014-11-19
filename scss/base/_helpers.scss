@@ -42,7 +42,7 @@
 
 
 // Responsive visibility helpers
-@include below-hand {
+@include media-query(below-hand) {
   .hidden-below-hand { display: none; }
 }
 
@@ -50,7 +50,7 @@
   .hidden-hand-and-up { display: none; }
 }
 
-@include below-lap {
+@include media-query(below-lap) {
   .hidden-below-lap { display: none; }
 }
 
@@ -58,11 +58,11 @@
   .hidden-lap-and-up { display: none; }
 }
 
-@include below-desk {
+@include media-query(below-desk) {
   .hidden-below-desk { display: none; }
 }
 
-@include desk-and-up {
+@include media-query(desk-and-up) {
   .hidden-desk-and-up { display: none; }
 }
 
