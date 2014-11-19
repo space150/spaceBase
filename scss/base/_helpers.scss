@@ -46,7 +46,7 @@
   .hidden-below-hand { display: none; }
 }
 
-@include hand-and-up {
+@include media-query(hand-and-up) {
   .hidden-hand-and-up { display: none; }
 }
 
@@ -54,7 +54,7 @@
   .hidden-below-lap { display: none; }
 }
 
-@include lap-and-up {
+@include media-query(lap-and-up) {
   .hidden-lap-and-up { display: none; }
 }
 

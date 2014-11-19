@@ -1,34 +1,78 @@
 @import "vars";
 @import "base/mixins";
 
-@mixin tests {
-  /* hand-and-up */
-  @include hand-and-up { div { display: none; } }
-  /* lap-and-up */
-  @include lap-and-up  { div { display: none; } }
-  /* desk-and-up */
-  @include desk-and-up { div { display: none; } }
-  /* wall-and-up */
-  @include wall-and-up { div { display: none; } }
-  /* below-lap */
-  @include below-desk  { div { display: none; } }
-  /* below-lap */
-  @include below-hand  { div { display: none; } }
-  /* below-lap */
-  @include below-lap   { div { display: none; } }
+@include media-query(lap-and-up) {
+  div { display: none; }
+}
+@include media-query(hand-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-up) {
+  div { display: none; }
+}
+@include media-query(wall-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-down) {
+  div { display: none; }
+}
+@include media-query(hand-and-down) {
+  div { display: none; }
+}
+@include media-query(lap-and-down) {
+  div { display: none; }
 }
 
-/* NORMAL */
-@include tests;
-
-/* LEGACY-IE */
+// LEGACY-IE
 $legacy-ie: true;
-@include tests;
 
-/* BREAKPOINTS SET TO FALSE */
+@include media-query(lap-and-up) {
+  div { display: none; }
+}
+@include media-query(hand-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-up) {
+  div { display: none; }
+}
+@include media-query(wall-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-down) {
+  div { display: none; }
+}
+@include media-query(hand-and-down) {
+  div { display: none; }
+}
+@include media-query(lap-and-down) {
+  div { display: none; }
+}
+
+// BREAKPOINTS SET TO FALSE
 $legacy-ie:  false;
 $hand-start: false;
 $lap-start:  false;
 $desk-start: false;
 $wall-start: false;
-@include tests;
+
+@include media-query(lap-and-up) {
+  div { display: none; }
+}
+@include media-query(hand-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-up) {
+  div { display: none; }
+}
+@include media-query(wall-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-down) {
+  div { display: none; }
+}
+@include media-query(hand-and-down) {
+  div { display: none; }
+}
+@include media-query(lap-and-down) {
+  div { display: none; }
+}
