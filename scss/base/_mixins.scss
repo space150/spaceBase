@@ -192,8 +192,8 @@
 // lap-and-up     -  laptops and up
 // desk-and-up    -  desktops and up
 // wall-and-up    -  widescreen desktops and up
-// lap-and-down   -  smaller than laptops
-// hand-and-down  -  isolates phones
+// below-lap      -  smaller than laptops
+// below-hand     -  isolates phones
 //
 // Without one of these parameters the mixin will accept a custom media query.
 //
@@ -212,11 +212,11 @@
 
     @else if $media-query == "wall-and-up" {}
 
-    @else if $media-query == "desk-and-down" {}
+    @else if $media-query == "below-desk" {}
 
-    @else if $media-query == "lap-and-down" {}
+    @else if $media-query == "below-lap" {}
 
-    @else if $media-query == "hand-and-down" {}
+    @else if $media-query == "below-hand" {}
 
     // include custom breakpoints
     @else {
@@ -255,21 +255,21 @@
       @else { @content; }
     }
 
-    @else if $media-query == "desk-and-down" {
+    @else if $media-query == "below-desk" {
       @if $desk-start != false {
         @media only screen and (max-width: ($desk-start - 1px)) { @content; }
       }
       @else {}
     }
 
-    @else if $media-query == "lap-and-down" {
+    @else if $media-query == "below-lap" {
       @if $lap-start != false {
         @media only screen and (max-width: ($lap-start - 1px)) { @content; }
       }
       @else {}
     }
 
-    @else if $media-query == "hand-and-down" {
+    @else if $media-query == "below-hand" {
       @if $hand-start != false {
         @media only screen and (max-width: ($hand-start - 1px)) { @content; }
       }

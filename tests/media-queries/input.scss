@@ -13,13 +13,13 @@
 @include media-query(wall-and-up) {
   div { display: none; }
 }
-@include media-query(desk-and-down) {
+@include media-query(below-desk) {
   div { display: none; }
 }
-@include media-query(hand-and-down) {
+@include media-query(below-hand) {
   div { display: none; }
 }
-@include media-query(lap-and-down) {
+@include media-query(below-lap) {
   div { display: none; }
 }
 
@@ -38,13 +38,13 @@ $legacy-ie: true;
 @include media-query(wall-and-up) {
   div { display: none; }
 }
-@include media-query(desk-and-down) {
+@include media-query(below-desk) {
   div { display: none; }
 }
-@include media-query(hand-and-down) {
+@include media-query(below-hand) {
   div { display: none; }
 }
-@include media-query(lap-and-down) {
+@include media-query(below-lap) {
   div { display: none; }
 }
 
@@ -67,12 +67,12 @@ $wall-start: false;
 @include media-query(wall-and-up) {
   div { display: none; }
 }
-@include media-query(desk-and-down) {
+@include media-query(below-desk) {
   div { display: none; }
 }
-@include media-query(hand-and-down) {
+@include media-query(below-hand) {
   div { display: none; }
 }
-@include media-query(lap-and-down) {
+@include media-query(below-lap) {
   div { display: none; }
 }
