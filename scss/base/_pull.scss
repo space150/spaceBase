@@ -17,23 +17,23 @@
     @if $responsive-push-pull {
 
       @if $hand-start {
-        @include hand-and-up { @include pull-setup("hand-"); }
+        @include media-query(hand-and-up) { @include pull-setup("hand-"); }
       }
 
       @if $lap-start {
-        @include lap-and-up { @include pull-setup("lap-"); }
+        @include media-query(lap-and-up) { @include pull-setup("lap-"); }
       }
 
       @if $desk-start {
-        @include desk-and-up { @include pull-setup("desk-"); }
+        @include media-query(desk-and-up) { @include pull-setup("desk-"); }
       }
 
       @if $wall-start {
-        @include wall-and-up { @include pull-setup("wall-"); }
+        @include media-query(wall-and-up) { @include pull-setup("wall-"); }
       }
     }
   }
   @else {
-    @include lap-and-up { @include pull-setup; }
+    @include media-query(lap-and-up) { @include pull-setup; }
   }
 }
