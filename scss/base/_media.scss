@@ -1,6 +1,6 @@
-/*------------------------------------*\
-    $MEDIA
-\*------------------------------------*/
+//------------------------------------//
+//  $MEDIA
+//------------------------------------//
 
 // Base Object
 .media { @include clearfix; }
@@ -8,25 +8,26 @@
 .media__item {
   float: left;
   margin-right: 1em;
-}
 
-.media__item {
-  img, video, iframe, object { display: block; }
+  img,
+  video,
+  iframe,
+  object { display: block; }
 }
 
 .media__body,
 .media__body > :last-child { margin-bottom: 0; }
 
 
-/**
- * EXTENSIONS
- */
+//
+// EXTENSIONS
+//
 
 // FLIP
 .media--flip > .media__item {
   float: right;
-  margin-right: 0;
   margin-left: $base-spacing-unit;
+  margin-right: 0;
 }
 
 // NOWRAP
@@ -45,7 +46,7 @@
   }
 
   .media__item {
-   padding-right: $base-spacing-unit;
+    padding-right: $base-spacing-unit;
 
     img {
       width: auto !important;

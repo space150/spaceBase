@@ -1,6 +1,6 @@
-/*------------------------------------*\
-    $ISLAND
-\*------------------------------------*/
+//------------------------------------//
+//  $ISLAND
+//------------------------------------//
 
 // Harry Robert's "island"
 .island,
@@ -8,10 +8,11 @@
 .landmark {
   display: block;
   @include rem(margin-bottom, $base-spacing-unit, $base-font-size--mobile);
-  @include clearfix();
+  @include clearfix;
   .islet & {
     @include rem(margin-bottom, $half-spacing-unit, $base-font-size--mobile);
   }
+
   > :last-child { margin-bottom: 0; }
 }
 

@@ -1,10 +1,10 @@
-/*------------------------------------*\
-    $BUTTONS
-\*------------------------------------*/
+//------------------------------------//
+//  $BUTTONS
+//------------------------------------//
 
 .btn {
   margin: 0;
-  padding: 0.4em 1em;
+  padding: .4em 1em;
   line-height: 1.6em;
   text-align: center;
   vertical-align: middle;
@@ -17,9 +17,7 @@
 
   &,
   &:hover,
-  &:focus {
-    text-decoration: none;
-  }
+  &:focus { text-decoration: none; }
 
   &.disabled,
   &[disabled] {

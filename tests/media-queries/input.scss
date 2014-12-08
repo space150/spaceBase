@@ -1,0 +1,78 @@
+@import "vars";
+@import "base/mixins";
+
+@include media-query(lap-and-up) {
+  div { display: none; }
+}
+@include media-query(hand-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-up) {
+  div { display: none; }
+}
+@include media-query(wall-and-up) {
+  div { display: none; }
+}
+@include media-query(below-desk) {
+  div { display: none; }
+}
+@include media-query(below-hand) {
+  div { display: none; }
+}
+@include media-query(below-lap) {
+  div { display: none; }
+}
+
+// LEGACY-IE
+$legacy-ie: true;
+
+@include media-query(lap-and-up) {
+  div { display: none; }
+}
+@include media-query(hand-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-up) {
+  div { display: none; }
+}
+@include media-query(wall-and-up) {
+  div { display: none; }
+}
+@include media-query(below-desk) {
+  div { display: none; }
+}
+@include media-query(below-hand) {
+  div { display: none; }
+}
+@include media-query(below-lap) {
+  div { display: none; }
+}
+
+// BREAKPOINTS SET TO FALSE
+$legacy-ie:  false;
+$hand-start: false;
+$lap-start:  false;
+$desk-start: false;
+$wall-start: false;
+
+@include media-query(lap-and-up) {
+  div { display: none; }
+}
+@include media-query(hand-and-up) {
+  div { display: none; }
+}
+@include media-query(desk-and-up) {
+  div { display: none; }
+}
+@include media-query(wall-and-up) {
+  div { display: none; }
+}
+@include media-query(below-desk) {
+  div { display: none; }
+}
+@include media-query(below-hand) {
+  div { display: none; }
+}
+@include media-query(below-lap) {
+  div { display: none; }
+}

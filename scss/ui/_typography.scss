@@ -1,55 +1,48 @@
-/*------------------------------------*\
-    $TYPOGRAPHY
-\*------------------------------------*/
+//------------------------------------//
+//  $TYPOGRAPHY
+//------------------------------------//
 
 html {
   font: #{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-body;
   color: $black;
   background: $white;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a {
   color: $primary;
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+
+  &:hover { text-decoration: underline; }
 }
 
-i {
-  font-style: normal;
-}
+i { font-style: normal; }
 
 h1, .h1 {
   @include rem(font-size, 1.875);
   line-height: 1;
 }
+
 h2, .h2 {
   @include rem(font-size, 1.25);
   line-height: 1.2;
 }
+
 h3, .h3 {
   @include rem(font-size, 1);
   line-height: 1.4;
 }
+
 h4, .h4 {
-  @include rem(font-size, 0.875);
+  @include rem(font-size, .875);
 }
 
 @include media-query(lap-and-up) {
+  h1, .h1 { @include rem(font-size, 3.6); }
 
-  h1, .h1 {
-    @include rem(font-size, 3.6);
-  }
-  h2, .h2 {
-    @include rem(font-size, 2.4);
-  }
-  h3, .h3 {
-    @include rem(font-size, 1.5);
-  }
-  h4, .h4 {
-    @include rem(font-size, 1.2);
-  }
+  h2, .h2 { @include rem(font-size, 2.4); }
 
+  h3, .h3 { @include rem(font-size, 1.5); }
+
+  h4, .h4 { @include rem(font-size, 1.2); }
 }

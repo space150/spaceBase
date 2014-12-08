@@ -1,0 +1,15 @@
+---
+exclude:
+  - "scss/vendor/_reset.scss"
+  - "scss/vendor/_normalize.scss"
+  - "scss/_tests/*"
+
+linters:
+  Comment:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
+  SingleLinePerSelector:
+    enabled: false
+  StringQuotes:
+    enabled: false

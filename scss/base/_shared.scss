@@ -1,15 +1,13 @@
-/*------------------------------------*\
-    $SHARED
-\*------------------------------------*/
+//------------------------------------//
+//  $SHARED
+//------------------------------------//
 
 // All elements will adopt `box-sizing:border-box;`
 // as per paulirish.com/2012/box-sizing-border-box-ftw
-*{
+* {
   &,
   &:before,
-  &:after {
-    @include box-sizing(border-box);
-  }
+  &:after { @include box-sizing(border-box); }
 }
 
 
@@ -18,9 +16,7 @@ audio,
 canvas,
 img,
 svg,
-video {
-  vertical-align: middle;
-}
+video { vertical-align: middle; }
 
 // Fluid images
 img {
@@ -30,13 +26,10 @@ img {
 
 // Non-fluid images if you specify `width` and/or `height` attributes
 img[width],
-img[height] {
-  max-width: none;
-}
+img[height] { max-width: none; }
 
 
 @if $reset != true {
-
   // Where `margin-bottom` is concerned, this value will be the same as the
   // base line-height. This allows us to keep a consistent vertical rhythm.
   // As per: csswizardry.com/2012/06/single-direction-margin-declarations
@@ -48,9 +41,7 @@ img[height] {
   pre {
     margin-top: 0;
     @include rem(margin-bottom, $base-spacing-unit, $base-font-size--mobile);
-    ul,ol {
-      margin-bottom: 0;
-    }
+    ul,ol { margin-bottom: 0; }
   }
 
   // Where `margin-left` is concerned, we want to try and indent certain elements
@@ -59,5 +50,4 @@ img[height] {
     @include rem(margin-left, $base-spacing-unit, $base-font-size--mobile);
     padding: 0;
   }
-
 }
