@@ -69,7 +69,7 @@ $grid-widths: (
     $selectors: null;
     $percent: 100% /(1 / $fraction);
     @each $width in $widths {
-      $selectors: append($selectors, ".#{$namespace}#{$width}", "comma");
+      $selectors: append($selectors, unquote(".#{$namespace}#{$width}"), "comma");
     }
     #{$selectors} { #{$property}: $percent; }
   }
