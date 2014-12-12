@@ -13,7 +13,7 @@
   cursor: pointer;
   @include inline-block;
   @include rem(font-size, 1);
-  @include border-radius(0);
+  border-radius: 0;
 
   &,
   &:hover,
@@ -22,6 +22,6 @@
   &.disabled,
   &[disabled] {
     cursor: not-allowed;
-    @include opacity(.65);
+    opacity: 0.65;
   }
 }

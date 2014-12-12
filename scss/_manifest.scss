@@ -1,10 +1,12 @@
+// Choose either Compass or Bourbon:
 @import "compass";
+// @import "bourbon/bourbon";
+
+// Choose either Reset or Normalize:
+@import "vendor/normalize"; $normalize: true;
+// @import "vendor/reset"; $reset: true;
 
 @import "vars";
-
-// Uncomment one of these lines to use either Reset or Normalize:
-// @import "vendor/reset"; $reset: true;
-@import "vendor/normalize"; $normalize: true;
 
 @import "base/functions";
 @import "base/mixins";
