@@ -43,7 +43,6 @@ spaceBase has some opinions on JavaScript setup. You can copy the starter folder
 
 ```
 fonts/
-images/
 scss/
   base/
     ...
