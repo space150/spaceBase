@@ -11,9 +11,9 @@ spaceBase is meant to be copied into your project for further modifications. The
 
 After you download the spaceBase ZIP from the repo, unzip it and copy its contents into your own project.
 
-spaceBase is built with Sass, so you'll need a Sass compiler (Compass or Bourbon). A Compass `config.rb` is included in the spaceBase folder you can use for reference.
+spaceBase is built with Sass, so you'll need a Sass compiler such as Compass. A Compass `config.rb` is included in the spaceBase folder you can use for reference.
 
-Installing Ruby, Sass, Compass and Bourbon is outside the scope of this document.
+Installing Ruby, Sass, and Compass is outside the scope of this document.
 
 Your editor should be setup with an EditorConfig plugin, so that certain basic code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 
@@ -36,3 +36,11 @@ scss/
 ```
 
 Read the [CSS Architecture Overview](scss/README.md) for details on these files.
+
+### Credits
+
+* [Harry Robert’s Inuit.css](https://github.com/csswizardry/inuit.css)
+* [Bootstrap](http://getbootstrap.com)
+* [HTML5 Boilerplate](http://html5boilerplate.com)
+* [Normalize.css](http://necolas.github.io/normalize.css)
+* [Eric Meyer’s CSS Reset](http://meyerweb.com/eric/tools/css/reset)
