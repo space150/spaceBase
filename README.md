@@ -1,43 +1,23 @@
 spaceBase
 =========
 
-Front-end starter files for new projects.
+### spaceBase is a Sass-based responsive CSS framework.
 
-### spaceBase is a boilerplate
-
-Unlike many other SCSS libraries, spaceBase is not intended to be included once and never touched. The goal with spaceBase is a boilerplate layer that you can build on, modify, tweak, and tailor to your needs.
+Many CSS frameworks are meant to be included and left alone. But spaceBase is a boilerplate layer that can be built upon and tailored for your needs. It combines best practices for today’s responsive web with the core components we use on every project. Consider it the launch pad for your adventures into cyberspace.
 
 spaceBase is meant to be copied into your project for further modifications. The SCSS files in `scss/base/` are usually not modified much, but the files in `scss/ui/` are meant to be completely tailored to your project.
 
-### Setting Up spaceBase
+### Getting Started
 
-After you download the latest spaceBase ZIP from the repo, you'll unzip it and copy folders into your own project.
+After you download the spaceBase ZIP from the repo, unzip it and copy its contents into your own project.
 
-#### Stylesheets
+spaceBase is built with Sass, so you'll need a Sass compiler (Compass or Bourbon). A Compass `config.rb` is included in the spaceBase folder you can use for reference.
 
-Copy the following to your project:
-
-```
-fonts/
-images/
-scss/
-.editorconfig
-```
-
-spaceBase is built with Sass and Compass, so you'll need a Sass compiler and the Compass gem. A Compass `config.rb` is included in the spaceBase folder you can use for reference.
-
-Installing Ruby, Sass, and Compass is outside the scope of this document.
-
-spaceBase works well with static web tools like Middleman or Jekyll, or simple build tools (like a simple Gruntfile).
+Installing Ruby, Sass, Compass and Bourbon is outside the scope of this document.
 
 Your editor should be setup with an EditorConfig plugin, so that certain basic code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 
 You can remove `scss/README.md`.
-
-#### JavaScripts
-
-spaceBase has some opinions on JavaScript setup. You can copy the starter folder `javascripts/` if you like.
-
 
 ### The spaceBase structure
 
@@ -50,9 +30,9 @@ scss/
     ...
   _manifest.scss
   _vars.scss
-  application-ie.css.scss
-  application.css.scss
-  styleguide.css.scss
+  application-ie.scss
+  application.scss
+  styleguide.scss
 ```
 
 Read the [CSS Architecture Overview](scss/README.md) for details on these files.
