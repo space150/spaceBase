@@ -1,5 +1,3 @@
-![](images/logo.jpg)
-
 spaceBase
 =========
 
