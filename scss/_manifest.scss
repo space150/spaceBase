@@ -2,11 +2,11 @@
 @import "compass";
 // @import "bourbon/bourbon";
 
+@import "vars";
+
 // Choose either Reset or Normalize:
 @import "vendor/normalize"; $normalize: true;
 // @import "vendor/reset"; $reset: true;
-
-@import "vars";
 
 @import "base/functions";
 @import "base/mixins";
