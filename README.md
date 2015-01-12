@@ -44,3 +44,9 @@ Read the [CSS Architecture Overview](scss/README.md) for details on these files.
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css)
 * [Eric Meyer’s CSS Reset](http://meyerweb.com/eric/tools/css/reset)
+
+### License
+
+spaceBase is free to use under the [MIT License](LICENSE.md).
+
+Copyright 2015 [space150](http://www.space150.com)
