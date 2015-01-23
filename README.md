@@ -7,6 +7,10 @@ Many CSS frameworks are meant to be included and left alone. But spaceBase is a 
 
 spaceBase is meant to be copied into your project for further modifications. The SCSS files in `scss/base/` are usually not modified much, but the files in `scss/ui/` are meant to be completely tailored to your project.
 
+**Coming Soon**
+
+Documentation is currently in orbit. In the meantime, feel free to explore!
+
 ### Getting Started
 
 After you download the spaceBase ZIP from the repo, unzip it and copy its contents into your own project.
