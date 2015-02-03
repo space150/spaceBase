@@ -133,20 +133,12 @@
     // Pixel fallbacks.
     // $fallback should be $base-font-size or $base-font-size--mobile.
     @if $fallback {
-      #{$property}: map(
-        force-unit,
-        map(multiply, $rem-values, $fallback),
-        px
-      );
+      #{$property}: map(multiply, $rem-values, $fallback);
     }
-    #{$property}: map(force-unit, $rem-values, rem);
+    #{$property}: map(multiply, $rem-values, 1rem);
   } @else {
     // Calculate pixel values for legacy browsers that don't support rems.
-    #{$property}: map(
-      force-unit,
-      map(multiply, $rem-values, $base-font-size),
-      px
-    );
+    #{$property}: map(multiply, $rem-values, $base-font-size);
   }
 }
 
