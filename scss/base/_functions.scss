@@ -21,19 +21,3 @@
     @return $a;
   }
 }
-
-// strip-unit
-//   Returns
-//   from https://github.com/sass/sass/issues/533#issuecomment-11675408
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
-
-// force-unit
-//   Forces the value's unit to the given one.
-//   Returns 0 without units.
-@function force-unit($value, $unit) {
-  // Remove any unit the value may have.
-  $value: strip-unit($value);
-  @return if($value == 0, 0, $value + $unit);
-}
