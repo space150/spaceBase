@@ -3,7 +3,7 @@
   "homepage": "http://spacebase.space150.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/space150/spaceBase"
+    "url": "git://github.com/space150/spaceBase.git"
   },
   "authors": [
     "space150 (http://www.space150.com)"
