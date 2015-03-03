@@ -77,3 +77,13 @@
 .text-upper { text-transform: uppercase !important; }
 .text-strong { font-weight: bold !important; }
 .text-nowrap { white-space: nowrap !important; }
+
+.display-table {
+  display: table;
+  width: 100%;
+}
+.display-row { display: table-row; }
+.display-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
