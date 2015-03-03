@@ -17,13 +17,13 @@
 
 // Clear grid floats
 @mixin n-up($number) {
-  &:nth-child(#{$number}n + 1) {
+  &:nth-of-type(#{$number}n + 1) {
     clear: left;
   }
 }
 // Clear grid float clears
 @mixin clear-n-up($number) {
-  &:nth-child(#{$number}n + 1) {
+  &:nth-of-type(#{$number}n + 1) {
     clear: none;
   }
 }
