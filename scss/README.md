@@ -42,7 +42,7 @@ Global variables are kept in the `_vars.scss` partial. This includes things like
 
 ## The Grid
 
-The grid structure comes almost directly from [inuit.css](http://inuitcss.com/2012/12/building-grid-systems-with-inuit-css/) with some minor modifications. It works on proportional sizes, not "columns" and "rows".
+The grid structure comes almost directly from [inuit.css](https://github.com/csswizardry/inuit.css) with some minor modifications. It works on proportional sizes, not "columns" and "rows".
 
 Example:
 ~~~html
