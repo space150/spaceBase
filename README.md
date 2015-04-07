@@ -21,7 +21,11 @@ Installing Ruby, Sass, and Compass is outside the scope of this document.
 
 Your editor should be setup with an EditorConfig plugin, so that certain basic code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 
-You can remove `tests/` and `scss/README.md`.
+You can remove:
+- `tests/`
+- `scss/README.md`
+- `Gemfile`
+- `Gemfile.lock`
 
 ### The spaceBase structure
 
