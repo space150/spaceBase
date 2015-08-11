@@ -15,12 +15,15 @@
     "sass",
     "responsive",
     "front-end",
-    "framework"
+    "framework",
+    "space150"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     ".sass-cache",
-    "tests"
+    "tests",
+    "Rakefile",
+    "Gemfile*"
   ]
 }
