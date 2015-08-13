@@ -4,10 +4,6 @@
 
 Mobile first. Fallback for legacy IE.
 
-## Compiling
-
-spaceBase uses Compass by default, but can be changed to Bourbon in `_manifest.scss`. Running `compass watch` (while in the parent directory of `scss/`) will watch for changes and compile your CSS properly.
-
 
 ## Directories
 
