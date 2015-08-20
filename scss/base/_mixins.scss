@@ -28,12 +28,6 @@
   }
 }
 
-@mixin inline-block {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-}
-
 // Image replacement
 @mixin hide-text {
   border: 0;
