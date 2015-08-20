@@ -4,15 +4,11 @@
 
 // Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
 @mixin clearfix {
-  *zoom: 1;
-
-  &:before,
   &:after {
     display: table;
     content: "";
+    clear: both;
   }
-
-  &:after { clear: both; }
 }
 
 // Clear grid floats
