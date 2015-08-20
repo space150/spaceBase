@@ -2,7 +2,7 @@
 //  $MIXINS
 //------------------------------------//
 
-// Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
+// Micro clearfix
 @mixin clearfix {
   &:after {
     display: table;
