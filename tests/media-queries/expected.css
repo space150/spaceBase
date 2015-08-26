@@ -1,66 +1,51 @@
 /*
-  spaceBase version: 1.0
-  http://spacebase.space150.com
+Error: File to import not found or unreadable: vars.
+        on line 1 of media-queries/input.scss
+
+1: @import "vars";
+2: @import "base/mixins";
+3: 
+4: @include media-query(lap-and-up) {
+5:   div { display: none; }
+6: }
+
+Backtrace:
+media-queries/input.scss:1
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/import_node.rb:45:in `import'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/stack.rb:79:in `block in with_base'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/stack.rb:115:in `with_frame'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/stack.rb:79:in `with_base'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/sass_scss.rb:407:in `run'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/base.rb:52:in `parse'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/base.rb:19:in `parse!'
+/Users/mike/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/sass-3.4.14/bin/sass:13:in `<top (required)>'
+/Users/mike/.rbenv/versions/2.2.2/bin/sass:23:in `load'
+/Users/mike/.rbenv/versions/2.2.2/bin/sass:23:in `<main>'
 */
-@media only screen and (min-width: 768px) {
-  div {
-    display: none;
-  }
-}
-@media only screen and (min-width: 480px) {
-  div {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  div {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  div {
-    display: none;
-  }
-}
-@media only screen and (max-width: 1023px) {
-  div {
-    display: none;
-  }
-}
-@media only screen and (max-width: 479px) {
-  div {
-    display: none;
-  }
-}
-@media only screen and (max-width: 767px) {
-  div {
-    display: none;
-  }
-}
-div {
-  display: none;
-}
-
-div {
-  display: none;
-}
-
-div {
-  display: none;
-}
-
-div {
-  display: none;
-}
-
-div {
-  display: none;
-}
-
-div {
-  display: none;
-}
-
-div {
-  display: none;
-}
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: vars.\A         on line 1 of media-queries/input.scss\A \A 1: @import \"vars\";\A 2: @import \"base/mixins\";\A 3: \A 4: @include media-query(lap-and-up) {\A 5:   div { display: none; }\A 6: }"; }
