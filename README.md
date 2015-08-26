@@ -15,9 +15,9 @@ Documentation is currently in orbit. In the meantime, feel free to explore!
 
 After you download the spaceBase ZIP from the repo, unzip it and copy its contents into your own project.
 
-spaceBase is built with Sass, so you'll need a Sass compiler such as Compass. A Compass `config.rb` is included in the spaceBase folder you can use for reference.
+spaceBase is built with Sass, so you'll need a a way to compile it.
 
-Installing Ruby, Sass, and Compass is outside the scope of this document.
+Setting up Sass compilation is outside the scope of this document.
 
 Your editor should be setup with an EditorConfig plugin, so that certain basic code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 

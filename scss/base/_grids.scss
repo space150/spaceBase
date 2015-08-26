@@ -42,7 +42,7 @@
     float: left;
     width: 100%;
     @include rem(padding-left, $gutter, $base-font-size--mobile);
-    @include transition(width .15s ease);
+    transition: width .15s ease;
   }
 }
 
