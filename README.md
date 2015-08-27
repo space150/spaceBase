@@ -5,7 +5,7 @@ spaceBase
 
 Many CSS frameworks are meant to be included and left alone. But spaceBase is a boilerplate layer that can be built upon and tailored for your needs. It combines best practices for today’s responsive web with the core components we use on every project. Consider it the launch pad for your adventures into cyberspace.
 
-spaceBase is meant to be copied into your project for further modifications. The SCSS files in `scss/base/` are usually not modified much, but the files in `scss/ui/` are meant to be completely tailored to your project.
+spaceBase is the front-end starter files for any new web project. It sets up your Sass architecture and normalizes your CSS and native HTML elements. It provides the structural groundwork for your application.
 
 **Coming Soon**
 
@@ -13,21 +13,17 @@ Documentation is currently in orbit. In the meantime, feel free to explore!
 
 ### Getting Started
 
-After you download the spaceBase ZIP from the repo, unzip it and copy its contents into your own project.
+1. `$ bower install spacebase` or download the ZIP and copy its contents into your project folder.
+2. Use your favorite Sass compiler to watch changes and compile the files. (Setting up Sass compilation is outside the scope of this document.)
+3. Open scss/_vars.scss to make changes to your global variables.
+4. Start building out your HTML. We've included index.html as a starting point.
+5. scss/base/ is the core of spaceBase. Build your UI layer in scss/ui/
 
-spaceBase is built with Sass, so you'll need a a way to compile it.
-
-Setting up Sass compilation is outside the scope of this document.
-
-Your editor should be setup with an EditorConfig plugin, so that certain basic code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
-
-You can remove:
-- `tests/`
-- `scss/README.md`
-- `Gemfile`
-- `Gemfile.lock`
+Your editor can be setup with EditorConfig so that code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 
 ### The spaceBase structure
+
+Read the [CSS Architecture Overview](scss/README.md) for details on the SCSS files.
 
 ```
 fonts/
@@ -36,14 +32,21 @@ scss/
     ...
   ui/
     ...
+  vendor/
+    ...
   _manifest.scss
   _vars.scss
   application-ie.scss
   application.scss
   styleguide.scss
+stylesheets/
 ```
 
-Read the [CSS Architecture Overview](scss/README.md) for details on these files.
+You can remove:
+- `tests/`
+- `scss/README.md`
+- `Gemfile`
+- `Gemfile.lock`
 
 ### Credits
 
