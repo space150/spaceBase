@@ -1,16 +1,12 @@
 # CSS Architecture Overview
 
-## Philosophy
+## File Structure
 
-Mobile first. Fallback for legacy IE.
+The `scss/` directory contains three folders: Base, UI and Vendor. The files in `scss/base/` are usually not modified much, but the files in `scss/ui/` are meant to be completely tailored to your project.
 
-
-## Directories
-
-The `scss/` directory contains two folders: Base and UI.
-
-- **Base** [avoid editing] contains things like normalize/CSS reset, mixins, helpers, and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes. The grid, widths, lists, blocks, and basic spacing content objects are in here.
-- **UI** [customize this] contains all design-specific styles shared across the application. This folder is free to organize however the project demands. To start, it includes layout, fonts, typography, buttons, and generic print styles.
+- **Base** [avoid editing] contains the grid framework, mixins, helpers and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes.
+- **UI** [customize this] contains all design-specific styles shared across the application. This folder is free to organize however the project demands. To start, it includes fonts, typography, buttons, form elements and generic print styles.
+- **Vendor** [avoid editing] contains Normalize and CSS reset. You can add other vendor files in here.
 
 
 ## Legacy IE Support
@@ -28,21 +24,25 @@ Example:
 <![endif]-->
 ~~~
 
-The only difference between these files is the `$legacy-ie` variable. When set to true, the `media-query()` mixin will only render the content inside the media query breakpoints. The site will thereby display the desktop layout in legacy IE browsers.
+The only difference between these files is the `$legacy-ie` variable. When set to true, the `media-query()` mixin will only render the content inside appropriate media query breakpoints, taking advantage of CSS inheritance. The site will thereby display the desktop layout in legacy browsers that don't support media queries (IE8 and below).
 
 
 ## Variables
 
-Global variables are kept in the `_vars.scss` partial. This includes things like base font styles, colors, breakpoints, and some misc. sizing measurements. All of these variables are used throughout most of the partials. There are a few spots where having some "local" variables are helpful for math and reuse in that particular section. These variables have been prefixed with an underscore so you know that those variables aren't used outside that partial.
+Global variables are kept in the `_vars.scss` partial. This includes things like base font styles, colors, breakpoints and global sizing measurements. All of these variables can be used throughout the rest of the partials.
+
+### The `$base-sizing-unit` Variable
+
+As a means for consistency and good vertical rhythm, many measurements are based off the `base-spacing-unit`, which is equal to the base `line-height-ratio`. This way if you adjust the base font-size or line-height down the road, all proportions are preserved.
 
 
 ## The Grid
 
-The grid structure comes almost directly from [inuit.css](https://github.com/csswizardry/inuit.css) with some minor modifications. It works on proportional sizes, not "columns" and "rows".
+The grid structure comes from v4 of [inuit.css](https://github.com/csswizardry/inuit.css) with some minor modifications. It works on proportionally-sized floats. Each set of grid elements must be wrapped in a `grid-wrapper`. Floats can be reversed by adding `grid-wrapper--rev`, and gutters can be removed by adding `grid-wrapper--full`.
 
 Example:
 ~~~html
-<div class="grid-wrapper">
+<div class="grid-wrapper grid-wrapper--full">
 
     <div class="grid two-thirds">
         ...
@@ -57,9 +57,9 @@ Example:
 
 ### The `$responsive` Variable
 
-If $responsive is set to false, the grid will collapse to 100% on mobile and use the same proportions for all wider breakpoints.
+If $responsive is set to false, the grid will collapse to 100% wide on mobile and only use the  proportional widths for breakpoint `lap` and above.
 
-If $responsive is set to true, the grid proportions will change at different breakpoints with the addition of classes prefixed with the breakpoint.
+If $responsive is set to true, the grid proportions stay constant across all breakpoints. But by adding classes prefixed with the breakpoint name, grid elements can change at different breakpoints, thereby creating a dynamic page layout.
 
 Example:
 ~~~html
@@ -75,7 +75,3 @@ Example:
 
 </div>
 ~~~
-
-### The `$base-sizing-unit` Variable
-
-As a means for consistency and good vertical rhythm as many "measurements" are based off the base-spacing-unit, which is equal to the base line-height. This way if we need to adjust down the road, all proportions are preserved.
