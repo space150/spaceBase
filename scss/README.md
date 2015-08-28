@@ -11,11 +11,11 @@ The `scss/` directory contains three folders: Base, UI and Vendor. The files in 
 
 ## Compilation
 
-All partials are imported into the `_manifest.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. `_manifest.scss` is then imported into the two main stylesheets, `application.scss` and `application-ie.scss`
+All partials are imported into the `_manifest.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. `_manifest.scss` is then imported into the two main stylesheets, `application.scss` and `application-ie.scss`. Set up your Sass compilation to generate these in the `stylesheets/` directory.
 
 ### Legacy IE Support
 
-All partials are compiled into two CSS files in the main `stylesheets/` directory, `application.css` and `application-ie.css`. These should be loaded into the site via conditional comments.
+After compilation you will have two stylesheets, `application.css` and `application-ie.css`. These should be loaded into the site via conditional comments.
 
 Example:
 ~~~html
@@ -29,6 +29,10 @@ Example:
 ~~~
 
 The only difference between these files is the `$legacy-ie` variable. When set to true, the `media-query()` mixin will only render the content inside appropriate media query breakpoints, taking advantage of CSS inheritance. The site will thereby display the desktop layout in legacy browsers that don't support media queries (IE8 and below).
+
+### Styleguide
+
+There is a third stylesheet, `styleguide.css`, used only in `styleguide.html`. This file is the start for your project style guide, including grid examples, color swatches, typography, UI and form elements. What is a [style guide](http://alistapart.com/article/creating-style-guides)?
 
 
 ## Variables
