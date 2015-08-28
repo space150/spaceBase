@@ -7,11 +7,22 @@ Many CSS frameworks are meant to be included and left alone. But spaceBase is a 
 
 spaceBase is the front-end starter files for any new web project. It sets up your Sass architecture and normalizes your CSS and native HTML elements. It provides the structural groundwork for your application.
 
+### Highlights
+
+* Object-oriented CSS
+* Optimized for light speed
+* Common UI components (buttons, lists, media object)
+* Helper classes and mixins
+* Cross-browser form controls
+* Built on REMs, with px fallback
+* Supports modern browsers including IE8+
+
 ### Customizable Features
 
 * Compatible with any Sass compiler
 * Start with Normalize (default) or CSS Reset
 * Scalable, mobile-first grid - choose how robust you want it
+* Base font size for mobile vs desktop
 * Global variables for breakpoints, colors, fonts and more
 
 **Coming Soon**
