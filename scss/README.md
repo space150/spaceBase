@@ -9,7 +9,11 @@ The `scss/` directory contains three folders: Base, UI and Vendor. The files in 
 - **Vendor** [avoid editing] contains Normalize and CSS reset. You can add other vendor files in here.
 
 
-## Legacy IE Support
+## Compilation
+
+All partials are imported into the `_manifest.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. `_manifest.scss` is then imported into the two main stylesheets, `application.scss` and `application-ie.scss`
+
+### Legacy IE Support
 
 All partials are compiled into two CSS files in the main `stylesheets/` directory, `application.css` and `application-ie.css`. These should be loaded into the site via conditional comments.
 
