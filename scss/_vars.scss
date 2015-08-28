@@ -9,9 +9,9 @@
 
 $legacy-ie: false !default;
 
-// To select Reset or Normalize, see _manifest.scss.
-$reset:     false !default;
+// To select Normalize or Reset, see _manifest.scss
 $normalize: false !default;
+$reset:     false !default;
 
 // Include push/pull styles?
 $push: true;
@@ -67,6 +67,6 @@ $state-error:    #b94a48;
 $font-body: Arial, Helvetica, sans-serif;
 $font-head: $font-body;
 
-// Examples for custom @font-face (see _fonts.scss for declaration)
+// Example font stacks using @font-face (see _fonts.scss for declaration)
 //$font-body:  "Source Sans Pro", Arial, Helvetica, sans-serif;
 //$font-head:  "Fontatica4F", Arial, Helvetica, sans-serif;
