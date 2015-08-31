@@ -2,11 +2,11 @@
 
 ## File Structure
 
-The `scss/` directory contains three folders: Base, UI and Vendor. The files in `scss/base/` are usually not modified much, but the files in `scss/ui/` are meant to be completely tailored to your project.
+The `scss/` directory contains three folders: Base, UI and Vendor.
 
-- **Base** [avoid editing] contains the grid framework, mixins, helpers and the "building block" abstractions. Most of the layout and basic visual styles can be achieved with these classes.
-- **UI** [customize this] contains all design-specific styles shared across the application. This folder is free to organize however the project demands. To start, it includes fonts, typography, buttons, form elements and generic print styles.
-- **Vendor** [avoid editing] contains Normalize and CSS reset. You can add other vendor files in here.
+- **Base** contains the "building block" abstractions, namely the grid framework, mixins and helpers. These are core to spaceBase and should not be edited.
+- **UI** contains all project-specific styles shared across the application. These files are meant to be completely tailored to your project. To start, it includes typography, form elements, generic print styles, buttons and other common UI components. Add more partials and  organize them however the project demands.
+- **Vendor** contains Normalize and CSS reset. You can add other vendor files here.
 
 
 ## Compilation
