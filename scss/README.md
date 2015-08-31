@@ -36,16 +36,16 @@ There is a third stylesheet, `styleguide.css`, used only in `styleguide.html`. T
 
 ## Variables
 
-Global variables are kept in the `_vars.scss` partial. This includes things like font styles, colors, breakpoints and base sizing measurements. Use these variables throughout the rest of the project and add more as you see fit.
+Global variables are kept in the `_vars.scss` partial. This includes things like font styles, colors, breakpoints and base sizing measurements. Use these variables throughout the rest of the project and add more as you see fit. `_vars.scss` also contains switches to include or exclude features as you need them.
 
 ### The `$base-sizing-unit` Variable
 
-As a means for consistency and good vertical rhythm, many measurements are based off the `$base-spacing-unit`, which is equal to the base `$line-height-ratio`. This way if you adjust the base font-size or line-height down the road, all proportions are preserved.
+As a means for consistency and good vertical rhythm, many measurements are based off the `$base-spacing-unit`, which is equal to the base `$line-height-ratio`. This way if the `$base-font-size` or `$base-line-height` is adjusted down the road, white space proportions are preserved.
 
 
 ## The Grid
 
-The grid structure comes from version 4 of [inuit.css](https://github.com/csswizardry/inuit.css) with some minor modifications. It works on proportionally-sized floats. By default, grid gutters (the space between grid elements) are equal to the `$base-sizing-unit` but can be changed in `_vars.scss`. Each set of grid elements must be wrapped in a `grid-wrapper`. Floats can be reversed by adding `grid-wrapper--rev`, and gutters can be removed by adding `grid-wrapper--full`.
+The grid structure comes from version 4 of [inuit.css](https://github.com/csswizardry/inuit.css) with some minor modifications. It uses proportionally-sized floats with human readable classnames (i.e. one-half, two-thirds, three-quarters, etc). By default, grid gutters (the space between grid elements) are equal to the `$base-sizing-unit` but can be changed in `_vars.scss`. Each set of grid elements must be wrapped in a `grid-wrapper`. Floats can be reversed by adding `grid-wrapper--rev`, and gutters can be removed by adding `grid-wrapper--full`.
 
 Example:
 ~~~html
@@ -78,5 +78,9 @@ Example:
 
 </div>
 ~~~
+
+### Push and Pull
+
+Push classes move grid items over to the right, creating white space on the left. Pull classes move grid items over to the left, creating white space on the right. To exclude the push/pull styles from the compiled stylesheet, change their variables to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
 
 See the [style guide](../styleguide.html) for more grid examples.
