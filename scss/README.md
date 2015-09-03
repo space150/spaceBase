@@ -1,4 +1,4 @@
-# CSS Architecture Overview
+# SCSS Architecture Overview
 
 ## File Structure
 
@@ -28,24 +28,23 @@ Example:
 <![endif]-->
 ~~~
 
-
 ### Styleguide
 
 There is a third stylesheet, `styleguide.css`, used only in `styleguide.html`. This file is the start for your project style guide, including grid examples, color swatches, typography, UI and form elements. [What is a style guide?](http://alistapart.com/article/creating-style-guides)
 
 
-## Variables
+## Global Variables
 
-Global variables are kept in the `_vars.scss` partial. This includes things like font styles, colors, breakpoints and base sizing measurements. Use these variables throughout the rest of the project and add more as you see fit. `_vars.scss` also contains switches to include or exclude features as you need them.
+Customizable variables are stored in the `_vars.scss` partial. This includes things like font styles, colors, breakpoints and base sizing measurements. Use these variables throughout the rest of the project, and add more as you see fit. `_vars.scss` also contains switches to include or exclude features as you need them.
 
-### The `$base-sizing-unit` Variable
+### Vertical Rhythm and the `$base-sizing-unit`
 
-As a means for consistency and good vertical rhythm, many measurements are based off the `$base-spacing-unit`, which is equal to the base `$line-height-ratio`. This way if the `$base-font-size` or `$base-line-height` is adjusted down the road, white space proportions are preserved.
+As a means for consistency and good vertical rhythm, many measurements are based off the `$base-spacing-unit`, which is equal to the base `$line-height-ratio`. This way if the `$base-font-size` or `$base-line-height` is adjusted down the road, white space proportions are preserved. For example, unless you opt for using CSS Reset, most block-level elements (headings, lists, paragraphs, etc.) will have a bottom margin equal to `$base-spacing-unit`.
 
 
 ## The Grid
 
-The grid structure comes from version 4 of [inuit.css](https://github.com/csswizardry/inuit.css) with some minor modifications. It uses proportionally-sized floats with human readable classnames (i.e. one-half, two-thirds, three-quarters, etc). By default, grid gutters (the space between grid elements) are equal to the `$base-sizing-unit` but can be changed in `_vars.scss`. Each set of grid elements must be wrapped in a `grid-wrapper`. Floats can be reversed by adding `grid-wrapper--rev`, and gutters can be removed by adding `grid-wrapper--full`.
+The grid structure comes from version 4 of [inuit.css](https://github.com/csswizardry/inuit.css) with some modifications. It uses proportionally-sized floats with human readable classnames (i.e. one-half, two-thirds, three-quarters, etc). By default, grid gutters (the space between grid elements) are equal to the `$base-sizing-unit` but can be changed in `_vars.scss`. Each set of grid elements must be wrapped in a `grid-wrapper`. Floats can be reversed by adding `grid-wrapper--rev`, and gutters can be removed by adding `grid-wrapper--full`.
 
 Example:
 ~~~html
@@ -64,20 +63,22 @@ Example:
 
 ### The `$responsive` Variable
 
-If `$responsive` is set to false, the grid will collapse to 100% wide on mobile and only use the  proportional widths for breakpoint `lap` and above.
+If `$responsive` is set to false, the grid will collapse to 100% wide on mobile and only use the  proportional-width classes for breakpoint `lap` and above. This is ideal for a simple site layout.
 
-If `$responsive` is set to true, the grid proportions stay constant across all breakpoints. But by adding classes prefixed with the breakpoint namespace, grid elements can change width at different breakpoints, thereby creating a dynamic page layout.
+If `$responsive` is set to true, the base grid proportions remain constant across all breakpoints. But by adding classes prefixed with the breakpoint namespace, grid elements can change width at different breakpoints, thereby creating a truly dynamic site layout.
 
 Example:
 ~~~html
 <div class="grid-wrapper">
 
-    <div class="grid hand-one-half lap-one-third desk-one-quarter">
+    <div class="grid one-whole hand-one-half lap-one-third desk-one-quarter">
         ...
     </div>
 
 </div>
 ~~~
+
+This would create a `div` that at the smallest sizes fills the full width of the horizontal space, takes up half of that space at `hand` sizes, a third of that space at `lap` sizes, and a quarter at `desk` sizes.
 
 ### Push and Pull
 
