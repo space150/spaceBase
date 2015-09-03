@@ -82,6 +82,19 @@ This would create a `div` that at the smallest sizes fills the full width of the
 
 ### Push and Pull
 
-Push classes move grid items over to the right, creating white space on the left. Pull classes move grid items over to the left, creating white space on the right. To exclude the push/pull styles from the compiled stylesheet, change their variables to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
+Push classes move grid items over to the right, creating white space on the left. Pull classes move grid items over to the left, creating white space on the right. Push and pull styles follow the same logic of the `$responsive` variable. If `$responsive` is false, they only apply to the `lap`  breakpoint and above. If `$responsive` is true, you have access to push and pull classes prefixed with the breakpoint namespace.
+
+Example:
+~~~html
+<div class="grid-wrapper">
+
+    <div class="grid one-half lap-one-quarter push--one-quarter push--lap-three-eighths">
+        ...
+    </div>
+
+</div>
+~~~
+
+To exclude the push/pull styles from the compiled stylesheet, change their variables to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
 
 See the [style guide](../styleguide.html) for more grid examples.
