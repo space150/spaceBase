@@ -3,6 +3,7 @@
 * Remove support for IE6/7.
 * Remove dependency on Compass.
 * Move island, lists and media partials into UI folder.
+* Update to Normalize.css 3.0.3.
 * Documentation!
 
 
