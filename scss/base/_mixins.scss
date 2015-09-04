@@ -181,50 +181,50 @@
     // render styles without media queries if those breakpoints are false
 
     @if $media-query == "hand-and-up" {
-      @if $hand-start != false {
-        @media only screen and (min-width:$hand-start) { @content; }
+      @if get-breakpoint-width(hand) {
+        @media only screen and (min-width:get-breakpoint-width(hand)) { @content; }
       }
       @else { @content; }
     }
 
     @else if $media-query == "lap-and-up" {
-      @if $lap-start != false {
-        @media only screen and (min-width:$lap-start) { @content; }
+      @if get-breakpoint-width(lap) {
+        @media only screen and (min-width:get-breakpoint-width(lap)) { @content; }
       }
       @else { @content; }
     }
 
     @else if $media-query == "desk-and-up" {
-      @if $desk-start != false {
-        @media only screen and (min-width:$desk-start) { @content; }
+      @if get-breakpoint-width(desk) {
+        @media only screen and (min-width:get-breakpoint-width(desk)) { @content; }
       }
       @else { @content; }
     }
 
     @else if $media-query == "wall-and-up" {
-      @if $wall-start != false {
-        @media only screen and (min-width:$wall-start) { @content; }
+      @if get-breakpoint-width(wall) {
+        @media only screen and (min-width:get-breakpoint-width(wall)) { @content; }
       }
       @else { @content; }
     }
 
     @else if $media-query == "below-desk" {
-      @if $desk-start != false {
-        @media only screen and (max-width: ($desk-start - 1px)) { @content; }
+      @if get-breakpoint-width(desk) {
+        @media only screen and (max-width: (get-breakpoint-width(desk) - 1px)) { @content; }
       }
       @else {}
     }
 
     @else if $media-query == "below-lap" {
-      @if $lap-start != false {
-        @media only screen and (max-width: ($lap-start - 1px)) { @content; }
+      @if get-breakpoint-width(lap) {
+        @media only screen and (max-width: (get-breakpoint-width(lap) - 1px)) { @content; }
       }
       @else {}
     }
 
     @else if $media-query == "below-hand" {
-      @if $hand-start != false {
-        @media only screen and (max-width: ($hand-start - 1px)) { @content; }
+      @if get-breakpoint-width(hand) {
+        @media only screen and (max-width: (get-breakpoint-width(hand) - 1px)) { @content; }
       }
       @else {}
     }
@@ -235,4 +235,3 @@
     }
   }
 }
-

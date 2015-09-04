@@ -50,10 +50,12 @@ $legacy-ie: true;
 
 // BREAKPOINTS SET TO FALSE
 $legacy-ie:  false;
-$hand-start: false;
-$lap-start:  false;
-$desk-start: false;
-$wall-start: false;
+$media-breakpoints: (
+  hand: false,
+  lap:  false,
+  desk: false,
+  wall: false
+);
 
 @include media-query(lap-and-up) {
   div { display: none; }

@@ -93,19 +93,19 @@ $grid-widths: (
 @if $responsive {
   @include grid-setup;
 
-  @if $hand-start {
+  @if get-breakpoint-width(hand) {
     @include media-query(hand-and-up) { @include grid-setup("hand-"); }
   }
 
-  @if $lap-start {
+  @if get-breakpoint-width(lap) {
     @include media-query(lap-and-up) { @include grid-setup("lap-"); }
   }
 
-  @if $desk-start {
+  @if get-breakpoint-width(desk) {
     @include media-query(desk-and-up) { @include grid-setup("desk-"); }
   }
 
-  @if $wall-start {
+  @if get-breakpoint-width(wall) {
     @include media-query(wall-and-up) { @include grid-setup("wall-"); }
   }
 } @else { // Not responsive

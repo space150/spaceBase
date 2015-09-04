@@ -21,3 +21,13 @@
     @return $a;
   }
 }
+
+// get-breakpoint-width
+//   Get a breakpoint's width from the map.
+@function get-breakpoint-width($name, $breakpoints: $media-breakpoints) {
+  @if map-has-key($breakpoints, $name) {
+    @return map-get($breakpoints, $name);
+  } @else {
+    @warn "Breakpoint #{$name} wasn't found in $breakpoints.";
+  }
+}
