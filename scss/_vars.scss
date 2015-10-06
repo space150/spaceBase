@@ -40,7 +40,6 @@ $site-min-width:         320px;
 $site-wrapper-max-width: 1440px;
 
 // Breakpoints
-// Set to false to exclude breakpoints
 $media-breakpoints: (
   hand: 480px,
   lap:  768px,
@@ -50,6 +49,7 @@ $media-breakpoints: (
 
 $legacy-media-breakpoint: desk;
 
+// Media query expressions
 $media-features: (
   portrait:  '(orientation: portrait)',
   landscape: '(orientation: landscape)',

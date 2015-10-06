@@ -94,21 +94,21 @@ $grid-widths: (
   @include grid-setup;
 
   @if get-breakpoint-width(hand) {
-    @include media-query(hand-and-up) { @include grid-setup("hand-"); }
+    @include media($from: hand) { @include grid-setup("hand-"); }
   }
 
   @if get-breakpoint-width(lap) {
-    @include media-query(lap-and-up) { @include grid-setup("lap-"); }
+    @include media($from: lap) { @include grid-setup("lap-"); }
   }
 
   @if get-breakpoint-width(desk) {
-    @include media-query(desk-and-up) { @include grid-setup("desk-"); }
+    @include media($from: desk) { @include grid-setup("desk-"); }
   }
 
   @if get-breakpoint-width(wall) {
-    @include media-query(wall-and-up) { @include grid-setup("wall-"); }
+    @include media($from: wall) { @include grid-setup("wall-"); }
   }
 } @else { // Not responsive
   // Initializes widths w/o namespace
-  @include media-query(lap-and-up) { @include grid-setup; }
+  @include media($from: lap) { @include grid-setup; }
 }

@@ -15,7 +15,7 @@ All partials are imported into the `_manifest.scss`. This is also where you can 
 
 ### Legacy IE Support
 
-After compilation you will have two stylesheets, `application.css` and `application-ie.css`. The only difference between these files lies in the `$legacy-ie` variable. When set to true, the `media-query()` mixin will only render the content inside appropriate media query breakpoints. Taking advantage of CSS inheritance, the site will render the desktop layout in legacy browsers that don't support media queries (IE8 and below). Therefore, these should be loaded into the site via conditional comments.
+After compilation you will have two stylesheets, `application.css` and `application-ie.css`. The only difference between these files lies in the `$legacy-ie` variable. When set to true, the `media()` mixin will only render the content inside appropriate media query breakpoints. Taking advantage of CSS inheritance, the site will render the desktop layout in legacy browsers that don't support media queries (IE8 and below). Therefore, these should be loaded into the site via conditional comments.
 
 Example:
 ~~~html

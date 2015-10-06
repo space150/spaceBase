@@ -17,23 +17,23 @@
     @if $responsive-push-pull {
 
       @if get-breakpoint-width(hand) {
-        @include media-query(hand-and-up) { @include pull-setup("hand-"); }
+        @include media($from: hand) { @include pull-setup("hand-"); }
       }
 
       @if get-breakpoint-width(lap) {
-        @include media-query(lap-and-up) { @include pull-setup("lap-"); }
+        @include media($from: lap) { @include pull-setup("lap-"); }
       }
 
       @if get-breakpoint-width(desk) {
-        @include media-query(desk-and-up) { @include pull-setup("desk-"); }
+        @include media($from: desk) { @include pull-setup("desk-"); }
       }
 
       @if get-breakpoint-width(wall) {
-        @include media-query(wall-and-up) { @include pull-setup("wall-"); }
+        @include media($from: wall) { @include pull-setup("wall-"); }
       }
     }
   }
   @else {
-    @include media-query(lap-and-up) { @include pull-setup; }
+    @include media($from: lap) { @include pull-setup; }
   }
 }

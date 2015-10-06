@@ -139,99 +139,90 @@
 // All styles w/o a media-query are assumed to be base, mobile-first styles.
 // All styling "up" from that should be done in media queries.
 //
-// Our options are:
+// USAGE:
 //
-// hand-and-up    -  bigger-than-phone and up
-// lap-and-up     -  laptops and up
-// desk-and-up    -  desktops and up
-// wall-and-up    -  widescreen desktops and up
-// below-lap      -  smaller than laptops
-// below-hand     -  isolates phones
+// @include media($from: hand) { ... }
+// @include media($upto: desk) { ... }
+// @include media($from: lap, $upto: desk) { ... }
+// @include media($from: 800px, $upto: 900px) { ... }
+// @include media(landscape, $upto: desk) { ... }
+// @include media($type: print) { ... }
+// @include media('(custom expression)') { ... }
 //
-// Without one of these parameters the mixin will accept a custom media query.
+// OUTPUT:
+//
+// @media screen and (min-width: 480px) { ... }
+// @media screen and (max-width: 1023px) { ... }
+// @media screen and (min-width: 768px) and (max-width: 1023px) { ... }
+// @media screen and (min-width: 800px) and (max-width: 900px) { ... }
+// @media screen and (max-width: 1023px) and (orientation: landscape) { ... }
+// @media print { ... }
+// @media screen and (custom expression) { ... }
+//
+// OUTPUT TO LEGACY CSS:
+//
+// Only the content needed to render the $legacy-media-breakpoint layout.
 //
 // ***************************************************************************
 
-@mixin media-query($media-query) {
+@mixin media($feature:false, $from:false, $upto:false, $type:screen) {
+  $min-width: 0;
+  $max-width: 0;
+  $media-query: '';
+  
+  // From: this breakpoint (inclusive)
+  @if $from {
+    @if type-of($from) == number {
+      $min-width: $from;
+    } @else if get-breakpoint-width($from) {
+      $min-width: get-breakpoint-width($from);
+    }
+  }
 
+  // Upto: that breakpoint (exclusive)
+  @if $upto {
+    @if type-of($upto) == number {
+      $max-width: $upto;
+    } @else if get-breakpoint-width($upto) {
+      $max-width: get-breakpoint-width($upto) - 1px;
+    }
+  }
+  
+  // Render styles without media queries
   @if $legacy-ie == true {
-    // render styles without media queries
-
-    @if $media-query == "hand-and-up" { @content; }
-
-    @else if $media-query == "lap-and-up" { @content; }
-
-    @else if $media-query == "desk-and-up" { @content; }
-
-    @else if $media-query == "wall-and-up" {}
-
-    @else if $media-query == "below-desk" {}
-
-    @else if $media-query == "below-lap" {}
-
-    @else if $media-query == "below-hand" {}
-
-    // include custom breakpoints
-    @else {
+    $legacy-breakpoint-width: get-breakpoint-width($legacy-media-breakpoint);
+    // Output only rules that start at or span our legacy media width
+    @if (
+      $min-width <= $legacy-breakpoint-width
+      and (
+        $upto == false or $max-width >= $legacy-breakpoint-width
+      )
+    ) {
       @content;
     }
-
-  // Not legacy-ie
+  
   } @else {
-    // render styles without media queries if those breakpoints are false
-
-    @if $media-query == "hand-and-up" {
-      @if get-breakpoint-width(hand) {
-        @media only screen and (min-width:get-breakpoint-width(hand)) { @content; }
+    @if $min-width != 0 { $media-query: '#{$media-query} and (min-width: #{$min-width})'; }
+    @if $max-width != 0 { $media-query: '#{$media-query} and (max-width: #{$max-width})'; }
+    @if $feature {
+      // Pass through custom expression or get defined expression
+      $original-feature: $feature;
+      $feature: get-feature($feature);
+      @if $feature {
+        $media-query: '#{$media-query} and #{$feature}';
+      } @else {
+        $media-query: '#{$media-query} and (#{$original-feature})';
       }
-      @else { @content; }
     }
 
-    @else if $media-query == "lap-and-up" {
-      @if get-breakpoint-width(lap) {
-        @media only screen and (min-width:get-breakpoint-width(lap)) { @content; }
-      }
-      @else { @content; }
+    // Remove unnecessary media query prefix 'all and '
+    @if ($type == 'all' and $media-query != '') {
+      $type: '';
+      $media-query: str-slice(unquote($media-query), 6);
     }
 
-    @else if $media-query == "desk-and-up" {
-      @if get-breakpoint-width(desk) {
-        @media only screen and (min-width:get-breakpoint-width(desk)) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "wall-and-up" {
-      @if get-breakpoint-width(wall) {
-        @media only screen and (min-width:get-breakpoint-width(wall)) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "below-desk" {
-      @if get-breakpoint-width(desk) {
-        @media only screen and (max-width: (get-breakpoint-width(desk) - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    @else if $media-query == "below-lap" {
-      @if get-breakpoint-width(lap) {
-        @media only screen and (max-width: (get-breakpoint-width(lap) - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    @else if $media-query == "below-hand" {
-      @if get-breakpoint-width(hand) {
-        @media only screen and (max-width: (get-breakpoint-width(hand) - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    // custom breakpoints
-    @else {
-      @media only screen and ($media-query) { @content; }
+    @media #{$type + $media-query} {
+      @content;
     }
   }
 }

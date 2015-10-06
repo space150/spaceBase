@@ -1,80 +1,76 @@
 @import "vars";
+@import "base/functions";
 @import "base/mixins";
 
-@include media-query(lap-and-up) {
+@include media($from: lap) {
   div { display: none; }
 }
-@include media-query(hand-and-up) {
+@include media($from: hand) {
   div { display: none; }
 }
-@include media-query(desk-and-up) {
+@include media($from: desk) {
   div { display: none; }
 }
-@include media-query(wall-and-up) {
+@include media($from: wall) {
   div { display: none; }
 }
-@include media-query(below-desk) {
+@include media($upto: desk) {
   div { display: none; }
 }
-@include media-query(below-hand) {
+@include media($upto: hand) {
   div { display: none; }
 }
-@include media-query(below-lap) {
+@include media($upto: lap) {
   div { display: none; }
 }
 
 // LEGACY-IE
 $legacy-ie: true;
 
-@include media-query(lap-and-up) {
+@include media($from: lap) {
   div { display: none; }
 }
-@include media-query(hand-and-up) {
+@include media($from: hand) {
   div { display: none; }
 }
-@include media-query(desk-and-up) {
+@include media($from: desk) {
   div { display: none; }
 }
-@include media-query(wall-and-up) {
+@include media($from: wall) {
   div { display: none; }
 }
-@include media-query(below-desk) {
+@include media($upto: desk) {
   div { display: none; }
 }
-@include media-query(below-hand) {
+@include media($upto: hand) {
   div { display: none; }
 }
-@include media-query(below-lap) {
+@include media($upto: lap) {
   div { display: none; }
 }
 
-// BREAKPOINTS SET TO FALSE
-$legacy-ie:  false;
-$media-breakpoints: (
-  hand: false,
-  lap:  false,
-  desk: false,
-  wall: false
-);
+// BREAKPOINTS REMOVED
+$legacy-ie: false;
+$media-breakpoints: ();
 
-@include media-query(lap-and-up) {
+@include media($from: lap) {
   div { display: none; }
 }
-@include media-query(hand-and-up) {
+@include media($from: hand) {
   div { display: none; }
 }
-@include media-query(desk-and-up) {
+@include media($from: desk) {
   div { display: none; }
 }
-@include media-query(wall-and-up) {
+@include media($from: wall) {
   div { display: none; }
 }
-@include media-query(below-desk) {
+@include media($upto: desk) {
   div { display: none; }
 }
-@include media-query(below-hand) {
+@include media($upto: hand) {
   div { display: none; }
 }
-@include media-query(below-lap) {
+@include media($upto: lap) {
   div { display: none; }
 }
