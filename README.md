@@ -68,6 +68,7 @@ You can remove:
 ## Credits
 
 * [Harry Robert’s Inuit.css](https://github.com/csswizardry/inuit.css)
+* [Sass MQ](https://github.com/sass-mq/sass-mq)
 * [Bootstrap](http://getbootstrap.com)
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css)
