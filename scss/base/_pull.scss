@@ -7,29 +7,14 @@
 }
 
 @if $pull {
-
   [class*="pull--"] { position: relative; }
 
   @if $responsive {
-
     @include pull-setup;
 
     @if $responsive-push-pull {
-
-      @if get-breakpoint-width(hand) {
-        @include media($from: hand) { @include pull-setup("hand-"); }
-      }
-
-      @if get-breakpoint-width(lap) {
-        @include media($from: lap) { @include pull-setup("lap-"); }
-      }
-
-      @if get-breakpoint-width(desk) {
-        @include media($from: desk) { @include pull-setup("desk-"); }
-      }
-
-      @if get-breakpoint-width(wall) {
-        @include media($from: wall) { @include pull-setup("wall-"); }
+      @each $breakpoint, $_ in $media-breakpoints {
+        @include media($from: $breakpoint) { @include pull-setup("#{$breakpoint}-"); }
       }
     }
   }

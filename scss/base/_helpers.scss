@@ -42,28 +42,14 @@
 
 
 // Responsive visibility helpers
-@include media($upto: hand) {
-  .hidden-below-hand { display: none; }
-}
+@each $breakpoint, $_ in $media-breakpoints {
+  @include media($upto: $breakpoint) {
+    .hidden-below-#{$breakpoint} { display: none; }
+  }
 
-@include media($from: hand) {
-  .hidden-hand-and-up { display: none; }
-}
-
-@include media($upto: lap) {
-  .hidden-below-lap { display: none; }
-}
-
-@include media($from: lap) {
-  .hidden-lap-and-up { display: none; }
-}
-
-@include media($upto: desk) {
-  .hidden-below-desk { display: none; }
-}
-
-@include media($from: desk) {
-  .hidden-desk-and-up { display: none; }
+  @include media($from: $breakpoint) {
+    .hidden-#{$breakpoint}-and-up { display: none; }
+  }
 }
 
 

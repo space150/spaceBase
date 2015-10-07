@@ -93,20 +93,8 @@ $grid-widths: (
 @if $responsive {
   @include grid-setup;
 
-  @if get-breakpoint-width(hand) {
-    @include media($from: hand) { @include grid-setup("hand-"); }
-  }
-
-  @if get-breakpoint-width(lap) {
-    @include media($from: lap) { @include grid-setup("lap-"); }
-  }
-
-  @if get-breakpoint-width(desk) {
-    @include media($from: desk) { @include grid-setup("desk-"); }
-  }
-
-  @if get-breakpoint-width(wall) {
-    @include media($from: wall) { @include grid-setup("wall-"); }
+  @each $breakpoint, $_ in $media-breakpoints {
+    @include media($from: $breakpoint) { @include grid-setup("#{$breakpoint}-"); }
   }
 } @else { // Not responsive
   // Initializes widths w/o namespace
