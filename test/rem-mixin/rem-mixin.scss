@@ -1,6 +1,4 @@
-@import "vars";
-@import "base/functions";
-@import "base/mixins";
+@import "../test_helper";
 
 div {
   @include rem(margin-left, 4);

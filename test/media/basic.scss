@@ -1,0 +1,61 @@
+@import "../test_helper";
+
+@each $breakpoint, $_ in $media-breakpoints {
+  @include media($from: $breakpoint) {
+    div { display: none; }
+  }
+  @include media($upto: $breakpoint) {
+    div { display: none; }
+  }
+}
+
+// // LEGACY-IE
+// $legacy-ie: true;
+
+// @include media($from: lap) {
+//   div { display: none; }
+// }
+// @include media($from: hand) {
+//   div { display: none; }
+// }
+// @include media($from: desk) {
+//   div { display: none; }
+// }
+// @include media($from: wall) {
+//   div { display: none; }
+// }
+// @include media($upto: desk) {
+//   div { display: none; }
+// }
+// @include media($upto: hand) {
+//   div { display: none; }
+// }
+// @include media($upto: lap) {
+//   div { display: none; }
+// }
+
+// // BREAKPOINTS REMOVED
+// // $legacy-ie: false;
+// // $media-breakpoints: ();
+
+// // @include media($from: lap) {
+// //   div { display: none; }
+// // }
+// // @include media($from: hand) {
+// //   div { display: none; }
+// // }
+// // @include media($from: desk) {
+// //   div { display: none; }
+// // }
+// // @include media($from: wall) {
+// //   div { display: none; }
+// // }
+// // @include media($upto: desk) {
+// //   div { display: none; }
+// // }
+// // @include media($upto: hand) {
+// //   div { display: none; }
+// // }
+// // @include media($upto: lap) {
+// //   div { display: none; }
+// // }
