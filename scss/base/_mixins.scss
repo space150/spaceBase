@@ -137,7 +137,11 @@
 // Media query mixin
 //
 // All styles w/o a media-query are assumed to be base, mobile-first styles.
-// All styling "up" from that should be done in media queries.
+// All styling "up" from that should be done in media queries. Set the min 
+// and max widths with $from and $upto parameters using the preset breakpoints 
+// or custom sizes. Set media features using the preset aliases or custom 
+// expressions. The default media type is screen, but can be changed by 
+// passing in a new $type parameter.
 //
 // USAGE:
 //
