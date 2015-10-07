@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
 gem "rake"
-gem "scss-lint", "0.25.1"
+gem "scss_lint", "0.38.0", require: false

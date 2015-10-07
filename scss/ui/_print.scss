@@ -6,6 +6,7 @@
 
 @media print {
   * {
+    // scss-lint:disable ColorVariable
     background: transparent !important;
     color: #000 !important;
     box-shadow: none !important;

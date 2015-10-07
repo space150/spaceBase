@@ -115,6 +115,7 @@ input[type="checkbox"]:focus { @include tab-focus; }
     background-color: $gray-light;
     opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
   }
+
   &[disabled],
   fieldset[disabled] & {
     cursor: not-allowed;
@@ -129,6 +130,7 @@ textarea.form-control {
 // Remove inner shadow on webkit, see http://zomigi.com/blog/bug-fixes-for-removing-the-inner-shadow-on-ios-inputs
 input.form-control,
 textarea.form-control {
+  // scss-lint:disable VendorPrefix
   background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0));
 }
 
@@ -158,6 +160,7 @@ textarea.form-control {
   margin-left: -20px;
   margin-top: 4px \9;
 }
+
 // Move up sibling radios or checkboxes for tighter spacing
 .radio + .radio,
 .checkbox + .checkbox { margin-top: -5px; }

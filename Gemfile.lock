@@ -3,17 +3,17 @@ GEM
   specs:
     rainbow (2.0.0)
     rake (10.4.2)
-    sass (3.3.14)
-    scss-lint (0.25.1)
+    sass (3.4.18)
+    scss_lint (0.38.0)
       rainbow (~> 2.0)
-      sass (~> 3.3.0)
+      sass (~> 3.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   rake
-  scss-lint (= 0.25.1)
+  scss_lint (= 0.38.0)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

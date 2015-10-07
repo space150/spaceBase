@@ -2,7 +2,7 @@
 exclude:
   - "scss/vendor/_reset.scss"
   - "scss/vendor/_normalize.scss"
-  - "scss/_tests/*"
+  - "tests/*"
 
 linters:
   Comment:
@@ -12,4 +12,14 @@ linters:
   SingleLinePerSelector:
     enabled: false
   StringQuotes:
+    enabled: false
+  ImportantRule:
+    enabled: false
+  SelectorFormat:
+    enabled: false
+  ColorVariable:
+    enabled: false
+  QualifyingElement:
+    enabled: false
+  DeclarationOrder:
     enabled: false
