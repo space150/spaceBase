@@ -7,6 +7,8 @@ Many CSS frameworks are meant to be included and left alone. But spaceBase is a 
 
 spaceBase is the front-end starter files for any new web project. It sets up your Sass architecture and normalizes your CSS and native HTML elements. It provides the structural groundwork for your application.
 
+[![Build Status](https://img.shields.io/travis/space150/spaceBase.svg?style=flat-square)](https://travis-ci.org/space150/spaceBase)
+
 ### Highlights
 
 * Object-oriented CSS
