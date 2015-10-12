@@ -2,17 +2,13 @@
 //  $MIXINS
 //------------------------------------//
 
-// Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
+// Micro clearfix
 @mixin clearfix {
-  *zoom: 1;
-
-  &:before,
   &:after {
     display: table;
     content: "";
+    clear: both;
   }
-
-  &:after { clear: both; }
 }
 
 // Clear grid floats
@@ -21,17 +17,12 @@
     clear: left;
   }
 }
+
 // Clear grid float clears
 @mixin clear-n-up($number) {
   &:nth-of-type(#{$number}n + 1) {
     clear: none;
   }
-}
-
-@mixin inline-block {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
 }
 
 // Image replacement
@@ -52,6 +43,7 @@
 
 // WebKit-style focus
 @mixin tab-focus {
+  // scss-lint:disable DuplicateProperty
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -59,6 +51,7 @@
 
 // Placeholder text
 @mixin placeholder {
+  // scss-lint:disable VendorPrefix
   &:-moz-placeholder { @content; } // Firefox 4-18
   &::-moz-placeholder { opacity: 1; @content; } // Firefox 19+
   &:-ms-input-placeholder { @content; } // Internet Explorer 10+
@@ -146,103 +139,107 @@
 // ***************************************************************************
 // Media query mixin
 //
-// All styles w/o a media-query are assumed to be base, mobile-first styles.
-// All styling "up" from that should be done in media queries.
+// When using spaceBase, styles should be written mobile-first.
+// The media mixin can override these base styles in a variety of ways:
+//   - starting at a breakpoint ($from: x)
+//   - up to a breakpoint ($upto: y)
+//   - between two breakpoints ($from: x, $upto: y)
+//   - for specific media features (e.g. retina, orientation)
+//   - for different media types ($type: print)
 //
-// Our options are:
+// You can use breakpoint aliases set in $media-breakpoints (in _vars.scss),
+// or custom widths like 480px or 20em.
 //
-// hand-and-up    -  bigger-than-phone and up
-// lap-and-up     -  laptops and up
-// desk-and-up    -  desktops and up
-// wall-and-up    -  widescreen desktops and up
-// below-lap      -  smaller than laptops
-// below-hand     -  isolates phones
+// Commonly-used media features are defined in $media-features (in _vars.scss).
+// You can define additional feature aliases or use custom one-off expressions.
 //
-// Without one of these parameters the mixin will accept a custom media query.
+// It's important to note that $upto is exclusive.
+// This means that `@include media($upto: 780px)` will set a max-width of 779px.
+//
+// USAGE:
+//
+// @include media($from: hand) { ... }
+// @include media($upto: desk) { ... }
+// @include media($from: lap, $upto: desk) { ... }
+// @include media($from: 800px, $upto: 900px) { ... }
+// @include media(landscape, $upto: desk) { ... }
+// @include media($type: print) { ... }
+// @include media('(device-radius: 50%)') { ... }
+//
+// OUTPUT:
+//
+// @media screen and (min-width: 480px) { ... }
+// @media screen and (max-width: 1023px) { ... }
+// @media screen and (min-width: 768px) and (max-width: 1023px) { ... }
+// @media screen and (min-width: 800px) and (max-width: 900px) { ... }
+// @media screen and (max-width: 1023px) and (orientation: landscape) { ... }
+// @media print { ... }
+// @media screen and (device-radius: 50%) { ... }
+//
+// OUTPUT TO LEGACY CSS:
+//
+// Only the content needed to render the $legacy-media-breakpoint layout.
 //
 // ***************************************************************************
 
-@mixin media-query($media-query) {
+@mixin media($feature:false, $from:false, $upto:false, $type:screen) {
+  $min-width: 0;
+  $max-width: 0;
+  $media-query: '';
 
+  // From: this breakpoint (inclusive)
+  @if $from {
+    @if type-of($from) == number {
+      $min-width: $from;
+    } @else if get-breakpoint-width($from) {
+      $min-width: get-breakpoint-width($from);
+    }
+  }
+
+  // Upto: that breakpoint (exclusive)
+  @if $upto {
+    @if type-of($upto) == number {
+      $max-width: $upto;
+    } @else if get-breakpoint-width($upto) {
+      $max-width: get-breakpoint-width($upto) - 1px;
+    }
+  }
+
+  // Render styles without media queries
   @if $legacy-ie == true {
-    // render styles without media queries
-
-    @if $media-query == "hand-and-up" { @content; }
-
-    @else if $media-query == "lap-and-up" { @content; }
-
-    @else if $media-query == "desk-and-up" { @content; }
-
-    @else if $media-query == "wall-and-up" {}
-
-    @else if $media-query == "below-desk" {}
-
-    @else if $media-query == "below-lap" {}
-
-    @else if $media-query == "below-hand" {}
-
-    // include custom breakpoints
-    @else {
+    $legacy-breakpoint-width: get-breakpoint-width($legacy-media-breakpoint);
+    // Output only rules that start at or span our legacy media width
+    @if (
+      $min-width <= $legacy-breakpoint-width
+      and (
+        $upto == false or $max-width >= $legacy-breakpoint-width
+      )
+    ) {
       @content;
     }
 
-  // Not legacy-ie
   } @else {
-    // render styles without media queries if those breakpoints are false
-
-    @if $media-query == "hand-and-up" {
-      @if $hand-start != false {
-        @media only screen and (min-width:$hand-start) { @content; }
+    @if $min-width != 0 { $media-query: '#{$media-query} and (min-width: #{$min-width})'; }
+    @if $max-width != 0 { $media-query: '#{$media-query} and (max-width: #{$max-width})'; }
+    @if $feature {
+      // Pass through custom expression or get defined expression
+      $original-feature: $feature;
+      $feature: get-feature($feature);
+      @if $feature {
+        $media-query: '#{$media-query} and #{$feature}';
+      } @else {
+        $media-query: '#{$media-query} and (#{$original-feature})';
       }
-      @else { @content; }
     }
 
-    @else if $media-query == "lap-and-up" {
-      @if $lap-start != false {
-        @media only screen and (min-width:$lap-start) { @content; }
-      }
-      @else { @content; }
+    // Remove unnecessary media query prefix 'all and '
+    @if ($type == 'all' and $media-query != '') {
+      $type: '';
+      $media-query: str-slice(unquote($media-query), 6);
     }
 
-    @else if $media-query == "desk-and-up" {
-      @if $desk-start != false {
-        @media only screen and (min-width:$desk-start) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "wall-and-up" {
-      @if $wall-start != false {
-        @media only screen and (min-width:$wall-start) { @content; }
-      }
-      @else { @content; }
-    }
-
-    @else if $media-query == "below-desk" {
-      @if $desk-start != false {
-        @media only screen and (max-width: ($desk-start - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    @else if $media-query == "below-lap" {
-      @if $lap-start != false {
-        @media only screen and (max-width: ($lap-start - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    @else if $media-query == "below-hand" {
-      @if $hand-start != false {
-        @media only screen and (max-width: ($hand-start - 1px)) { @content; }
-      }
-      @else {}
-    }
-
-    // custom breakpoints
-    @else {
-      @media only screen and ($media-query) { @content; }
+    @media #{$type + $media-query} {
+      @content;
     }
   }
 }
-

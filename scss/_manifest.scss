@@ -1,6 +1,6 @@
 @import "vars";
 
-// Choose either Reset or Normalize:
+// Choose either Normalize or Reset:
 @import "vendor/normalize"; $normalize: true;
 // @import "vendor/reset"; $reset: true;
 
@@ -10,9 +10,6 @@
 @import "base/widths";
 @import "base/push";
 @import "base/pull";
-@import "base/island";
-@import "base/lists";
-@import "base/media";
 @import "base/shared";
 @import "base/helpers";
 
@@ -20,6 +17,9 @@
 @import "ui/typography";
 @import "ui/forms";
 @import "ui/buttons";
+@import "ui/island";
+@import "ui/lists";
+@import "ui/media";
 @import "ui/layout";
 
 @import "ui/print";

@@ -1,0 +1,13 @@
+@import "../test_helper";
+
+$legacy-ie: true;
+
+@each $breakpoint, $_ in $media-breakpoints {
+  @include media($from: $breakpoint) {
+    div { display: none; }
+  }
+  @include media($upto: $breakpoint) {
+    div { display: none; }
+  }
+}
+

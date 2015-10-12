@@ -3,15 +3,15 @@
 //------------------------------------//
 
 /*
-  spaceBase version: 1.0.1
+  spaceBase version: 2.0.0
   http://spacebase.space150.com
 */
 
 $legacy-ie: false !default;
 
-// To select Reset or Normalize, see _manifest.scss.
-$reset:     false !default;
+// To select Normalize or Reset, see _manifest.scss
 $normalize: false !default;
+$reset:     false !default;
 
 // Include push/pull styles?
 $push: true;
@@ -36,15 +36,26 @@ $half-spacing-unit: $base-spacing-unit / 2;
 $gutter: $base-spacing-unit;
 
 // Layout
-$site-min-width:          320px;
-$site-wrapper-max-width:  1440px;
+$site-min-width:         320px;
+$site-wrapper-max-width: 1440px;
 
 // Breakpoints
-// Set to false to exclude breakpoints
-$hand-start:   480px;
-$lap-start:    768px;
-$desk-start:   1024px;
-$wall-start:   1200px;
+$media-breakpoints: (
+  hand: 480px,
+  lap:  768px,
+  desk: 1024px,
+  wall: 1200px
+);
+
+$legacy-media-breakpoint: desk;
+
+// Media query expressions
+$media-features: (
+  portrait:  '(orientation: portrait)',
+  landscape: '(orientation: landscape)',
+  at2x: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  at3x: '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+);
 
 // Colors
 $black:        #000;
@@ -60,13 +71,13 @@ $quaternary:   #c46e35; // dark orange
 // quinary, senary, septenary, octonary, nonary, denary
 
 // Form validation colors
-$state-success:  #468847;
-$state-error:    #b94a48;
+$state-success: #468847;
+$state-error:   #b94a48;
 
 // Fonts
 $font-body: Arial, Helvetica, sans-serif;
 $font-head: $font-body;
 
-// Examples for custom @font-face (see _fonts.scss for declaration)
-//$font-body:  "Source Sans Pro", Arial, Helvetica, sans-serif;
-//$font-head:  "Fontatica4F", Arial, Helvetica, sans-serif;
+// Example font stacks using @font-face (see _fonts.scss for declaration)
+// $font-body: "Source Sans Pro", Arial, Helvetica, sans-serif;
+// $font-head: "Fontatica4F", Arial, Helvetica, sans-serif;

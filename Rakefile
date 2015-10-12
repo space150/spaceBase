@@ -5,6 +5,5 @@ end
 
 desc "Run tests"
 task :test do
-  Dir.chdir "./tests"
-  require_relative "./tests/test"
+  puts `bundle exec sassunit`
 end

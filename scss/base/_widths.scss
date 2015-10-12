@@ -93,22 +93,10 @@ $grid-widths: (
 @if $responsive {
   @include grid-setup;
 
-  @if $hand-start {
-    @include media-query(hand-and-up) { @include grid-setup("hand-"); }
-  }
-
-  @if $lap-start {
-    @include media-query(lap-and-up) { @include grid-setup("lap-"); }
-  }
-
-  @if $desk-start {
-    @include media-query(desk-and-up) { @include grid-setup("desk-"); }
-  }
-
-  @if $wall-start {
-    @include media-query(wall-and-up) { @include grid-setup("wall-"); }
+  @each $breakpoint, $_ in $media-breakpoints {
+    @include media($from: $breakpoint) { @include grid-setup("#{$breakpoint}-"); }
   }
 } @else { // Not responsive
   // Initializes widths w/o namespace
-  @include media-query(lap-and-up) { @include grid-setup; }
+  @include media($from: lap) { @include grid-setup; }
 }

@@ -7,33 +7,18 @@
 }
 
 @if $pull {
-
   [class*="pull--"] { position: relative; }
 
   @if $responsive {
-
     @include pull-setup;
 
     @if $responsive-push-pull {
-
-      @if $hand-start {
-        @include media-query(hand-and-up) { @include pull-setup("hand-"); }
-      }
-
-      @if $lap-start {
-        @include media-query(lap-and-up) { @include pull-setup("lap-"); }
-      }
-
-      @if $desk-start {
-        @include media-query(desk-and-up) { @include pull-setup("desk-"); }
-      }
-
-      @if $wall-start {
-        @include media-query(wall-and-up) { @include pull-setup("wall-"); }
+      @each $breakpoint, $_ in $media-breakpoints {
+        @include media($from: $breakpoint) { @include pull-setup("#{$breakpoint}-"); }
       }
     }
   }
   @else {
-    @include media-query(lap-and-up) { @include pull-setup; }
+    @include media($from: lap) { @include pull-setup; }
   }
 }

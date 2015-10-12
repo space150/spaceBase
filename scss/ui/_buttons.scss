@@ -3,17 +3,17 @@
 //------------------------------------//
 
 .btn {
+  display: inline-block;
   margin: 0;
   padding: .4em 1em;
+  @include rem(font-size, 1);
   line-height: 1.6em;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
   border: 1px solid $gray;
-  cursor: pointer;
-  @include inline-block;
-  @include rem(font-size, 1);
   border-radius: 0;
+  cursor: pointer;
 
   &,
   &:hover,
@@ -22,6 +22,6 @@
   &.disabled,
   &[disabled] {
     cursor: not-allowed;
-    opacity: 0.65;
+    opacity: .65;
   }
 }
