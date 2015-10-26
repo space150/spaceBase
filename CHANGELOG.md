@@ -1,3 +1,8 @@
+### 2.0.1 (Oct 26, 2015)
+
+* Fix compilation issue with libsass
+
+
 ### 2.0.0 (Oct 8, 2015)
 
 * Replace media-query() mixin with media() mixin.
