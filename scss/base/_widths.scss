@@ -67,7 +67,7 @@ $grid-widths: (
 @mixin grid-setup($namespace: "", $property: width) {
   @each $fraction, $widths in $grid-widths {
     $selectors: null;
-    $percent: 100% /(1 / $fraction);
+    $percent: $fraction * 100%;
     @each $width in $widths {
       $selectors: append($selectors, unquote(".#{$namespace}#{$width}"), "comma");
     }
