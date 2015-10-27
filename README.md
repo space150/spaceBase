@@ -27,10 +27,6 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 * Base font size for mobile vs desktop
 * Global variables for breakpoints, colors, fonts and more
 
-**Coming Soon**
-
-Detailed documentation is currently in orbit. In the meantime, feel free to explore!
-
 ## Getting Started
 
 1. `$ bower install spacebase` or download the ZIP and copy its contents into your project folder.
@@ -43,7 +39,7 @@ Your editor can be setup with EditorConfig so that code style standards are enfo
 
 ## The spaceBase structure
 
-Read the [CSS Architecture Overview](scss/README.md) for details on the SCSS files.
+Read the [CSS Architecture Overview](scss/README.md) for documentation of the SCSS files.
 
 ```
 fonts/
