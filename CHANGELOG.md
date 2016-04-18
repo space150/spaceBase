@@ -1,6 +1,11 @@
+### 2.0.2 (Apr 18, 2016)
+
+* Update to Normalize.css 4.1.1.
+
+
 ### 2.0.1 (Oct 26, 2015)
 
-* Fix compilation issue with libsass
+* Fix compilation issue with libsass.
 
 
 ### 2.0.0 (Oct 8, 2015)
