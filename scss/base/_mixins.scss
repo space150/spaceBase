@@ -190,24 +190,24 @@
   // From: this breakpoint (inclusive)
   @if $from {
     @if type-of($from) == number {
-      $min-width: $from;
+      $min-width: px2em($from);
     } @else if get-breakpoint-width($from) {
-      $min-width: get-breakpoint-width($from);
+      $min-width: px2em(get-breakpoint-width($from));
     }
   }
 
   // Upto: that breakpoint (exclusive)
   @if $upto {
     @if type-of($upto) == number {
-      $max-width: $upto;
+      $max-width: px2em($upto);
     } @else if get-breakpoint-width($upto) {
-      $max-width: get-breakpoint-width($upto) - 1px;
+      $max-width: px2em(get-breakpoint-width($upto)) - .01em;
     }
   }
 
   // Render styles without media queries
   @if $legacy-ie == true {
-    $legacy-breakpoint-width: get-breakpoint-width($legacy-media-breakpoint);
+    $legacy-breakpoint-width: px2em(get-breakpoint-width($legacy-media-breakpoint));
     // Output only rules that start at or span our legacy media width
     @if (
       $min-width <= $legacy-breakpoint-width
