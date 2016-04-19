@@ -4,7 +4,7 @@
 
 .visible-print { display: none !important; }
 
-@media print {
+@include media($type: print) {
   * {
     // scss-lint:disable ColorVariable
     background: transparent !important;
