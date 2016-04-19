@@ -11,7 +11,7 @@
 
 .h-list > li {
   float: left;
-  @include rem(margin-right, $half-spacing-unit, $base-font-size--mobile);
+  @include rem(margin-right, $half-spacing-unit);
 }
 
 .h-list > li:last-child {
@@ -24,10 +24,10 @@
   > li {
     float: none;
     display: inline-block;
-    @include rem(margin, 0 $half-spacing-unit, $base-font-size--mobile);
+    @include rem(margin, 0 $half-spacing-unit);
 
     &:last-child {
-      @include rem(margin-right, $half-spacing-unit, $base-font-size--mobile);
+      @include rem(margin-right, $half-spacing-unit);
     }
   }
 }
@@ -37,13 +37,13 @@
     margin-right: 0;
 
     + li {
-      @include rem(margin-left, $half-spacing-unit, $base-font-size--mobile);
-      @include rem(padding-left, $half-spacing-unit, $base-font-size--mobile);
+      @include rem(margin-left, $half-spacing-unit);
+      @include rem(padding-left, $half-spacing-unit);
       border-left: solid 1px;
     }
   }
 }
 
 .v-list > li {
-  @include rem(margin-top, $half-spacing-unit / 2, $base-font-size--mobile);
+  @include rem(margin-top, $half-spacing-unit / 2);
 }
