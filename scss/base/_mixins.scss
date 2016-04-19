@@ -147,14 +147,15 @@
 //   - for specific media features (e.g. retina, orientation)
 //   - for different media types ($type: print)
 //
-// You can use breakpoint aliases set in $media-breakpoints (in _vars.scss),
-// or custom widths like 480px or 20em.
+// You can use breakpoint aliases set in $media-breakpoints (in _vars.scss)
+// or custom widths. Pixel values will be converted to ems.
 //
 // Commonly-used media features are defined in $media-features (in _vars.scss).
 // You can define additional feature aliases or use custom one-off expressions.
 //
 // It's important to note that $upto is exclusive.
-// This means that `@include media($upto: 780px)` will set a max-width of 779px.
+// This means that `@include media($upto: 768px)` will set a max-width of 
+// 47.99em (roughly 767px).
 //
 // USAGE:
 //
@@ -168,17 +169,18 @@
 //
 // OUTPUT:
 //
-// @media screen and (min-width: 480px) { ... }
-// @media screen and (max-width: 1023px) { ... }
-// @media screen and (min-width: 768px) and (max-width: 1023px) { ... }
-// @media screen and (min-width: 800px) and (max-width: 900px) { ... }
-// @media screen and (max-width: 1023px) and (orientation: landscape) { ... }
+// @media screen and (min-width: 30em) { ... }
+// @media screen and (max-width: 63.99em) { ... }
+// @media screen and (min-width: 48em) and (max-width: 63.99em) { ... }
+// @media screen and (min-width: 50em) and (max-width: 56.25em) { ... }
+// @media screen and (max-width: 63.99em) and (orientation: landscape) { ... }
 // @media print { ... }
 // @media screen and (device-radius: 50%) { ... }
 //
 // OUTPUT TO LEGACY CSS:
 //
-// Only the content needed to render the $legacy-media-breakpoint layout.
+// Only the content needed to render the $legacy-media-breakpoint layout. Any
+// includes with features or types other than screen will be excluded.
 //
 // ***************************************************************************
 
