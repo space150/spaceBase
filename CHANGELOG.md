@@ -1,6 +1,9 @@
-### 2.0.2 (Apr 18, 2016)
+### 2.0.2 (Apr 19, 2016)
 
 * Update to Normalize.css 4.1.1.
+* Convert media query mixin from px to em.
+* Fix legacy CSS from including content with type or feature media queries.
+* Remove conditional comments for IE7.
 
 
 ### 2.0.1 (Oct 26, 2015)
