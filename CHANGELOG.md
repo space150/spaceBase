@@ -1,4 +1,4 @@
-### 2.0.2 (Apr 19, 2016)
+### 2.1.0 (Apr 19, 2016)
 
 * Update to Normalize.css 4.1.1.
 * Convert media query mixin from px to em.
