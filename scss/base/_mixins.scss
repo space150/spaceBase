@@ -90,11 +90,11 @@
 // Rem conversion mixin
 //
 // Converts values to rems for any property passed to it. If optional
-// $fallback is provided, it returns two lines of code: first with the pixel
+// $fallback is provided, it outputs two lines of code: first with the pixel
 // values for non-rem support and a second with the converted rem values.
-// This is necessary for IE9/10 when used with psuedo elements or font
+// This is only necessary for IE9/10 when used with psuedo elements or font
 // shorthand property. Possible $fallback values are $base-font-size or
-// $base-font-size--mobile. This mixin returns just the pixel values to the
+// $base-font-size--mobile. This mixin outputs just the pixel values to the
 // legacy IE CSS file.
 //
 // USAGE:
@@ -123,14 +123,14 @@
 
 @mixin rem($property, $rem-values, $fallback: false) {
   @if not $legacy-ie {
-    // Pixel fallbacks.
-    // $fallback should be $base-font-size or $base-font-size--mobile.
+    // Output pixel fallback
+    // $fallback should be $base-font-size or $base-font-size--mobile
     @if $fallback {
       #{$property}: map(multiply, $rem-values, $fallback);
     }
     #{$property}: map(multiply, $rem-values, 1rem);
   } @else {
-    // Calculate pixel values for legacy browsers that don't support rems.
+    // Calculate pixel values for legacy browsers that don't support rems
     #{$property}: map(multiply, $rem-values, $base-font-size);
   }
 }
@@ -147,14 +147,15 @@
 //   - for specific media features (e.g. retina, orientation)
 //   - for different media types ($type: print)
 //
-// You can use breakpoint aliases set in $media-breakpoints (in _vars.scss),
-// or custom widths like 480px or 20em.
+// You can use breakpoint aliases set in $media-breakpoints (in _vars.scss)
+// or custom widths. Pixel values will be converted to ems.
 //
 // Commonly-used media features are defined in $media-features (in _vars.scss).
 // You can define additional feature aliases or use custom one-off expressions.
 //
 // It's important to note that $upto is exclusive.
-// This means that `@include media($upto: 780px)` will set a max-width of 779px.
+// This means that `@include media($upto: 768px)` will set a max-width of 
+// 47.99em (roughly 767px).
 //
 // USAGE:
 //
@@ -168,17 +169,18 @@
 //
 // OUTPUT:
 //
-// @media screen and (min-width: 480px) { ... }
-// @media screen and (max-width: 1023px) { ... }
-// @media screen and (min-width: 768px) and (max-width: 1023px) { ... }
-// @media screen and (min-width: 800px) and (max-width: 900px) { ... }
-// @media screen and (max-width: 1023px) and (orientation: landscape) { ... }
+// @media screen and (min-width: 30em) { ... }
+// @media screen and (max-width: 63.99em) { ... }
+// @media screen and (min-width: 48em) and (max-width: 63.99em) { ... }
+// @media screen and (min-width: 50em) and (max-width: 56.25em) { ... }
+// @media screen and (max-width: 63.99em) and (orientation: landscape) { ... }
 // @media print { ... }
 // @media screen and (device-radius: 50%) { ... }
 //
 // OUTPUT TO LEGACY CSS:
 //
-// Only the content needed to render the $legacy-media-breakpoint layout.
+// Only the content needed to render the $legacy-media-breakpoint layout. Any
+// includes with features or types other than screen will be excluded.
 //
 // ***************************************************************************
 
@@ -190,27 +192,29 @@
   // From: this breakpoint (inclusive)
   @if $from {
     @if type-of($from) == number {
-      $min-width: $from;
+      $min-width: px2em($from);
     } @else if get-breakpoint-width($from) {
-      $min-width: get-breakpoint-width($from);
+      $min-width: px2em(get-breakpoint-width($from));
     }
   }
 
   // Upto: that breakpoint (exclusive)
   @if $upto {
     @if type-of($upto) == number {
-      $max-width: $upto;
+      $max-width: px2em($upto);
     } @else if get-breakpoint-width($upto) {
-      $max-width: get-breakpoint-width($upto) - 1px;
+      $max-width: px2em(get-breakpoint-width($upto)) - .01em;
     }
   }
 
   // Render styles without media queries
   @if $legacy-ie == true {
-    $legacy-breakpoint-width: get-breakpoint-width($legacy-media-breakpoint);
+    $legacy-breakpoint-width: px2em(get-breakpoint-width($legacy-media-breakpoint));
     // Output only rules that start at or span our legacy media width
     @if (
-      $min-width <= $legacy-breakpoint-width
+      $feature == false
+      and $type == 'screen'
+      and $min-width <= $legacy-breakpoint-width
       and (
         $upto == false or $max-width >= $legacy-breakpoint-width
       )

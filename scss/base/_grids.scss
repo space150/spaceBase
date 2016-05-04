@@ -7,7 +7,7 @@
 .grid-wrapper {
   list-style: none;
   margin-bottom: 0;
-  @include rem(margin-left, -$gutter, $base-font-size--mobile);
+  @include rem(margin-left, -$gutter);
   @include clearfix;
 }
 
@@ -39,6 +39,6 @@
 .grid {
   float: left;
   width: 100%;
-  @include rem(padding-left, $gutter, $base-font-size--mobile);
+  @include rem(padding-left, $gutter);
   transition: width .15s ease;
 }
