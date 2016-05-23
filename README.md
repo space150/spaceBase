@@ -59,9 +59,11 @@ stylesheets/
 ```
 
 You can remove:
-- `tests/`
+- `bower.json`
 - `Gemfile`
 - `Gemfile.lock`
+- `Rakefile`
+- `test/`
 
 ## Credits
 

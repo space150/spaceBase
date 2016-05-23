@@ -22,7 +22,7 @@
   "ignore": [
     "**/.*",
     ".sass-cache",
-    "tests",
+    "test",
     "Rakefile",
     "Gemfile*"
   ]
