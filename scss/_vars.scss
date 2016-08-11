@@ -68,11 +68,13 @@ $primary:      #7abcb5; // light teal
 $secondary:    #41a29c; // dark teal
 $tertiary:     #e48d38; // orange
 $quaternary:   #c46e35; // dark orange
-$quinary:      tomato; // tomato
 
 // quinary, senary, septenary, octonary, nonary, denary
 
-$all-colors: $black, $gray-dark, $gray, $gray-light, $white, $primary, $secondary, $tertiary, $quaternary, $quinary;
+$all-colors:
+
+$black, $gray-dark, $gray, $gray-light, $white,
+$primary, $secondary, $tertiary, $quaternary;
 
 // Form validation colors
 $state-success: #468847;
