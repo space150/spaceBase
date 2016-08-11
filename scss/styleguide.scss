@@ -30,6 +30,74 @@ $legacy-ie: true;
   display: block;
   height: 100px;
   width: 100px;
+  position: relative;
+  &:after {
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+  &:after {
+    top: 100px;
+  }
+  &.black {
+    background: $black;
+    &:after {
+      content: "#{$black}";
+    }
+  }
+  &.gray-dark {
+    background: $gray-dark;
+    &:after {
+      content: "#{$gray-dark}";
+    }
+  }
+  &.gray {
+    background: $gray;
+    &:after {
+      content: "#{$gray}";
+    }
+  }
+  &.gray-light {
+    background: $gray-light;
+    &:after {
+      content: "#{$gray-light}";
+    }
+  }
+  &.white {
+    background: $white;
+    &:after {
+      content: "#{$white}";
+    }
+  }
+  &.primary {
+    background: $primary;
+    &:after {
+      content: "#{$primary}";
+    }
+  }
+  &.secondary {
+    background: $secondary;
+    &:after {
+      content: "#{$secondary}";
+    }
+  }
+  &.tertiary {
+    background: $tertiary;
+    &:after {
+      content: "#{$tertiary}";
+    }
+  }
+  &.quaternary {
+    background: $quaternary;
+    &:after {
+      content: "#{$quaternary}";
+    }
+  }
+}
+
+.sg-colors .sg-label {
+  display: block;
+  @include rem(margin-top, $base-spacing-unit);
 }
 
 .sg-field-container {
