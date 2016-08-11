@@ -37,58 +37,13 @@ $legacy-ie: true;
     position: absolute;
     top: 100px;
   }
-  &.black {
-    background: $black;
+}
+
+@for $i from 1 through length($all-colors) {
+  .sg-colors li:nth-of-type(#{$i}) .sg-swatch {
+    background: nth($all-colors, $i);
     &:after {
-      content: "#{$black}";
-    }
-  }
-  &.gray-dark {
-    background: $gray-dark;
-    &:after {
-      content: "#{$gray-dark}";
-    }
-  }
-  &.gray {
-    background: $gray;
-    &:after {
-      content: "#{$gray}";
-    }
-  }
-  &.gray-light {
-    background: $gray-light;
-    &:after {
-      content: "#{$gray-light}";
-    }
-  }
-  &.white {
-    background: $white;
-    &:after {
-      content: "#{$white}";
-    }
-  }
-  &.primary {
-    background: $primary;
-    &:after {
-      content: "#{$primary}";
-    }
-  }
-  &.secondary {
-    background: $secondary;
-    &:after {
-      content: "#{$secondary}";
-    }
-  }
-  &.tertiary {
-    background: $tertiary;
-    &:after {
-      content: "#{$tertiary}";
-    }
-  }
-  &.quaternary {
-    background: $quaternary;
-    &:after {
-      content: "#{$quaternary}";
+      content: "#{nth($all-colors, $i)}"
     }
   }
 }
