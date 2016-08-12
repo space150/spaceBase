@@ -71,7 +71,8 @@ $quaternary:   #c46e35; // dark orange
 
 // quinary, senary, septenary, octonary, nonary, denary
 
-$all-colors:
+// List of all colors used to automatically populate styleguide
+$styleguide-colors:
 
 $black, $gray-dark, $gray, $gray-light, $white,
 $primary, $secondary, $tertiary, $quaternary;

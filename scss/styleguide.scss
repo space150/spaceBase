@@ -39,11 +39,11 @@ $legacy-ie: true;
   }
 }
 
-@for $i from 1 through length($all-colors) {
+@for $i from 1 through length($styleguide-colors) {
   .sg-colors li:nth-of-type(#{$i}) .sg-swatch {
-    background: nth($all-colors, $i);
+    background: nth($styleguide-colors, $i);
     &:after {
-      content: "#{nth($all-colors, $i)}"
+      content: "#{nth($styleguide-colors, $i)}"
     }
   }
 }
