@@ -40,5 +40,4 @@
   float: left;
   width: 100%;
   @include rem(padding-left, $gutter);
-  transition: width .15s ease;
 }
