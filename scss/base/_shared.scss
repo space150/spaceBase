@@ -50,4 +50,9 @@ img[height] { max-width: none; }
     @include rem(margin-left, $base-spacing-unit);
     padding: 0;
   }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 }
