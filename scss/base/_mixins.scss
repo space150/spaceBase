@@ -197,3 +197,28 @@
     }
   }
 }
+
+
+// ***************************************************************************
+// Padding mixins
+//
+// padding-horizontal and padding-vertical apply the given amount of padding
+// to padding-{left,right} and padding-{top,bottom}, respectively.
+//
+// USAGE:
+//
+// .island {
+//    @include padding-vertical($base-spacing-unit);
+// }
+//
+// ***************************************************************************
+
+@mixin padding-horizontal ($amount) {
+  padding-left: $amount;
+  padding-right: $amount;
+}
+
+@mixin padding-vertical ($amount) {
+  padding-top: $amount;
+  padding-bottom: $amount;
+}
