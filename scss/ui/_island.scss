@@ -5,7 +5,8 @@
 // Harry Robert's "island"
 .island,
 .islet,
-.landmark {
+.landmark,
+.landmarklet {
   display: block;
   @include rem(margin-bottom, $base-spacing-unit);
   @include clearfix;
@@ -29,4 +30,8 @@
 
 .landmark {
   @include rem(margin-bottom, 2 * $base-spacing-unit);
+}
+
+.landmarklet {
+  @include rem(margin-bottom, $base-spacing-unit);
 }
