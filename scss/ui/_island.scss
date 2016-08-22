@@ -7,26 +7,26 @@
 .islet,
 .landmark {
   display: block;
-  @include rem(margin-bottom, $base-spacing-unit);
+  margin-bottom: rem($base-spacing-unit);
   @include clearfix;
-  
+
   .islet & {
-    @include rem(margin-bottom, $half-spacing-unit);
+    margin-bottom: rem($half-spacing-unit);
   }
-  
+
   > :last-child { margin-bottom: 0; }
 }
 
 .island {
-  @include rem(padding-top, $base-spacing-unit);
-  @include rem(padding-bottom, $base-spacing-unit);
+  padding-top: rem($base-spacing-unit);
+  padding-bottom: rem($base-spacing-unit);
 }
 
 .islet {
-  @include rem(padding-top, $half-spacing-unit);
-  @include rem(padding-bottom, $half-spacing-unit);
+  padding-top: rem($half-spacing-unit);
+  padding-bottom: rem($half-spacing-unit);
 }
 
 .landmark {
-  @include rem(margin-bottom, 2 * $base-spacing-unit);
+  margin-bottom: rem(2 * $base-spacing-unit);
 }

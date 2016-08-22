@@ -29,30 +29,30 @@ h6, .h6 {
 }
 
 h1, .h1 {
-  @include rem(font-size, 1.875);
+  font-size: rem(1.875);
   line-height: 1;
 }
 
 h2, .h2 {
-  @include rem(font-size, 1.25);
+  font-size: rem(1.25);
   line-height: 1.2;
 }
 
 h3, .h3 {
-  @include rem(font-size, 1);
+  font-size: rem(1);
   line-height: 1.4;
 }
 
 h4, .h4 {
-  @include rem(font-size, .875);
+  font-size: rem(.875);
 }
 
 @include media($from: lap) {
-  h1, .h1 { @include rem(font-size, 3.6); }
+  h1, .h1 { font-size: rem(3.6); }
 
-  h2, .h2 { @include rem(font-size, 2.4); }
+  h2, .h2 { font-size: rem(2.4); }
 
-  h3, .h3 { @include rem(font-size, 1.5); }
+  h3, .h3 { font-size: rem(1.5); }
 
-  h4, .h4 { @include rem(font-size, 1.2); }
+  h4, .h4 { font-size: rem(1.2); }
 }
