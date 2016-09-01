@@ -81,7 +81,7 @@ input[type="checkbox"]:focus { @include tab-focus; }
   height: 2.5em;
   padding: .2em 1em;
   font-family: $font-body;
-  @include rem(font-size, 1);
+  font-size: rem(1);
   line-height: $line-height-ratio;
   color: $gray-dark;
   vertical-align: middle;
