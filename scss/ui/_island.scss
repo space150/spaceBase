@@ -18,13 +18,11 @@
 }
 
 .island {
-  padding-top: rem($base-spacing-unit);
-  padding-bottom: rem($base-spacing-unit);
+  @include padding-vertical(rem($base-spacing-unit));
 }
 
 .islet {
-  padding-top: rem($half-spacing-unit);
-  padding-bottom: rem($half-spacing-unit);
+  @include padding-vertical(rem($half-spacing-unit));
 }
 
 .landmark {
