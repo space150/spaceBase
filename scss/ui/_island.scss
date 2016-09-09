@@ -8,12 +8,7 @@
 .landmark,
 .landmarklet {
   display: block;
-  @include rem(margin-bottom, $base-spacing-unit);
   @include clearfix;
-  
-  .islet & {
-    @include rem(margin-bottom, $half-spacing-unit);
-  }
   
   > :last-child { margin-bottom: 0; }
 }
