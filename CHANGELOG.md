@@ -1,3 +1,10 @@
+### 3.0.0 (Sept 9, 2016)
+
+* Replace rem() mixin with rem function.
+* Add padding mixins.
+* Populate styleguide color swatches dynamically.
+
+
 ### 2.1.0 (Apr 19, 2016)
 
 * Update to Normalize.css 4.1.1.

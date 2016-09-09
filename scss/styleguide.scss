@@ -50,7 +50,7 @@ $legacy-ie: true;
 
 .sg-colors .sg-label {
   display: block;
-  @include rem(margin-top, $base-spacing-unit);
+  margin-top: rem($base-spacing-unit);
 }
 
 .sg-field-container {
