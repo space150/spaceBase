@@ -4,7 +4,7 @@ $legacy-ie: true;
 @import "base/mixins";
 
 .sg-landmark {
-  @include rem(margin-bottom, 3 * $base-spacing-unit);
+  margin-bottom: rem(3 * $base-spacing-unit);
 }
 
 .sg-heading {
@@ -15,21 +15,42 @@ $legacy-ie: true;
 .sg-demo-block {
   background-color: $gray;
   color: $white;
-  @include rem(padding, $half-spacing-unit);
-  @include rem(margin, 0 0 $base-spacing-unit);
+  padding: rem($half-spacing-unit);
+  margin: rem(0 0 $base-spacing-unit);
 }
 
 .sg-colors li {
   border: 1px solid $gray-light;
   background: $white;
-  @include rem(padding, .4);
-  @include rem(margin-bottom, $half-spacing-unit);
+  padding: rem(.4);
+  margin-bottom: rem($half-spacing-unit);
 }
 
 .sg-swatch {
   display: block;
   height: 100px;
   width: 100px;
+  position: relative;
+  &:after {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 100px;
+  }
+}
+
+@for $i from 1 through length($styleguide-colors) {
+  .sg-colors li:nth-of-type(#{$i}) .sg-swatch {
+    background: nth($styleguide-colors, $i);
+    &:after {
+      content: "#{nth($styleguide-colors, $i)}"
+    }
+  }
+}
+
+.sg-colors .sg-label {
+  display: block;
+  margin-top: rem($base-spacing-unit);
 }
 
 .sg-field-container {
@@ -39,4 +60,3 @@ $legacy-ie: true;
     display: block;
   }
 }
-

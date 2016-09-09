@@ -9,24 +9,22 @@
 .landmarklet {
   display: block;
   @include clearfix;
-  
+
   > :last-child { margin-bottom: 0; }
 }
 
 .island {
-  @include rem(padding-top, $base-spacing-unit);
-  @include rem(padding-bottom, $base-spacing-unit);
+  @include padding-vertical(rem($base-spacing-unit));
 }
 
 .islet {
-  @include rem(padding-top, $half-spacing-unit);
-  @include rem(padding-bottom, $half-spacing-unit);
+  @include padding-vertical(rem($half-spacing-unit));
 }
 
 .landmark {
-  @include rem(margin-bottom, 2 * $base-spacing-unit);
+  margin-bottom: rem(2 * $base-spacing-unit);
 }
 
 .landmarklet {
-  @include rem(margin-bottom, $base-spacing-unit);
+  margin-bottom: rem($base-spacing-unit);
 }

@@ -53,3 +53,42 @@
     @return false;
   }
 }
+
+
+// ***************************************************************************
+// Rem conversion
+//
+// Renders the given values as rems in the normal stylesheet and as pixels in
+// the legacy-ie stylesheet.
+//
+// USAGE:
+//
+// .element {
+//    padding: rem(4 0 2 1);
+//    font-size: rem(2);
+// }
+//
+// OUTPUT:
+//
+// .element {
+//    padding: 4rem 0 2rem 1rem;
+//    font-size: 2rem;
+// }
+//
+// OUTPUT TO LEGACY CSS:
+//
+// .element {
+//    padding: 64px 0 32px 16px;
+//    font-size: 32px;
+// }
+//
+// ***************************************************************************
+
+@function rem($rem-values) {
+  @if not $legacy-ie {
+    @return map(multiply, $rem-values, 1rem);
+  } @else {
+    // Calculate pixel values for legacy browsers that don't support rems
+    @return map(multiply, $rem-values, $base-font-size);
+  }
+}
