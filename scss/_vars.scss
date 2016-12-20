@@ -59,17 +59,22 @@ $media-features: (
 );
 
 // Colors
-$black:        #000;
-$gray-dark:    #666;
-$gray:         #999;
-$gray-light:   #ccc;
-$white:        #fff;
+$black:        #000000;
+$gray-dark:    #666666;
+$gray:         #999999;
+$gray-light:   #cccccc;
+$white:        #ffffff;
 
 $primary:      #7abcb5; // light teal
 $secondary:    #41a29c; // dark teal
 $tertiary:     #e48d38; // orange
 $quaternary:   #c46e35; // dark orange
+
 // quinary, senary, septenary, octonary, nonary, denary
+
+// List of colors used to automatically populate styleguide
+$styleguide-colors:
+$black, $gray-dark, $gray, $gray-light, $white, $primary, $secondary, $tertiary, $quaternary;
 
 // Form validation colors
 $state-success: #468847;

@@ -56,9 +56,9 @@
 
 
 // ***************************************************************************
-// Rem conversion mixin
+// Rem conversion
 //
-// Renders the given values as rems in the normal stylesheet, and as pixels in
+// Renders the given values as rems in the normal stylesheet and as pixels in
 // the legacy-ie stylesheet.
 //
 // USAGE:
@@ -103,4 +103,3 @@
     @return map(multiply, $rem-values, $base-font-size);
   }
 }
-

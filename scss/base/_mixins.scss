@@ -43,8 +43,6 @@
 
 // WebKit-style focus
 @mixin tab-focus {
-  // scss-lint:disable DuplicateProperty
-  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -52,9 +50,9 @@
 // Placeholder text
 @mixin placeholder {
   // scss-lint:disable VendorPrefix
-  &:-moz-placeholder { @content; } // Firefox 4-18
-  &::-moz-placeholder { opacity: 1; @content; } // Firefox 19+
-  &:-ms-input-placeholder { @content; } // Internet Explorer 10+
+  &::-moz-placeholder { @content; } // Firefox 19+
+  &:-ms-input-placeholder { @content; } // IE 10+
+  &::-ms-input-placeholder { @content; } // Edge
   &::-webkit-input-placeholder { @content; } // Safari and Chrome
 }
 
@@ -83,6 +81,31 @@
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba;
   }
+}
+
+
+// ***************************************************************************
+// Padding mixins
+//
+// padding-horizontal and padding-vertical apply the given amount of padding
+// to padding-{left,right} and padding-{top,bottom}, respectively.
+//
+// USAGE:
+//
+// .island {
+//   @include padding-vertical($base-spacing-unit);
+// }
+//
+// ***************************************************************************
+
+@mixin padding-horizontal($amount) {
+  padding-left: $amount;
+  padding-right: $amount;
+}
+
+@mixin padding-vertical($amount) {
+  padding-top: $amount;
+  padding-bottom: $amount;
 }
 
 
@@ -196,29 +219,4 @@
       @content;
     }
   }
-}
-
-
-// ***************************************************************************
-// Padding mixins
-//
-// padding-horizontal and padding-vertical apply the given amount of padding
-// to padding-{left,right} and padding-{top,bottom}, respectively.
-//
-// USAGE:
-//
-// .island {
-//    @include padding-vertical($base-spacing-unit);
-// }
-//
-// ***************************************************************************
-
-@mixin padding-horizontal ($amount) {
-  padding-left: $amount;
-  padding-right: $amount;
-}
-
-@mixin padding-vertical ($amount) {
-  padding-top: $amount;
-  padding-bottom: $amount;
 }

@@ -1,3 +1,15 @@
+### 3.0.0 (Dec 20, 2016)
+
+* Replace rem() mixin with rem function.
+* Calculate $base-spacing-unit once.
+* Add padding mixins.
+* Add plain anchor helper.
+* Add landmarklet class.
+* Update form styles for better cross browser uniformity.
+* Populate styleguide color swatches dynamically.
+* Update to Normalize.css 5.0.0.
+
+
 ### 2.1.0 (Apr 19, 2016)
 
 * Update to Normalize.css 4.1.1.

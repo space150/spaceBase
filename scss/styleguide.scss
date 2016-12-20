@@ -30,6 +30,27 @@ $legacy-ie: true;
   display: block;
   height: 100px;
   width: 100px;
+  position: relative;
+  &:after {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 100px;
+  }
+}
+
+@for $i from 1 through length($styleguide-colors) {
+  .sg-colors li:nth-of-type(#{$i}) .sg-swatch {
+    background: nth($styleguide-colors, $i);
+    &:after {
+      content: "#{nth($styleguide-colors, $i)}"
+    }
+  }
+}
+
+.sg-colors .sg-label {
+  display: block;
+  margin-top: rem($base-spacing-unit);
 }
 
 .sg-field-container {
@@ -39,4 +60,3 @@ $legacy-ie: true;
     display: block;
   }
 }
-

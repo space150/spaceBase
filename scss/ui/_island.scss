@@ -5,28 +5,26 @@
 // Harry Robert's "island"
 .island,
 .islet,
-.landmark {
+.landmark,
+.landmarklet {
   display: block;
-  margin-bottom: $base-spacing-unit;
   @include clearfix;
-
-  .islet & {
-    margin-bottom: $half-spacing-unit;
-  }
 
   > :last-child { margin-bottom: 0; }
 }
 
 .island {
-  padding-top: $base-spacing-unit;
-  padding-bottom: $base-spacing-unit;
+  @include padding-vertical($base-spacing-unit);
 }
 
 .islet {
-  padding-top: $half-spacing-unit;
-  padding-bottom: $half-spacing-unit;
+  @include padding-vertical($half-spacing-unit);
 }
 
 .landmark {
   margin-bottom: 2 * $base-spacing-unit;
+}
+
+.landmarklet {
+  margin-bottom: rem($base-spacing-unit);
 }
