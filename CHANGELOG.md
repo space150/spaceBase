@@ -1,7 +1,8 @@
-### 3.0.0 (Sept 9, 2016)
+### 3.0.0 (Dec 20, 2016)
 
 * Replace rem() mixin with rem function.
 * Add padding mixins.
+* Add plain anchor helper.
 * Populate styleguide color swatches dynamically.
 
 
