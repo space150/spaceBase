@@ -13,7 +13,7 @@ a {
   color: $primary;
   text-decoration: none;
 
-  &:hover { text-decoration: underline; }
+  &:hover, &:focus { text-decoration: underline; }
 }
 
 i { font-style: normal; }

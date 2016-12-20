@@ -90,23 +90,30 @@ input[type="checkbox"]:focus { @include tab-focus; }
   border: 1px solid $gray;
   border-radius: 0;
   transition: border-color ease-in-out .15s;
+  
+  // Unstyle the caret on `<select>`s in IE10+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
 
   // Customize the `:focus` state to imitate native WebKit styles
   @include form-control-focus;
 
   // Placeholder
-  @include placeholder { color: $primary; }
+  @include placeholder {
+    color: $primary;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
 
   // Disabled and read-only inputs
   &[disabled],
-  &[readonly],
-  fieldset[disabled] & {
+  &[readonly] {
     background-color: $gray-light;
     opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
   }
 
-  &[disabled],
-  fieldset[disabled] & {
+  &[disabled] {
     cursor: not-allowed;
   }
 }
@@ -135,6 +142,7 @@ textarea.form-control {
   margin-bottom: 10px;
 
   label {
+    display: inline-block;
     min-height: $base-line-height; // Ensure the input doesn't jump when there is no text
     padding-left: 22px;
     margin-bottom: 0;

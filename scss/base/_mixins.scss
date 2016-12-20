@@ -43,8 +43,6 @@
 
 // WebKit-style focus
 @mixin tab-focus {
-  // scss-lint:disable DuplicateProperty
-  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -52,9 +50,9 @@
 // Placeholder text
 @mixin placeholder {
   // scss-lint:disable VendorPrefix
-  &:-moz-placeholder { @content; } // Firefox 4-18
-  &::-moz-placeholder { opacity: 1; @content; } // Firefox 19+
-  &:-ms-input-placeholder { @content; } // Internet Explorer 10+
+  &::-moz-placeholder { @content; } // Firefox 19+
+  &:-ms-input-placeholder { @content; } // IE 10+
+  &::-ms-input-placeholder { @content; } // Edge
   &::-webkit-input-placeholder { @content; } // Safari and Chrome
 }
 
