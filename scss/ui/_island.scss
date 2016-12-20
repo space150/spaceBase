@@ -14,15 +14,15 @@
 }
 
 .island {
-  @include padding-vertical(rem($base-spacing-unit));
+  @include padding-vertical($base-spacing-unit);
 }
 
 .islet {
-  @include padding-vertical(rem($half-spacing-unit));
+  @include padding-vertical($half-spacing-unit);
 }
 
 .landmark {
-  margin-bottom: rem(2 * $base-spacing-unit);
+  margin-bottom: 2 * $base-spacing-unit;
 }
 
 .landmarklet {

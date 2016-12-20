@@ -85,10 +85,21 @@
 // ***************************************************************************
 
 @function rem($rem-values) {
+  @if length($rem-values) > 1 {
+    @return rem-list($rem-values);
+  }
+  @if not $legacy-ie {
+    @return $rem-values * 1rem;
+  } @else {
+    // Calculate pixel values for legacy browsers that don't support rems
+    @return $rem-values * $base-font-size;
+  }
+}
+
+@function rem-list($rem-values) {
   @if not $legacy-ie {
     @return map(multiply, $rem-values, 1rem);
   } @else {
-    // Calculate pixel values for legacy browsers that don't support rems
     @return map(multiply, $rem-values, $base-font-size);
   }
 }

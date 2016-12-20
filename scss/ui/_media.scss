@@ -7,7 +7,7 @@
 
 .media__item {
   float: left;
-  margin-right: rem($half-spacing-unit);
+  margin-right: $half-spacing-unit;
 
   img,
   video,
@@ -27,7 +27,7 @@
 .media--flip > .media__item {
   float: right;
   margin-right: 0;
-  margin-left: rem($half-spacing-unit);
+  margin-left: $half-spacing-unit;
 }
 
 // NOWRAP
@@ -46,7 +46,7 @@
   }
 
   .media__item {
-    padding-right: rem($half-spacing-unit);
+    padding-right: $half-spacing-unit;
 
     img {
       width: auto !important;

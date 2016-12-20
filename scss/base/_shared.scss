@@ -40,14 +40,14 @@ img[height] { max-width: none; }
   fieldset,figure,figcaption,
   pre {
     margin-top: 0;
-    margin-bottom: rem($base-spacing-unit);
+    margin-bottom: $base-spacing-unit;
     ul,ol { margin-bottom: 0; }
   }
 
   // Where `margin-left` is concerned, we want to try and indent certain elements
   // by a consistent amount
   ul,ol,dd {
-    margin-left: rem($base-spacing-unit);
+    margin-left: $base-spacing-unit;
     padding: 0;
   }
   

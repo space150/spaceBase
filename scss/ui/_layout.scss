@@ -8,5 +8,6 @@ body { min-width: $site-min-width; }
   max-width: $site-wrapper-max-width;
   margin-left: auto;
   margin-right: auto;
-  @include padding-horizontal(rem($gutter));
+  @include padding-horizontal($gutter);
 }
+
