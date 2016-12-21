@@ -1,3 +1,8 @@
+### 3.0.1 (Dec 21, 2016)
+
+* Fix styleguide.scss compile issue.
+
+
 ### 3.0.0 (Dec 20, 2016)
 
 * Replace rem() mixin with rem function.
