@@ -21,16 +21,19 @@ html:not([class*="lt"]) {
 
     // align-items
 
+    &.align--start,
     &.valign--top {
       align-items: flex-start;
     }
+    &.align--center,
     &.valign--middle {
       align-items: center;
     }
+    &.align--end,
     &.valign--bottom {
       align-items: flex-end;
     }
-    &.stretch {
+    &.align--stretch {
       align-items: stretch;
     }
 
@@ -98,7 +101,7 @@ html[class*="lt"] {
     @include clearfix;
 
     &[class*="valign"],
-    &.stretch {
+    &.align--stretch {
       display: table;
       height: 100%;
       width: calc(100% + $gutter);
@@ -145,7 +148,7 @@ html[class*="lt"] {
   .gw,
   .grid-wrapper {
     &[class*="valign"],
-    &.stretch {
+    &.align--stretch {
       width: $site-wrapper-max-width - 28; // 28 == $gutter
     }
   }
