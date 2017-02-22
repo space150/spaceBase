@@ -1,0 +1,30 @@
+@media screen and (min-width: 30em) {
+  div { display: none; }
+}
+@media screen and (max-width: 29.99em) {
+  div { display: none; }
+}
+
+
+@media screen and (min-width: 48em) {
+  div { display: none; }
+}
+@media screen and (max-width: 47.99em) {
+  div { display: none; }
+}
+
+
+@media screen and (min-width: 64em) {
+  div { display: none; }
+}
+@media screen and (max-width: 63.99em) {
+  div { display: none; }
+}
+
+
+@media screen and (min-width: 75em) {
+  div { display: none; }
+}
+@media screen and (max-width: 74.99em) {
+  div { display: none; }
+}

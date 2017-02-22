@@ -1,0 +1,29 @@
+{
+  "name": "spacebase",
+  "homepage": "http://spacebase.space150.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/space150/spaceBase.git"
+  },
+  "authors": [
+    "space150 (http://www.space150.com)"
+  ],
+  "description": "spaceBase is a Sass-based responsive CSS framework.",
+  "main": "stylesheets/application.css",
+  "keywords": [
+    "css",
+    "sass",
+    "responsive",
+    "front-end",
+    "framework",
+    "space150"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    ".sass-cache",
+    "test",
+    "Rakefile",
+    "Gemfile*"
+  ]
+}

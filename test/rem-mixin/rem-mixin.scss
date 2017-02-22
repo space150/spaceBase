@@ -1,0 +1,14 @@
+@import "../test_helper";
+
+div {
+  @include rem(margin-left, 4);
+  @include rem(padding, 4 0 2 1);
+  @include rem(font-size, 2, $fallback: $base-font-size);
+}
+
+$legacy-ie: true;
+
+span {
+  @include rem(padding, 4 0 2 1);
+  @include rem(font-size, 2, $fallback: $base-font-size);
+}
