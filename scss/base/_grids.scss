@@ -2,39 +2,157 @@
 //  $GRIDS
 //------------------------------------//
 
-// Grid wrapper
-.gw,
-.grid-wrapper {
-  list-style: none;
-  margin-bottom: 0;
-  margin-left: -$gutter;
-  @include clearfix;
-}
 
+// because @supports isn't well supported (in ie)
+// we'll check class to keep ie10 & ie11 in the mix
+// want to drop ie and go edge only? switch to: @supports (display: flex)
 
-// Reverse grid
-.gw--rev > .g,
-.grid-wrapper--rev > .grid { float: right; }
+html:not([class*="lt"]) {
+  .gw,
+  .grid-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -$gutter;
 
+    // align-items
 
-// Gutterless grid
-.gw--full,
-.grid-wrapper--full {
-  margin-left: 0;
+    &.valign--top {
+      align-items: flex-start;
+    }
+    &.valign--middle {
+      align-items: center;
+    }
+    &.valign--bottom {
+      align-items: flex-end;
+    }
+    &.stretch {
+      align-items: stretch;
+    }
 
-  > .g,
-  > .grid {
-    padding-left: 0;
+    // justify
+
+    &[class^="justify"] {
+      flex-wrap: nowrap;
+    }
+    &.justify--start {
+      justify-content: flex-start;
+    }
+    &.justify--center {
+      justify-content: center;
+    }
+    &.justify--end {
+      justify-content: flex-end;
+    }
+    &.justify--space-between {
+      justify-content: space-between;
+    }
+    &.justify--space-around {
+      justify-content: space-around;
+    }
+  }
+
+  .gw--col,
+  .grid-wrapper--column {
+    flex-direction: column;
+  }
+
+  .gw--rev,
+  .grid-wrapper--rev {
+    flex-direction: row-reverse;
+
+    &[class*="gw--col"],
+    &[class*="grid-wrapper--column"] {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .g,
+  .grid {
+    -webkit-box-flex: 0 1 auto;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    padding-left: $gutter;
+    transition: width .15s ease;
   }
 }
 
 
-// Very infrequently occuring grid wrappers as children of grid wrappers
-.gw > .gw,
-.grid-wrapper > .grid-wrapper { margin-left: 0; }
+// ie9 support
+// could include '@supports not'
+// but browsers need to support @supports to support '@supports not'
+// and we want to keep ie10 & ie11 in the mix (for now)
+// want to drop ie and go edge only? switch to: @supports not (display: flex)
 
+html[class*="lt"] {
+  .gw,
+  .grid-wrapper {
+    list-style: none;
+    margin-bottom: 0;
+    margin-left: -$gutter;
+    @include clearfix;
 
-// Grid
+    &[class*="valign"],
+    &.stretch {
+      display: table;
+      height: 100%;
+      width: calc(100% + $gutter);
+
+      > .g,
+      > .grid {
+        display: table-cell;
+        float: none;
+        height: 100%;
+        padding: 0;
+
+        border: 0 transparent solid;
+        border-width: 0 0 0 $gutter;
+        background-clip: padding-box;
+      }
+    }
+
+    &.valign--top > .g,
+    &.valign--top > .grid {
+      vertical-align: top;
+    }
+    &.valign--middle > .g,
+    &.valign--middle > .grid {
+      vertical-align: middle;
+    }
+    &.valign--bottom > .g,
+    &.valign--bottom > .grid {
+      vertical-align: bottom;
+    }
+
+  }
+
+  .gw--rev > .g,
+  .grid-wrapper--rev > .grid {
+    float: right;
+  }
+}
+
+// This just makes ie9 look nice in the styleguide
+// calc() doesn't work in ie9 for display: table;
+// only an issue when applying .valign--middle
+
+.lt-ie10 {
+  .gw,
+  .grid-wrapper {
+    &[class*="valign"],
+    &.stretch {
+      width: $site-wrapper-max-width - 28; // 28 == $gutter
+    }
+  }
+}
+
+// Everyone's cool with these
+
 .g,
 .grid {
   float: left;
@@ -42,3 +160,20 @@
   padding-left: $gutter;
   transition: width .15s ease;
 }
+
+
+// Gutterless grid
+.gw--full,
+.grid-wrapper--full {
+  margin-left: 0 !important;
+
+  > .g,
+  > .grid {
+    padding-left: 0 !important;
+  }
+}
+
+
+// Very infrequently occuring grid wrappers as children of grid wrappers
+.gw > .gw,
+.grid-wrapper > .grid-wrapper { margin-left: 0 !important; }
