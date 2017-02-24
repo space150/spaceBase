@@ -39,9 +39,6 @@ html:not([class*="lt"]) {
 
     // justify
 
-    &[class^="justify"] {
-      flex-wrap: nowrap;
-    }
     &.justify--start {
       justify-content: flex-start;
     }
@@ -68,8 +65,8 @@ html:not([class*="lt"]) {
   .grid-wrapper--rev {
     flex-direction: row-reverse;
 
-    &[class*="gw--col"],
-    &[class*="grid-wrapper--column"] {
+    &.gw--col,
+    &.grid-wrapper--column {
       flex-direction: column-reverse !important;
     }
   }
