@@ -58,9 +58,6 @@
 // ***************************************************************************
 // Rem conversion
 //
-// Renders the given values as rems in the normal stylesheet and as pixels in
-// the legacy-ie stylesheet.
-//
 // USAGE:
 //
 // .element {
@@ -75,31 +72,11 @@
 //    font-size: 2rem;
 // }
 //
-// OUTPUT TO LEGACY CSS:
-//
-// .element {
-//    padding: 64px 0 32px 16px;
-//    font-size: 32px;
-// }
-//
 // ***************************************************************************
 
 @function rem($rem-values) {
   @if length($rem-values) > 1 {
-    @return rem-list($rem-values);
-  }
-  @if not $legacy-ie {
-    @return $rem-values * 1rem;
-  } @else {
-    // Calculate pixel values for legacy browsers that don't support rems
-    @return $rem-values * $base-font-size;
-  }
-}
-
-@function rem-list($rem-values) {
-  @if not $legacy-ie {
     @return map(multiply, $rem-values, 1rem);
-  } @else {
-    @return map(multiply, $rem-values, $base-font-size);
   }
+  @return $rem-values * 1rem;
 }

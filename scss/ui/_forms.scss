@@ -90,7 +90,7 @@ input[type="checkbox"]:focus { @include tab-focus; }
   border: 1px solid $gray;
   border-radius: 0;
   transition: border-color ease-in-out .15s;
-  
+
   // Unstyle the caret on `<select>`s in IE10+
   &::-ms-expand {
     background-color: transparent;
