@@ -30,7 +30,7 @@
   height: 100px;
   width: 100px;
   position: relative;
-  
+
   &:after {
     display: block;
     left: 0;
@@ -52,12 +52,4 @@
 .sg-colors .sg-label {
   display: block;
   margin-top: $base-spacing-unit;
-}
-
-.sg-field-container {
-  margin-bottom: 1em;
-
-  label {
-    display: block;
-  }
 }

@@ -41,12 +41,6 @@
   white-space: nowrap;
 }
 
-// WebKit-style focus
-@mixin tab-focus {
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
 // Placeholder text
 @mixin placeholder {
   // scss-lint:disable VendorPrefix
@@ -73,13 +67,13 @@
 }
 
 // Form control focus state, based on WebKit's default styles
-@mixin form-control-focus($color: #66afe9) {
-  $color-rgba: rgba(red($color), green($color), blue($color), .6);
+@mixin form-control-focus($color: #419bf9) {
+  $color-rgba: rgba($color, .25);
 
   &:focus {
     border-color: $color;
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 0 .2rem $color-rgba;
   }
 }
 
