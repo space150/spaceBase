@@ -102,6 +102,7 @@ select.form-control {
 .checkbox {
   position: relative;
   display: block;
+  margin-bottom: .3em;
 
   label {
     padding-left: 22px;
@@ -113,7 +114,7 @@ select.form-control {
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   position: absolute;
-  margin-top: .3rem;
+  margin-top: .3em;
   margin-left: -22px;
 }
 
