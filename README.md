@@ -49,9 +49,7 @@ scss/
     ...
   vendor/
     ...
-  _manifest.scss
   _vars.scss
-  application-ie.scss
   application.scss
   styleguide.scss
 stylesheets/
