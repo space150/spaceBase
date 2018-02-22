@@ -1,3 +1,10 @@
+### 4.0.0 (Feb 22, 2018)
+
+* Remove support for IE8/9.
+* Update form styles.
+* Update to Normalize.css 8.0.0.
+
+
 ### 3.0.1 (Dec 21, 2016)
 
 * Fix styleguide.scss compile issue.
