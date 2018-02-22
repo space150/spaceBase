@@ -2,178 +2,98 @@
 //  $GRIDS
 //------------------------------------//
 
+.gw,
+.grid-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -$gutter;
 
-// because @supports isn't well supported (in ie)
-// we'll check class to keep ie10 & ie11 in the mix
-// want to drop ie and go edge only? switch to: @supports (display: flex)
-
-html:not([class*="lt"]) {
-  .gw,
-  .grid-wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-left: -$gutter;
-
-    // align-items
-
-    &.align--start,
-    &.valign--top {
-      align-items: flex-start;
-    }
-    &.align--center,
-    &.valign--middle {
-      align-items: center;
-    }
-    &.align--end,
-    &.valign--bottom {
-      align-items: flex-end;
-    }
-    &.align--stretch {
-      align-items: stretch;
-    }
-
-    // justify
-
-    &.justify--start {
-      justify-content: flex-start;
-    }
-    &.justify--center {
-      justify-content: center;
-    }
-    &.justify--end {
-      justify-content: flex-end;
-    }
-    &.justify--space-between {
-      justify-content: space-between;
-    }
-    &.justify--space-around {
-      justify-content: space-around;
-    }
+  // align-items
+  &.align--start,
+  &.valign--top {
+    align-items: flex-start;
+  }
+  &.align--center,
+  &.valign--middle {
+    align-items: center;
+  }
+  &.align--end,
+  &.valign--bottom {
+    align-items: flex-end;
+  }
+  &.align--stretch {
+    align-items: stretch;
   }
 
-  .gw--col,
-  .grid-wrapper--column {
-    flex-direction: column;
+  // justify
+  &.justify--start {
+    justify-content: flex-start;
   }
-
-  .gw--rev,
-  .grid-wrapper--rev {
-    flex-direction: row-reverse;
-
-    &.gw--col,
-    &.grid-wrapper--column {
-      flex-direction: column-reverse !important;
-    }
+  &.justify--center {
+    justify-content: center;
   }
-
-  .g,
-  .grid {
-    -webkit-box-flex: 0 1 auto;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    padding-left: $gutter;
-    transition: width .15s ease;
+  &.justify--end {
+    justify-content: flex-end;
+  }
+  &.justify--space-between {
+    justify-content: space-between;
+  }
+  &.justify--space-around {
+    justify-content: space-around;
   }
 }
 
-
-// ie9 support
-// could include '@supports not'
-// but browsers need to support @supports to support '@supports not'
-// and we want to keep ie10 & ie11 in the mix (for now)
-// want to drop ie and go edge only? switch to: @supports not (display: flex)
-
-html[class*="lt"] {
-  .gw,
-  .grid-wrapper {
-    list-style: none;
-    margin-bottom: 0;
-    margin-left: -$gutter;
-    @include clearfix;
-
-    &[class*="valign"],
-    &.align--stretch {
-      display: table;
-      height: 100%;
-      width: calc(100% + $gutter);
-
-      > .g,
-      > .grid {
-        display: table-cell;
-        float: none;
-        height: 100%;
-        padding: 0;
-
-        border: 0 transparent solid;
-        border-width: 0 0 0 $gutter;
-        background-clip: padding-box;
-      }
-    }
-
-    &.valign--top > .g,
-    &.valign--top > .grid {
-      vertical-align: top;
-    }
-    &.valign--middle > .g,
-    &.valign--middle > .grid {
-      vertical-align: middle;
-    }
-    &.valign--bottom > .g,
-    &.valign--bottom > .grid {
-      vertical-align: bottom;
-    }
-
-  }
-
-  .gw--rev > .g,
-  .grid-wrapper--rev > .grid {
-    float: right;
-  }
+.gw--col,
+.grid-wrapper--column {
+  flex-direction: column;
 }
 
-// This just makes ie9 look nice in the styleguide
-// calc() doesn't work in ie9 for display: table;
-// only an issue when applying .valign--middle
+.gw--rev,
+.grid-wrapper--rev {
+  flex-direction: row-reverse;
 
-.lt-ie10 {
-  .gw,
-  .grid-wrapper {
-    &[class*="valign"],
-    &.align--stretch {
-      width: $site-wrapper-max-width - 28; // 28 == $gutter
-    }
+  &.gw--col,
+  &.grid-wrapper--column {
+    flex-direction: column-reverse;
   }
 }
-
-// Everyone's cool with these
-
-.g,
-.grid {
-  float: left;
-  width: 100%;
-  padding-left: $gutter;
-  transition: width .15s ease;
-}
-
 
 // Gutterless grid
 .gw--full,
 .grid-wrapper--full {
-  margin-left: 0 !important;
+  margin-left: 0;
 
   > .g,
   > .grid {
-    padding-left: 0 !important;
+    padding-left: 0;
   }
 }
 
+.g,
+.grid {
+  -webkit-box-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  padding-left: $gutter;
 
-// Very infrequently occuring grid wrappers as children of grid wrappers
-.gw > .gw,
-.grid-wrapper > .grid-wrapper { margin-left: 0 !important; }
+  &.auto {
+    -webkit-box-flex: 1 1 0;
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+    width: auto;
+  }
+
+  &.shrink {
+    width: auto;
+  }
+}
