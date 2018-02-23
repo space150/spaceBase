@@ -3,7 +3,7 @@
 //------------------------------------//
 
 @mixin push-setup($namespace: "") {
-  @include grid-setup("push--" + $namespace, left);
+  @include grid-setup("push--" + $namespace, margin-left);
 }
 
 @if $push {
@@ -12,7 +12,7 @@
   @if $responsive {
     @include push-setup;
 
-    @if $responsive-push-pull {
+    @if $responsive-push {
       @each $breakpoint, $_ in $media-breakpoints {
         @include media($from: $breakpoint) { @include push-setup("#{$breakpoint}-"); }
       }
