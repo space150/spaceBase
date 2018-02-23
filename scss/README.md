@@ -80,9 +80,9 @@ Example:
 
 This would create a `div` that at the smallest sizes fills the full width of the horizontal space, takes up half of that space at `hand` sizes, a third of that space at `lap` sizes, and a quarter at `desk` sizes.
 
-### Push and Pull
+### Push
 
-Push classes move grid items over to the right, creating white space on the left. Pull classes move grid items over to the left, creating white space on the right. Push and pull styles follow the same logic of the `$responsive` variable. If `$responsive` is false, they only apply to the `lap`  breakpoint and above. If `$responsive` is true, you have access to push and pull classes prefixed with the breakpoint namespace.
+Push classes move grid items over to the right, creating white space on the left. Push styles follow the same logic of the `$responsive` variable. If `$responsive` is false, they only apply to the `lap`  breakpoint and above. If `$responsive` is true, you have access to push classes prefixed with the breakpoint namespace.
 
 Example:
 ~~~html
@@ -95,6 +95,6 @@ Example:
 </div>
 ~~~
 
-To exclude the push/pull styles from the compiled stylesheet, change their variables to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
+To exclude the push styles from the compiled stylesheet, change their variables to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
 
 See the [style guide](../styleguide.html) for more grid examples.
