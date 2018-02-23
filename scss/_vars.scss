@@ -28,7 +28,7 @@ $base-font-size--mobile: $base-font-size;
 // Calculated measurements
 $line-height-ratio: $base-line-height / $base-font-size;
 
-$base-spacing-unit: rem($line-height-ratio);
+$base-spacing-unit: $line-height-ratio * 1rem;
 $half-spacing-unit: $base-spacing-unit / 2;
 
 // Grid

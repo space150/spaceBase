@@ -53,30 +53,3 @@
     @return false;
   }
 }
-
-
-// ***************************************************************************
-// Rem conversion
-//
-// USAGE:
-//
-// .element {
-//    padding: rem(4 0 2 1);
-//    font-size: rem(2);
-// }
-//
-// OUTPUT:
-//
-// .element {
-//    padding: 4rem 0 2rem 1rem;
-//    font-size: 2rem;
-// }
-//
-// ***************************************************************************
-
-@function rem($rem-values) {
-  @if length($rem-values) > 1 {
-    @return map(multiply, $rem-values, 1rem);
-  }
-  @return $rem-values * 1rem;
-}
