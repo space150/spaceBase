@@ -4,6 +4,7 @@
 
 .gw,
 .grid-wrapper {
+  list-style: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,6 +12,7 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  margin-bottom: 0;
   margin-left: -$gutter;
 
   // Align-items
