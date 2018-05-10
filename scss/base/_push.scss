@@ -7,8 +7,6 @@
 }
 
 @if $push {
-  [class*="push--"] { position: relative; }
-
   @if $responsive {
     @include push-setup;
 
