@@ -58,12 +58,12 @@ scss/
 stylesheets/
 ```
 
-You can remove:
+You can remove (if downloaded from Git):
+- `*.yml`
 - `package.json`
-- `Gemfile`
-- `Gemfile.lock`
+- `Gemfile*`
 - `Rakefile`
-- `test/`
+- `test`
 
 ## Credits
 

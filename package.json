@@ -22,6 +22,6 @@
     "*.md",
     "*.html",
     "scss/*",
-    "stylesheets"
+    "stylesheets/*.css"
   ]
 }
