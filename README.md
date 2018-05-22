@@ -29,7 +29,7 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 
 ## Getting Started
 
-1. `$ bower install spacebase` or download the ZIP and copy its contents into your project folder.
+1. `$ npm install spacebase` or download the ZIP and copy its contents into your project folder.
 2. Use your favorite Sass 3.3 compiler to watch changes and compile the files. (Setting up Sass is outside the scope of this document.)
 3. Open scss/_vars.scss to make changes to your global variables.
 4. Start building out your HTML. We've included index.html as a starting point.
@@ -59,7 +59,7 @@ stylesheets/
 ```
 
 You can remove:
-- `bower.json`
+- `package.json`
 - `Gemfile`
 - `Gemfile.lock`
 - `Rakefile`

@@ -1,15 +1,15 @@
 {
   "name": "spacebase",
+  "version": "3.0.1",
+  "description": "spaceBase is a Sass-based responsive CSS framework.",
   "homepage": "http://spacebase.space150.com",
+  "main": "stylesheets/application.css",
   "repository": {
     "type": "git",
     "url": "git://github.com/space150/spaceBase.git"
   },
-  "authors": [
-    "space150 (http://www.space150.com)"
-  ],
-  "description": "spaceBase is a Sass-based responsive CSS framework.",
-  "main": "stylesheets/application.css",
+  "author": "space150 (http://www.space150.com)",
+  "license": "MIT",
   "keywords": [
     "css",
     "sass",
@@ -18,12 +18,10 @@
     "framework",
     "space150"
   ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    ".sass-cache",
-    "test",
-    "Rakefile",
-    "Gemfile*"
+  "files": [
+    "*.md",
+    "*.html",
+    "scss/*",
+    "stylesheets"
   ]
 }
