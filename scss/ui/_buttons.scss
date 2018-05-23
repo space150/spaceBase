@@ -6,6 +6,7 @@
   display: inline-block;
   margin: 0;
   padding: .4em 1em;
+  color: $primary;
   font-size: 1rem;
   line-height: 1.6em;
   text-align: center;
@@ -13,6 +14,7 @@
   white-space: nowrap;
   border: 1px solid $gray;
   border-radius: 0;
+  background: transparent;
   cursor: pointer;
 
   &,
