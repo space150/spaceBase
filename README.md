@@ -12,9 +12,10 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 ### Highlights
 
 * Object-oriented CSS
+* Flexbox grid system
 * Optimized for light speed
-* Common UI components (buttons, lists, media object)
 * Helper classes and mixins
+* Common UI components
 * Cross-browser form controls
 * Built on REMs, with px fallback
 * Supports modern browsers including IE8+
@@ -30,7 +31,7 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 ## Getting Started
 
 1. `$ npm install spacebase` or download the ZIP and copy its contents into your project folder.
-2. Use your favorite Sass 3.3 compiler to watch changes and compile the files. (Setting up Sass is outside the scope of this document.)
+2. Use your favorite Sass 3.3 compiler to watch for changes and compile the files. (Setting up Sass is outside the scope of this document.)
 3. Open scss/_vars.scss to make changes to your global variables.
 4. Start building out your HTML. We've included index.html as a starting point.
 5. scss/base/ is the core of spaceBase. Build your UI layer in scss/ui/
@@ -70,7 +71,6 @@ You can remove (if downloaded from Git):
 * [Harry Robert’s Inuit.css](https://github.com/csswizardry/inuit.css)
 * [Sass MQ](https://github.com/sass-mq/sass-mq)
 * [Bootstrap](http://getbootstrap.com)
-* [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css)
 * [Eric Meyer’s CSS Reset](http://meyerweb.com/eric/tools/css/reset)
 
