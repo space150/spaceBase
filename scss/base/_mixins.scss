@@ -11,20 +11,6 @@
   }
 }
 
-// Clear grid floats
-@mixin n-up($number) {
-  &:nth-of-type(#{$number}n + 1) {
-    clear: left;
-  }
-}
-
-// Clear grid float clears
-@mixin clear-n-up($number) {
-  &:nth-of-type(#{$number}n + 1) {
-    clear: none;
-  }
-}
-
 // Image replacement
 @mixin hide-text {
   border: 0;
@@ -127,7 +113,7 @@
 // You can define additional feature aliases or use custom one-off expressions.
 //
 // It's important to note that $upto is exclusive.
-// This means that `@include media($upto: 768px)` will set a max-width of 
+// This means that `@include media($upto: 768px)` will set a max-width of
 // 47.99em (roughly 767px).
 //
 // USAGE:
