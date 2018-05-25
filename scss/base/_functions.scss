@@ -2,26 +2,6 @@
 //  $FUNCTIONS
 //------------------------------------//
 
-// map
-//   Applies the function to each argument in the given list.
-@function map($func, $list, $args...) {
-  $new-list: ();
-  @each $item in $list {
-    $new-list: append($new-list, call($func, $item, $args...));
-  }
-  @return $new-list;
-}
-
-// multiply
-//   Multiplies a and b, if a is a number.
-@function multiply($a, $b) {
-  @if type-of($a) == 'number' {
-    @return $a * $b;
-  } @else {
-    @return $a;
-  }
-}
-
 // px2em
 //   Convert pixels to ems
 @function px2em($px) {
