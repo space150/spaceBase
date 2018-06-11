@@ -7,9 +7,7 @@
   http://spacebase.space150.com
 */
 
-$legacy-ie: false !default;
-
-// To select Normalize or Reset, see _manifest.scss
+// To select Normalize or Reset, see application.scss
 $normalize: false !default;
 $reset:     false !default;
 
@@ -30,7 +28,7 @@ $base-font-size--mobile: $base-font-size;
 // Calculated measurements
 $line-height-ratio: $base-line-height / $base-font-size;
 
-$base-spacing-unit: rem($line-height-ratio);
+$base-spacing-unit: $line-height-ratio * 1rem;
 $half-spacing-unit: $base-spacing-unit / 2;
 
 // Grid
@@ -47,8 +45,6 @@ $media-breakpoints: (
   desk: 1024px,
   wall: 1200px
 );
-
-$legacy-media-breakpoint: desk;
 
 // Media query expressions
 $media-features: (

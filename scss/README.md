@@ -11,26 +11,11 @@ The `scss/` directory contains three folders: Base, UI and Vendor.
 
 ## Compilation
 
-All partials are imported into the `_manifest.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. `_manifest.scss` is then imported into the two main stylesheets, `application.scss` and `application-ie.scss`. Set up your Sass compilation to generate these in the `stylesheets/` directory. Because of the amount of comments, please use minified CSS in production.
-
-### Legacy IE Support
-
-After compilation you will have two stylesheets, `application.css` and `application-ie.css`. The only difference between these files lies in the `$legacy-ie` variable. When set to true, the `media()` mixin will only render the content inside appropriate media query breakpoints. Taking advantage of CSS inheritance, the site will render the desktop layout in legacy browsers that don't support media queries (IE8 and below). Therefore, these should be loaded into the site via conditional comments.
-
-Example:
-~~~html
-<!--[if (gt IE 8) | (IEMobile)]><!-->
-  <link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
-<!--<![endif]-->
-
-<!--[if (lt IE 9) & (!IEMobile)]>
-  <link href="/stylesheets/application-ie.css" media="all" rel="stylesheet" type="text/css" />
-<![endif]-->
-~~~
+All partials are imported into the `application.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. Set up your Sass compilation to generate this in the `stylesheets/` directory. Because of the amount of comments, please use minified CSS in production.
 
 ### Styleguide
 
-There is a third stylesheet, `styleguide.css`, used only in `styleguide.html`. This file is the start for your project style guide, including grid examples, color swatches, typography, UI and form elements. [What is a style guide?](http://alistapart.com/article/creating-style-guides)
+There is an additional stylesheet, `styleguide.css`, used only in `styleguide.html`. This file is the start for your project style guide, including grid examples, color swatches, typography, UI and form elements. [What is a style guide?](http://alistapart.com/article/creating-style-guides)
 
 
 ## Global Variables

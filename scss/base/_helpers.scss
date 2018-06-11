@@ -78,6 +78,7 @@
 // Remove styling of anchor, useful for large clickable content areas
 .anchor-plain {
   color: inherit;
+  
   &:hover, &:focus {
     text-decoration: none;
   }

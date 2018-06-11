@@ -16,8 +16,7 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 * Common UI components (buttons, lists, media object)
 * Helper classes and mixins
 * Cross-browser form controls
-* Built on REMs, with px fallback
-* Supports modern browsers including IE8+
+* Supports modern browsers including IE10+
 
 ### Customizable Features
 
@@ -50,9 +49,7 @@ scss/
     ...
   vendor/
     ...
-  _manifest.scss
   _vars.scss
-  application-ie.scss
   application.scss
   styleguide.scss
 stylesheets/
@@ -78,4 +75,4 @@ You can remove (if downloaded from Git):
 
 spaceBase is free to use under the [MIT License](LICENSE.md).
 
-Copyright 2016 [space150](http://www.space150.com)
+Copyright 2013-2018 [space150](http://www.space150.com)
