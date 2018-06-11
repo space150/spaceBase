@@ -1,5 +1,7 @@
-### 4.0.0 (Feb 22, 2018)
+### 4.0.0 (June 11, 2018)
 
+* Refactor grid system to use flexbox instead of floats.
+* Remove media object.
 * Remove support for IE8/9.
 * Update form styles.
 * Update to Normalize.css 8.0.0.

@@ -11,13 +11,12 @@
 $normalize: false !default;
 $reset:     false !default;
 
-// Include push/pull styles?
+// Include push styles?
 $push: true;
-$pull: true;
 
 // Include responsive grid widths w/breakpoint namespace?
-$responsive:           true;
-$responsive-push-pull: true;
+$responsive:      true;
+$responsive-push: true;
 
 // Base measurements
 $base-font-size:         16px;

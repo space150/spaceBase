@@ -2,20 +2,73 @@
 //  $GRIDS
 //------------------------------------//
 
-// Grid wrapper
 .gw,
 .grid-wrapper {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-bottom: 0;
   margin-left: -$gutter;
-  @include clearfix;
+
+  // Align-items
+  &.align--start,
+  &.valign--top {
+    align-items: flex-start;
+  }
+  &.align--center,
+  &.valign--middle {
+    align-items: center;
+  }
+  &.align--end,
+  &.valign--bottom {
+    align-items: flex-end;
+  }
+  &.align--stretch {
+    align-items: stretch;
+  }
+
+  // Justify-content
+  &.justify--start {
+    justify-content: flex-start;
+  }
+  &.justify--center {
+    justify-content: center;
+  }
+  &.justify--end {
+    justify-content: flex-end;
+  }
+  &.justify--around {
+    justify-content: space-around;
+  }
+  &.justify--between {
+    justify-content: space-between;
+  }
+
+  &.centered {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 }
 
+.gw--col,
+.grid-wrapper--column {
+  flex-direction: column;
+}
 
 // Reverse grid
-.gw--rev > .g,
-.grid-wrapper--rev > .grid { float: right; }
+.gw--rev,
+.grid-wrapper--rev {
+  flex-direction: row-reverse;
 
+  &.gw--col,
+  &.grid-wrapper--column {
+    flex-direction: column-reverse;
+  }
+}
 
 // Gutterless grid
 .gw--full,
@@ -28,17 +81,24 @@
   }
 }
 
-
-// Very infrequently occuring grid wrappers as children of grid wrappers
-.gw > .gw,
-.grid-wrapper > .grid-wrapper { margin-left: 0; }
-
-
-// Grid
 .g,
 .grid {
-  float: left;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-height: 0;
+  min-width: 0;
   width: 100%;
   padding-left: $gutter;
-  transition: width .15s ease;
+
+  &.auto {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    width: auto;
+  }
+
+  &.shrink {
+    width: auto;
+  }
 }

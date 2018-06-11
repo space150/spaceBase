@@ -1,6 +1,7 @@
 //------------------------------------//
 //  $WIDTHS
 //------------------------------------//
+
 $grid-widths: (
   1:     one-whole,
 
@@ -81,11 +82,10 @@ $grid-widths: (
 // If you have set `$responsive` to ‘true’ in `_vars.scss` then you can define at
 // which breakpoint you’d like an element to be a certain size, e.g.:
 //
-// <div class="g one-quarter lap-one-half palm-one-whole"> ... </div>
+// <div class="g one-half lap-one-third desk-one-quarter"> ... </div>
 //
-// This would create a `div` that, at ‘desktop’ sizes, takes up a quarter of the
-// horizontal space, a half of that space at ‘tablet’ sizes, and goes full width
-// at ‘mobile’ sizes.
+// This would create a div that, at mobile sizes, takes up half of the horizontal
+// space, a third of the space at laptop sizes, and a quarter at desktop sizes.
 //
 // If `$responsive` is ‘false’ then the grid would only be used at laptop sizes and above.
 //

@@ -11,20 +11,6 @@
   }
 }
 
-// Clear grid floats
-@mixin n-up($number) {
-  &:nth-of-type(#{$number}n + 1) {
-    clear: left;
-  }
-}
-
-// Clear grid float clears
-@mixin clear-n-up($number) {
-  &:nth-of-type(#{$number}n + 1) {
-    clear: none;
-  }
-}
-
 // Image replacement
 @mixin hide-text {
   border: 0;
