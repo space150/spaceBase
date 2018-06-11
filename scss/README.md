@@ -11,6 +11,7 @@ The `scss/` directory contains three folders: Base, UI and Vendor.
 
 ## Compilation
 
+<<<<<<< HEAD
 All partials are imported into the `_manifest.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. `_manifest.scss` is then imported into the two main stylesheets, `application.scss` and `application-ie.scss`. Set up your Sass compilation to generate these in the `stylesheets/` directory. Because of the amount of comments, remember to use minified CSS in production.
 
 ### Legacy IE Support
@@ -27,10 +28,13 @@ Example:
   <link href="/stylesheets/application-ie.css" media="all" rel="stylesheet" type="text/css" />
 <![endif]-->
 ~~~
+=======
+All partials are imported into the `application.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. Set up your Sass compilation to generate this in the `stylesheets/` directory. Because of the amount of comments, please use minified CSS in production.
+>>>>>>> master
 
 ### Styleguide
 
-There is a third stylesheet, `styleguide.css`, used only in `styleguide.html`. This file is the start for your project style guide, including grid examples, color swatches, typography, UI and form elements. [What is a style guide?](http://alistapart.com/article/creating-style-guides)
+There is an additional stylesheet, `styleguide.css`, used only in `styleguide.html`. This file is the start for your project style guide, including grid examples, color swatches, typography, UI and form elements. [What is a style guide?](http://alistapart.com/article/creating-style-guides)
 
 
 ## Global Variables

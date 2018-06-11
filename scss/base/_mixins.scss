@@ -27,12 +27,6 @@
   white-space: nowrap;
 }
 
-// WebKit-style focus
-@mixin tab-focus {
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
 // Placeholder text
 @mixin placeholder {
   // scss-lint:disable VendorPrefix
@@ -52,20 +46,17 @@
     border-color: $border-color;
 
     &:focus {
-      border-color: darken($border-color, 10%);
-      box-shadow: 0 0 6px lighten($border-color, 20%);
+      box-shadow: 0 0 0 .2rem rgba($border-color, .25);
     }
   }
 }
 
 // Form control focus state, based on WebKit's default styles
-@mixin form-control-focus($color: #66afe9) {
-  $color-rgba: rgba(red($color), green($color), blue($color), .6);
-
+@mixin form-control-focus($color: #419bf9) {
   &:focus {
     border-color: $color;
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 0 .2rem rgba($color, .25);
   }
 }
 
@@ -136,11 +127,6 @@
 // @media print { ... }
 // @media screen and (device-radius: 50%) { ... }
 //
-// OUTPUT TO LEGACY CSS:
-//
-// Only the content needed to render the $legacy-media-breakpoint layout. Any
-// includes with features or types other than screen will be excluded.
-//
 // ***************************************************************************
 
 @mixin media($feature:false, $from:false, $upto:false, $type:screen) {
@@ -166,43 +152,26 @@
     }
   }
 
-  // Render styles without media queries
-  @if $legacy-ie == true {
-    $legacy-breakpoint-width: px2em(get-breakpoint-width($legacy-media-breakpoint));
-    // Output only rules that start at or span our legacy media width
-    @if (
-      $feature == false
-      and $type == 'screen'
-      and $min-width <= $legacy-breakpoint-width
-      and (
-        $upto == false or $max-width >= $legacy-breakpoint-width
-      )
-    ) {
-      @content;
-    }
-
-  } @else {
-    @if $min-width != 0 { $media-query: '#{$media-query} and (min-width: #{$min-width})'; }
-    @if $max-width != 0 { $media-query: '#{$media-query} and (max-width: #{$max-width})'; }
+  @if $min-width != 0 { $media-query: '#{$media-query} and (min-width: #{$min-width})'; }
+  @if $max-width != 0 { $media-query: '#{$media-query} and (max-width: #{$max-width})'; }
+  @if $feature {
+    // Pass through custom expression or get defined expression
+    $original-feature: $feature;
+    $feature: get-feature($feature);
     @if $feature {
-      // Pass through custom expression or get defined expression
-      $original-feature: $feature;
-      $feature: get-feature($feature);
-      @if $feature {
-        $media-query: '#{$media-query} and #{$feature}';
-      } @else {
-        $media-query: '#{$media-query} and (#{$original-feature})';
-      }
+      $media-query: '#{$media-query} and #{$feature}';
+    } @else {
+      $media-query: '#{$media-query} and (#{$original-feature})';
     }
+  }
 
-    // Remove unnecessary media query prefix 'all and '
-    @if ($type == 'all' and $media-query != '') {
-      $type: '';
-      $media-query: str-slice(unquote($media-query), 6);
-    }
+  // Remove unnecessary media query prefix 'all and '
+  @if ($type == 'all' and $media-query != '') {
+    $type: '';
+    $media-query: str-slice(unquote($media-query), 6);
+  }
 
-    @media #{$type + $media-query} {
-      @content;
-    }
+  @media #{$type + $media-query} {
+    @content;
   }
 }
