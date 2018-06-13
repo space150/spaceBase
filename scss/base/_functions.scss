@@ -16,14 +16,14 @@
 
 // px2rem
 //   Convert pixels to rems
-@function px2rem($px) {
+@function px2rem($px, $rel-to: $base-font-size--mobile) {
   @if unitless($px) {
     @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
     @return px2rem($px * 1px);
   } @else if unit($px) == rem {
     @return $px;
   }
-  @return ($px / $base-font-size--mobile) * 1rem;
+  @return ($px / $rel-to) * 1rem;
 }
 
 // get-breakpoint-width
