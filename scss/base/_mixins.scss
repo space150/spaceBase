@@ -87,6 +87,97 @@
 
 
 // ***************************************************************************
+// Fluid mixin
+//
+// Inspired by Mike Riethmuller's Fluid Type Technique:
+// https://www.madebymike.com.au/writing/fluid-type-calc-examples/
+//
+// Create fluid typography that scales smoothly between specific values within
+// a specific viewport range. This mixin can be applied to any numerical
+// property such as padding, margin, line-height and font-size. Multiple
+// properties with the same values can be listed (a, b).
+//
+// $min-breakpoint and $max-breakpoint are the browser widths where the scaling
+// starts and stops. You can use breakpoint aliases set in $media-breakpoints
+// (in _vars.scss) or custom widths. Pixel values will be converted to ems.
+//
+// $min-value and $max-value are the starting and ending sizes, specified in
+// pixels or rems. Pixel values will be converted to rems.
+//
+// USAGE:
+//
+// h1 {
+//   @include fluid(font-size, hand, desk, 32px, 48px);
+// }
+// .hero {
+//   @include fluid((padding-top, padding-bottom), 320px, 1200px, 1rem, 2rem);
+// }
+//
+// OUTPUT:
+//
+// h1 { font-size: 2rem; }
+// @media screen and (min-width: 30em) {
+//   h1 { font-size: calc(2.94118vw + 1.11765rem); }
+// }
+// @media screen and (min-width: 64em) {
+//   h1 { font-size: 3rem; }
+// }
+// .hero {
+//   padding-top: 1rem;
+//   padding-bottom: 1rem;
+// }
+// @media screen and (min-width: 20em) {
+//   .hero {
+//     padding-top: calc(1.81818vw + 0.63636rem);
+//     padding-bottom: calc(1.81818vw + 0.63636rem);
+//   }
+// }
+// @media screen and (min-width: 75em) {
+//   .hero {
+//     padding-top: 2rem;
+//     padding-bottom: 2rem;
+//   }
+// }
+//
+// ***************************************************************************
+
+@mixin fluid($properties, $min-breakpoint, $max-breakpoint, $min-value, $max-value) {
+  // convert breakpoints to ems and rems
+  @if type-of($min-breakpoint) == string {
+    $min-breakpoint: get-breakpoint-width($min-breakpoint);
+  }
+  $min-em-width: px2em($min-breakpoint);
+  $min-rem-width: px2rem($min-breakpoint);
+
+  @if type-of($max-breakpoint) == string {
+    $max-breakpoint: get-breakpoint-width($max-breakpoint);
+  }
+  $max-em-width: px2em($max-breakpoint);
+  $max-rem-width: px2rem($max-breakpoint);
+
+  // convert values to rems
+  $min-rem-value: px2rem($min-value);
+  $max-rem-value: px2rem($max-value);
+
+	@each $property in $properties {
+		#{$property}: $min-rem-value;
+	}
+
+	@media screen and (min-width: $min-em-width) {
+		@each $property in $properties {
+			#{$property}: calc-interpolation($min-rem-width, $max-rem-width, $min-rem-value, $max-rem-value);
+		}
+	}
+
+	@media screen and (min-width: $max-em-width) {
+		@each $property in $properties {
+			#{$property}: $max-rem-value;
+		}
+	}
+}
+
+
+// ***************************************************************************
 // Media query mixin
 //
 // When using spaceBase, styles should be written mobile-first.

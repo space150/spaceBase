@@ -21,7 +21,7 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 
 ### Customizable Features
 
-* Compatible with any Sass 3.3 compiler
+* Compatible with any Sass 3.4 compiler
 * Start with Normalize (default) or CSS Reset
 * Scalable, mobile-first grid - choose how robust you want it
 * Base font size for mobile vs desktop
@@ -30,7 +30,7 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 ## Getting Started
 
 1. `$ npm install spacebase` or download the ZIP and copy its contents into your project folder.
-2. Use your favorite Sass 3.3 compiler to watch for changes and compile the files. (Setting up Sass is outside the scope of this document.)
+2. Use your favorite Sass 3.4 compiler to watch for changes and compile the files. (Setting up Sass is outside the scope of this document.)
 3. Open scss/_vars.scss to make changes to your global variables.
 4. Start building out your HTML. We've included index.html as a starting point.
 5. scss/base/ is the core of spaceBase. Build your UI layer in scss/ui/
