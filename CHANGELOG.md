@@ -1,3 +1,8 @@
+### 4.0.1 (Nov 4, 2019)
+
+* Update to Normalize.css 8.0.1.
+
+
 ### 4.0.0 (June 11, 2018)
 
 * Refactor grid system to use flexbox instead of floats.
