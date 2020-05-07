@@ -4,8 +4,8 @@
 
 The `scss/` directory contains three folders: Base, UI and Vendor.
 
-- **Base** contains the "building block" abstractions, namely the grid framework, mixins and helpers. These are core to spaceBase and should not be edited.
-- **UI** contains all project-specific styles shared across the application. These files are meant to be completely tailored to your project. To start, it includes typography, form elements, generic print styles, buttons and other common UI components. Add more partials and  organize them however the project demands.
+- **Base** contains the "building block" abstractions, namely the grid framework, mixins and helpers. These are core to spaceBase and should not be edited, but you can add your own mixins to `mixins.scss`.
+- **UI** contains all project-specific styles shared across the application. These files are meant to be completely tailored to your project. To start, it includes typography, form elements, generic print styles, buttons and other common UI components. Add more partials and organize them however the project demands.
 - **Vendor** contains Normalize and CSS reset. You can add other vendor files here.
 
 
@@ -80,6 +80,6 @@ Example:
 </div>
 ~~~
 
-To exclude the push styles from the compiled stylesheet, change their variables to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
+To exclude the push styles from the compiled stylesheet, change its variable to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
 
 See the [style guide](../styleguide.html) for more grid examples.
