@@ -42,6 +42,8 @@
 
 
 // Responsive visibility helpers
+// .hidden-below-hand, .hidden-below-lap, .hidden-below-desk, .hidden-below-wall
+// .hidden-hand-and-up, .hidden-lap-and-up, .hidden-desk-and-up, .hidden-wall-and-up
 @each $breakpoint, $_ in $media-breakpoints {
   @include media($upto: $breakpoint) {
     .hidden-below-#{$breakpoint} { display: none; }
@@ -78,7 +80,7 @@
 // Remove styling of anchor, useful for large clickable content areas
 .anchor-plain {
   color: inherit;
-  
+
   &:hover, &:focus {
     text-decoration: none;
   }
