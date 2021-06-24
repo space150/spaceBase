@@ -1,6 +1,6 @@
 {
   "name": "spacebase",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "spaceBase is a Sass-based responsive CSS framework.",
   "homepage": "http://spacebase.space150.com",
   "main": "stylesheets/application.css",

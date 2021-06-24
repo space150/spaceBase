@@ -17,11 +17,11 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 * Helper classes and mixins
 * Common UI components
 * Cross-browser form controls
-* Supports modern browsers including IE10+
+* Supports modern and legacy browsers including IE10+
 
 ### Customizable Features
 
-* Compatible with any LibSass compiler
+* Compatible with any Sass compiler
 * Start with Normalize (default) or CSS Reset
 * Scalable, mobile-first grid - choose how robust you want it
 * Base font size for mobile vs desktop
@@ -30,7 +30,7 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 ## Getting Started
 
 1. `$ npm install spacebase` or download the ZIP and copy its contents into your project folder.
-2. Use your favorite LibSass compiler to watch for changes and compile the files.
+2. Use your favorite Sass compiler to watch for changes and compile the files.
 3. Open `scss/_vars.scss` to update your global variables.
 4. Start building out your HTML. We've included `index.html` and `styleguide.html` to begin with.
 5. `scss/base/` is the core of spaceBase. Build your UI layer in `scss/ui/`
@@ -58,10 +58,11 @@ stylesheets/
 
 You can remove (if downloaded from Git):
 - `*.yml`
-- `package.json`
+- `CHANGELOG.md`
 - `Gemfile*`
+- `package.json`
 - `Rakefile`
-- `test`
+- `test/`
 
 ## Credits
 
@@ -75,4 +76,4 @@ You can remove (if downloaded from Git):
 
 spaceBase is free to use under the [MIT License](LICENSE.md).
 
-Copyright 2013-2020 [space150](http://www.space150.com)
+Copyright 2013-2021 [space150](http://www.space150.com)
