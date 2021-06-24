@@ -4,6 +4,9 @@ stylesheets/*
 # Temporary Sass files
 .sass-cache/
 
+# Node Modules
+node_modules
+
 # Compiled source for deployment
 dist/
 tests/**/*input.css

@@ -1,9 +1,6 @@
 @import "base/functions";
 @import "vars";
-
-// Choose either Normalize or Reset:
-@import "vendor/normalize"; $normalize: true;
-// @import "vendor/reset"; $reset: true;
+@import "vendor/normalize";
 
 @import "base/mixins";
 @import "base/grids";
