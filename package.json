@@ -1,6 +1,6 @@
 {
   "name": "spacebase",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "spaceBase is a Sass-based responsive CSS framework.",
   "homepage": "http://spacebase.space150.com",
   "main": "stylesheets/application.css",
@@ -24,5 +24,12 @@
     "*.html",
     "scss/*",
     "stylesheets/*.css"
-  ]
+  ],
+  "dependencies": {
+    "sass": "^1.35.1"
+  },
+  "scripts": {
+    "build": "sass --style compressed scss/:stylesheets/",
+    "watch": "sass --watch scss/:stylesheets/"
+  }
 }

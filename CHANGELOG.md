@@ -1,3 +1,9 @@
+### 4.1.0 (June 24, 2021)
+
+* Add sass npm scripts for compilation.
+* Remove CSS Reset option.
+
+
 ### 4.0.1 (Nov 4, 2019)
 
 * Update to Normalize.css 8.0.1.

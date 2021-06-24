@@ -1,6 +1,5 @@
 ---
 exclude:
-  - "scss/vendor/_reset.scss"
   - "scss/vendor/_normalize.scss"
   - "tests/*"
 

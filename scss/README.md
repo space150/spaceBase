@@ -6,12 +6,12 @@ The `scss/` directory contains three folders: Base, UI and Vendor.
 
 - **Base** contains the "building block" abstractions, namely the grid framework, mixins and helpers. These are core to spaceBase and should not be edited, but you can add your own mixins to `mixins.scss`.
 - **UI** contains all project-specific styles shared across the application. These files are meant to be completely tailored to your project. To start, it includes typography, form elements, generic print styles, buttons and other common UI components. Add more partials and organize them however the project demands.
-- **Vendor** contains Normalize and CSS reset. You can add other vendor files here.
+- **Vendor** contains Normalize. You can add other vendor files here.
 
 
 ## Compilation
 
-All partials are imported into the `application.scss`. This is also where you can choose to import either Normalize (default) or CSS Reset. When you add new partials to your project, add them to this import list. Set up your Sass compilation to generate this in the `stylesheets/` directory. Because of the amount of comments, please use minified CSS in production.
+All partials are imported into the `application.scss`. When you add new partials to your project, add them to this import list. Set up your Sass compilation to generate this in the `stylesheets/` directory. Because of the amount of comments, please use minified CSS in production.
 
 ### Styleguide
 
@@ -24,7 +24,7 @@ Customizable variables are stored in the `_vars.scss` partial. This includes thi
 
 ### Vertical Rhythm and the `$base-sizing-unit`
 
-As a means for consistency and good vertical rhythm, many measurements are based off the `$base-spacing-unit`, which is equal to the base `$line-height-ratio`. This way if the `$base-font-size` or `$base-line-height` is adjusted down the road, white space proportions are preserved. For example, unless you opt for using CSS Reset, most block-level elements (headings, lists, paragraphs, etc.) will have a bottom margin equal to `$base-spacing-unit`.
+As a means for consistency and good vertical rhythm, many measurements are based off the `$base-spacing-unit`, which is equal to the base `$line-height-ratio`. This way if the `$base-font-size` or `$base-line-height` is adjusted down the road, white space proportions are preserved. For example, most block-level elements (headings, lists, paragraphs, etc.) will have a bottom margin equal to `$base-spacing-unit`.
 
 
 ## The Grid

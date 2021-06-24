@@ -22,7 +22,6 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 ### Customizable Features
 
 * Compatible with any Sass compiler
-* Start with Normalize (default) or CSS Reset
 * Scalable, mobile-first grid - choose how robust you want it
 * Base font size for mobile vs desktop
 * Global variables for breakpoints, colors, fonts and more
@@ -70,7 +69,6 @@ You can remove (if downloaded from Git):
 * [Sass MQ](https://github.com/sass-mq/sass-mq)
 * [Bootstrap](http://getbootstrap.com)
 * [Normalize.css](http://necolas.github.io/normalize.css)
-* [Eric Meyer’s CSS Reset](http://meyerweb.com/eric/tools/css/reset)
 
 ## License
 
