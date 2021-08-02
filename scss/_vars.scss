@@ -1,3 +1,4 @@
+@use "sass:math";
 //------------------------------------//
 //  $VARIABLES
 //------------------------------------//
@@ -21,10 +22,10 @@ $base-font-size--mobile: $base-font-size;
 // Set to px value if mobile requires different font size
 
 // Calculated measurements
-$line-height-ratio: $base-line-height / $base-font-size;
+$line-height-ratio: math.div($base-line-height, $base-font-size);
 
 $base-spacing-unit: $line-height-ratio * 1rem;
-$half-spacing-unit: $base-spacing-unit / 2;
+$half-spacing-unit: math.div($base-spacing-unit, 2);
 
 // Grid
 $gutter: $base-spacing-unit;
