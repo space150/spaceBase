@@ -29,7 +29,7 @@
     "sass": "^1.35.1"
   },
   "scripts": {
-    "build": "sass --style expanded scss/:stylesheets/",
+    "build": "sass --style compressed scss/:stylesheets/",
     "watch": "sass --watch scss/:stylesheets/"
   }
 }
