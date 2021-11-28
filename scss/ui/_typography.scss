@@ -1,9 +1,11 @@
+@use 'sass:math';
+
 //------------------------------------//
 //  $TYPOGRAPHY
 //------------------------------------//
 
 html {
-  font: #{($base-font-size--mobile/16px)*1em}/#{$line-height-ratio} $font-body;
+  font: #{(math.div($base-font-size--mobile,16px))*1em}/#{$line-height-ratio} $font-body;
   color: $black;
   background: $white;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
