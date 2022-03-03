@@ -1,6 +1,7 @@
 //------------------------------------//
 //  $FUNCTIONS
 //------------------------------------//
+@use "sass:math";
 
 // px2em
 //   Convert pixels to ems
@@ -11,7 +12,7 @@
   } @else if unit($px) == em {
     @return $px;
   }
-  @return ($px / 16px) * 1em;
+  @return math.div($px, 16px) * 1em;
 }
 
 // get-breakpoint-width

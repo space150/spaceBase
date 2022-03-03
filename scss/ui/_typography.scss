@@ -1,9 +1,10 @@
 //------------------------------------//
 //  $TYPOGRAPHY
 //------------------------------------//
+@use "sass:math";
 
 html {
-  font: #{($base-font-size--mobile/16px)*1em}/#{$line-height-ratio} $font-body;
+  font: #{math.div($base-font-size--mobile, 16px)*1em}/#{$line-height-ratio} $font-body;
   color: $black;
   background: $white;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -15,8 +16,6 @@ a {
 
   &:hover, &:focus { text-decoration: underline; }
 }
-
-i { font-style: normal; }
 
 h1, .h1,
 h2, .h2,

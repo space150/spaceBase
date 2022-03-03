@@ -1,3 +1,10 @@
+### 4.2.0 (Mar 2, 2022)
+
+* Replace / divider with math.div().
+* Allow images with width/height attributes to remain fluid.
+* Remove i rule.
+
+
 ### 4.1.0 (June 24, 2021)
 
 * Add sass npm scripts for compilation.
