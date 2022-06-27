@@ -1,3 +1,8 @@
+### 4.2.1 (Jun 27, 2022)
+
+* Fix fluid images that have height attribute.
+
+
 ### 4.2.0 (Mar 2, 2022)
 
 * Replace / divider with math.div().
@@ -5,7 +10,7 @@
 * Remove i rule.
 
 
-### 4.1.0 (June 24, 2021)
+### 4.1.0 (Jun 24, 2021)
 
 * Add sass npm scripts for compilation.
 * Remove CSS Reset option.
@@ -16,7 +21,7 @@
 * Update to Normalize.css 8.0.1.
 
 
-### 4.0.0 (June 11, 2018)
+### 4.0.0 (Jun 11, 2018)
 
 * Refactor grid system to use flexbox instead of floats.
 * Remove media object.
