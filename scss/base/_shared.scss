@@ -23,9 +23,7 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-img[height] {
-  height: auto;
-}
+img[height] { height: auto; }
 
 // Where `margin-bottom` is concerned, this value will be the same as the
 // base line-height. This allows us to keep a consistent vertical rhythm.
