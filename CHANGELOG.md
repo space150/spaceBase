@@ -1,3 +1,12 @@
+### 4.3.0 (Nov 2, 2023)
+
+* Add additional island classes.
+* Update button styles.
+* Remove link underline styles.
+* Remove support for IE10/11.
+* Remove placeholder mixin with vendor prefixes.
+
+
 ### 4.2.1 (Jun 27, 2022)
 
 * Fix fluid images that have height attribute.
