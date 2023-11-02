@@ -2,6 +2,7 @@
 
 * Add additional island classes.
 * Update button styles.
+* Add balanced text wrapping to headings.
 * Remove link underline styles.
 * Remove support for IE10/11.
 * Remove placeholder mixin with vendor prefixes.
