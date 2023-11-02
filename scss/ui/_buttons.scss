@@ -10,20 +10,28 @@
   font-size: 1rem;
   line-height: 1.6em;
   text-align: center;
+  text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
   border: 1px solid $gray;
   border-radius: 0;
   background: transparent;
+  transition: all .15s ease;
   cursor: pointer;
 
-  &,
   &:hover,
-  &:focus { text-decoration: none; }
+  &:focus {
+    color: $secondary;
+    border-color: $black;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 
   &.disabled,
   &[disabled] {
-    cursor: not-allowed;
+    pointer-events: none;
     opacity: .65;
   }
 }
