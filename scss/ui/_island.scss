@@ -3,9 +3,11 @@
 //------------------------------------//
 
 // Harry Robert's "island"
-.island,
 .islet,
+.island,
+.island--dubs,
 .landmark,
+.landmark--dubs,
 .landmarklet {
   display: block;
   @include clearfix;
@@ -13,18 +15,30 @@
   > :last-child { margin-bottom: 0; }
 }
 
-.island {
-  @include padding-vertical($base-spacing-unit);
-}
-
 .islet {
   @include padding-vertical($half-spacing-unit);
 }
 
+.island {
+  @include padding-vertical($base-spacing-unit);
+}
+
+.island--dubs {
+  @include padding-vertical($base-spacing-unit * 2);
+}
+
 .landmark {
-  margin-bottom: 2 * $base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
+}
+
+.landmark--dubs {
+  margin-bottom: $base-spacing-unit * 2;
 }
 
 .landmarklet {
   margin-bottom: $base-spacing-unit;
+}
+
+.landmarkless {
+  margin-bottom: 0;
 }
