@@ -19,9 +19,6 @@ fieldset {
 legend {
   display: block;
   width: 100%;
-  max-width: 100%; // Correct the text wrapping in Edge and IE
-  white-space: normal;
-  color: inherit; // Correct the color inheritance from `fieldset` elements in IE
 }
 
 label { display: inline-block; }
@@ -50,7 +47,7 @@ label { display: inline-block; }
   @include form-control-focus($primary);
 
   // Placeholder
-  @include placeholder {
+  &::placeholder {
     color: $primary;
     opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
   }
@@ -66,16 +63,6 @@ label { display: inline-block; }
 select.form-control {
   &:not([size]):not([multiple]) {
     height: calc(#{$base-font-size} * #{$line-height-ratio} + .325em * 2 + 2px);
-  }
-
-  &:focus::-ms-value {
-    // Suppress the nested default white text on blue background highlight given to
-    // the selected option text when the (still closed) <select> receives focus
-    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
-    // match the appearance of the native widget.
-    // See https://github.com/twbs/bootstrap/issues/19398
-    color: $gray-dark;
-    background-color: $white;
   }
 }
 
