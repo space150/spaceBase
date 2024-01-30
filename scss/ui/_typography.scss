@@ -12,9 +12,6 @@ html {
 
 a {
   color: $primary;
-  text-decoration: none;
-
-  &:hover, &:focus { text-decoration: underline; }
 }
 
 h1, .h1,
@@ -25,6 +22,7 @@ h5, .h5,
 h6, .h6 {
   font-family: $font-head;
   font-weight: normal;
+  text-wrap: balance;
 }
 
 h1, .h1 {
