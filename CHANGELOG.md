@@ -1,4 +1,4 @@
-### 4.3.0 (Nov 2, 2023)
+### 4.3.0 (Jul 16, 2024)
 
 * Add additional island classes.
 * Update button styles.
