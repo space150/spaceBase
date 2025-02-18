@@ -77,7 +77,7 @@ $grid-widths: (
     @each $width in $widths {
       $selectors: list.append($selectors, string.unquote(".#{$namespace}#{$width}"), "comma");
     }
-    #{$selectors} { #{$property}: $percent !important; }
+    #{$selectors} { #{$property}: $percent; }
   }
 }
 
