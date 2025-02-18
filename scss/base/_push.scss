@@ -2,6 +2,8 @@
 //  $PUSH
 //------------------------------------//
 
+@use '@/app/styles/globals' as *;
+
 @mixin push-setup($namespace: "") {
   @include grid-setup("push--" + $namespace, margin-left);
 }

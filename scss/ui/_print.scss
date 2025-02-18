@@ -2,6 +2,8 @@
 //  $PRINT
 //------------------------------------//
 
+@use '@/app/styles/globals' as *;
+
 .visible-print { display: none !important; }
 
 @include media($type: print) {

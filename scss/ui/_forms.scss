@@ -2,6 +2,9 @@
 //  $FORMS
 //------------------------------------//
 
+@use "sass:color";
+@use '@/app/styles/globals' as *;
+
 form { margin: 0; }
 
 fieldset {
@@ -112,9 +115,9 @@ input[type="checkbox"] {
 
 // Form control validation states
 .has-error {
-  @include form-control-validation($state-error, darken($state-error, 5%));
+  @include form-control-validation($state-error, color.adjust($state-error, $lightness: -5%));
 }
 
 .has-success {
-  @include form-control-validation($state-success, darken($state-success, 5%));
+  @include form-control-validation($state-success, darkcolor.adjusten($state-success, $lightness: -5%));
 }

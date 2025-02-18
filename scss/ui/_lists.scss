@@ -2,6 +2,7 @@
 //  $LISTS
 //------------------------------------//
 @use "sass:math";
+@use '@/app/styles/globals' as *;
 
 .h-list,
 .v-list {

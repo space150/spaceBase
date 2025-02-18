@@ -2,6 +2,10 @@
 //  $WIDTHS
 //------------------------------------//
 @use "sass:math";
+@use "sass:string";
+@use "sass:list";
+@use "../vars" as *;
+@use "../base/mixins" as *;
 
 $grid-widths: (
   1:     one-whole,
@@ -71,9 +75,9 @@ $grid-widths: (
     $selectors: null;
     $percent: $fraction * 100%;
     @each $width in $widths {
-      $selectors: append($selectors, unquote(".#{$namespace}#{$width}"), "comma");
+      $selectors: list.append($selectors, string.unquote(".#{$namespace}#{$width}"), "comma");
     }
-    #{$selectors} { #{$property}: $percent; }
+    #{$selectors} { #{$property}: $percent !important; }
   }
 }
 

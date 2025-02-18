@@ -2,6 +2,8 @@
 //  $LAYOUT
 //------------------------------------//
 
+@use '@/app/styles/globals' as *;
+
 body { min-width: $site-min-width; }
 
 .site-wrapper {
