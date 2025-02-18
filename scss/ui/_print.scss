@@ -2,7 +2,7 @@
 //  $PRINT
 //------------------------------------//
 
-@use '../globals' as *;
+@use "../global" as *;
 
 .visible-print { display: none !important; }
 

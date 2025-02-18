@@ -2,7 +2,7 @@
 //  $LAYOUT
 //------------------------------------//
 
-@use '../globals' as *;
+@use "../global" as *;
 
 body { min-width: $site-min-width; }
 

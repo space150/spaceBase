@@ -2,7 +2,7 @@
 //  $HELPERS
 //------------------------------------//
 
-@use '../globals' as *;
+@use "../global" as *;
 
 // Clearfix
 .cf { @include clearfix; }

@@ -1,5 +1,5 @@
 @use "sass:list";
-@use '../globals' as *;
+@use "../global" as *;
 
 .sg-landmark {
   margin-bottom: 3 * $base-spacing-unit;

@@ -2,7 +2,7 @@
 //  $PUSH
 //------------------------------------//
 
-@use '../globals' as *;
+@use "../global" as *;
 
 @mixin push-setup($namespace: "") {
   @include grid-setup("push--" + $namespace, margin-left);
