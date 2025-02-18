@@ -2,7 +2,7 @@
 //  $HELPERS
 //------------------------------------//
 
-@use '@/app/styles/globals' as *;
+@use '../globals' as *;
 
 // Clearfix
 .cf { @include clearfix; }

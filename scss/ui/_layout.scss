@@ -2,7 +2,7 @@
 //  $LAYOUT
 //------------------------------------//
 
-@use '@/app/styles/globals' as *;
+@use '../globals' as *;
 
 body { min-width: $site-min-width; }
 

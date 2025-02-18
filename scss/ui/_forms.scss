@@ -3,7 +3,7 @@
 //------------------------------------//
 
 @use "sass:color";
-@use '@/app/styles/globals' as *;
+@use '../globals' as *;
 
 form { margin: 0; }
 
