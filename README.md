@@ -37,7 +37,13 @@ Using spaceBase in React or NextJS development has proven tricky with newer vers
 3. Open `scss/_vars.scss` to update your global variables.
 4. Start building out your HTML. We've included `index.html` and `styleguide.html` to begin with.
 5. `scss/base/` is the core of spaceBase. Build your UI layer in `scss/ui/`
-6. If your Sass code includes references to spaceBase-defined variables, mixins, or "grid widths" (such as a class name like "lap-one-half"), you must add this line of code to the top of your file: `@use '@/app/styles/globals' as *;`
+6. As you add Sass files and make use of spaceBase-defined variables, mixins, or "grid widths" (such as a class name like "lap-one-half"), you must add this line of code to the top of your file: `@use '/[path-to-your-styles-directory]/globals' as *;`.
+ - Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be something like  `@use '@/app/styles/globals' as *;` as long as you add include the following in the `compilerOptions` object of your `tsconfig.json` file:
+  ```
+  "paths": {
+	"@/*": ["./src/*"]
+  }
+  ```
 
 Your editor can be setup with EditorConfig so that code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 
