@@ -3,7 +3,7 @@
 //------------------------------------//
 
 @use "sass:color";
-@use "../global" as *;
+@use "../globals" as *;
 
 form { margin: 0; }
 
@@ -119,5 +119,5 @@ input[type="checkbox"] {
 }
 
 .has-success {
-  @include form-control-validation($state-success, darkcolor.adjusten($state-success, $lightness: -5%));
+  @include form-control-validation($state-success, color.adjust($state-success, $lightness: -5%));
 }
