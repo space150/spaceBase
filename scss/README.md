@@ -83,3 +83,8 @@ Example:
 To exclude the push styles from the compiled stylesheet, change its variable to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
 
 See the [style guide](../styleguide.html) for more grid examples.
+
+## SpaceBase for NextJS Development
+- SpaceBase has become difficult to use, especially in a React/NextJS context, if upgrading Sass to newer versions (`>=1.81.0`) due to an increasing volume of deprecation warnings in development. This branch modernizes some Sass syntax, allowing us to continue to use SpaceBase as currently configured while also using the latest version of Sass.
+- As you add Sass files and make use of spaceBase-defined variables, mixins, or variables-based media queries (e.g., `@include media($from: lap)`), you must add this line of code to the top of your file: `@use '/[path-to-your-styles-directory]/globals' as *;`.
+- Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be something like  `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
