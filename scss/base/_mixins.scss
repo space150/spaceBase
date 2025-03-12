@@ -2,6 +2,10 @@
 //  $MIXINS
 //------------------------------------//
 
+@use "sass:meta";
+@use "../vars" as *;
+@use "./functions" as *;
+
 // Micro clearfix
 @mixin clearfix {
   &:after {
@@ -127,7 +131,7 @@
 
   // From: this breakpoint (inclusive)
   @if $from {
-    @if type-of($from) == number {
+    @if meta.type-of($from) == number {
       $min-width: px2em($from);
     } @else if get-breakpoint-width($from) {
       $min-width: px2em(get-breakpoint-width($from));
@@ -136,7 +140,7 @@
 
   // Upto: that breakpoint (exclusive)
   @if $upto {
-    @if type-of($upto) == number {
+    @if meta.type-of($upto) == number {
       $max-width: px2em($upto);
     } @else if get-breakpoint-width($upto) {
       $max-width: px2em(get-breakpoint-width($upto)) - .01em;
