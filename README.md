@@ -1,4 +1,4 @@
-spaceBase - NextJS / React branch
+spaceBase
 =========
 
 ### spaceBase is a Sass-based responsive CSS framework.
@@ -6,10 +6,6 @@ spaceBase - NextJS / React branch
 Many CSS frameworks are meant to be included and left alone. But spaceBase is a boilerplate layer that can be built upon and tailored for your needs. It combines best practices for today’s responsive web with the core components we use on every project. Consider it the launch pad for your adventures into cyberspace.
 
 spaceBase is the front-end starter files for any new web project. It sets up your Sass architecture and normalizes your CSS and native HTML elements. It provides the structural groundwork for your application.
-
-## NextJS / React branch
-
-Using spaceBase in React or NextJS development has proven tricky with newer versions of Sass (`>= 1.81.0`) due to an increasing volume of deprecation warnings. This branch modernizes some Sass syntax and also introduces the `_globals` partial, which forwards spaceBase-defined variables and mixins so that they can be used throughout your Sass code while still adhering to Sass's modern syntax. See `Getting Started` below for how to integrate the `_globals` partial into your code.
 
 [![Build Status](https://img.shields.io/travis/space150/spaceBase.svg?style=flat-square)](https://travis-ci.org/space150/spaceBase)
 
@@ -81,7 +77,7 @@ spaceBase is free to use under the [MIT License](LICENSE.md).
 Copyright 2013-2022 [space150](http://www.space150.com)
 
 ## SpaceBase for NextJS Development
-- SpaceBase has become difficult to use, especially in a React/NextJS context, if upgrading Sass to newer versions (`>=1.81.0`) due to an increasing volume of deprecation warnings in development. This branch modernizes some Sass syntax, allowing us to continue to use SpaceBase as currently configured while also using the latest version of Sass.
+- SpaceBase has become difficult to use in a React/NextJS context if upgrading Sass to newer versions (`>=1.81.0`) due to an increasing volume of deprecation warnings in development. To address this, we have modernized some Sass syntax so that we can continue to use SpaceBase as currently configured while also using the latest version of Sass.
 - As you add Sass files and make use of spaceBase-defined variables, mixins, or variables-based media queries (e.g., `@include media($from: lap)`), you must add this line of code to the top of your file: `@use '/[path-to-your-styles-directory]/globals' as *;`.
 - Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be something like  `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
 - You can further silence deprecation warnings when creating production builds by adding this to your `next.config.js` file: `sassOptions: { silenceDeprecations: ['legacy-js-api'] }`
