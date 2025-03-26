@@ -12,6 +12,7 @@ The `scss/` directory contains three folders: Base, UI and Vendor.
 ## Compilation
 
 All partials are imported into the `application.scss`. When you add new partials to your project, add them to this import list. Set up your Sass compilation to generate this in the `stylesheets/` directory. Because of the amount of comments, please use minified CSS in production.
+- Note: to make use of your variables, mixins, or variables-based media queries (e.g., `@include media($from: lap)`), you must add this line of code to the top of new files: `@use '/[path-to-your-styles-directory]/globals' as *;`.
 
 ### Styleguide
 
@@ -85,7 +86,5 @@ To exclude the push styles from the compiled stylesheet, change its variable to 
 See the [style guide](../styleguide.html) for more grid examples.
 
 ## SpaceBase for NextJS Development
-- SpaceBase has become difficult to use in a React/NextJS context if upgrading Sass to newer versions (`>=1.81.0`) due to an increasing volume of deprecation warnings in development. To address this, we have modernized some Sass syntax so that we can continue to use SpaceBase as currently configured while also using the latest version of Sass.
-- As you add Sass files and make use of spaceBase-defined variables, mixins, or variables-based media queries (e.g., `@include media($from: lap)`), you must add this line of code to the top of your file: `@use '/[path-to-your-styles-directory]/globals' as *;`.
 - Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be something like  `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
-- You can further silence deprecation warnings when creating production builds by adding this to your `next.config.js` file: `sassOptions: { silenceDeprecations: ['legacy-js-api'] }`
+- To silence deprecation warnings related to the "Legacy JS API", add this to your `next.config.js` file: `sassOptions: { silenceDeprecations: ['legacy-js-api'] }`
