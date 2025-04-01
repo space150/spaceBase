@@ -84,7 +84,3 @@ Example:
 To exclude the push styles from the compiled stylesheet, change its variable to `false` in `_vars.scss`. Because of the weight they add to the file size, it is advisable to do this if you aren't using them.
 
 See the [style guide](../styleguide.html) for more grid examples.
-
-## SpaceBase for NextJS Development
-- Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be something like  `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
-- To silence deprecation warnings related to the "Legacy JS API", add this to your `next.config.js` file: `sassOptions: { silenceDeprecations: ['legacy-js-api'] }`

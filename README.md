@@ -33,7 +33,7 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 3. Open `scss/_vars.scss` to update your global variables.
 4. Start building out your HTML. We've included `index.html` and `styleguide.html` to begin with.
 5. `scss/base/` is the core of spaceBase. Build your UI layer in `scss/ui/`
-6. To make use of your variables, mixins, or variables-based media queries (e.g., `@include media($from: lap)`), you must add this line of code to the top of new files: `@use '/[path-to-your-styles-directory]/globals' as *;`.
+6. Reference the [/scss/README.md](scss/README.md) for details on spaceBase architecture and use.
 
 Your editor can be setup with EditorConfig so that code style standards are enforced automatically. See http://editorconfig.org/#download and install the plugin for your editor of choice.
 
@@ -64,6 +64,10 @@ You can remove (if downloaded from Git):
 - `Rakefile`
 - `test/`
 
+## spaceBase for NextJS Development
+- Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
+- To silence deprecation warnings related to the "Legacy JS API", add this to your `next.config.js` file: `sassOptions: { silenceDeprecations: ['legacy-js-api'] }`
+
 ## Credits
 
 * [Harry Robert’s Inuit.css](https://github.com/csswizardry/inuit.css)
@@ -75,8 +79,4 @@ You can remove (if downloaded from Git):
 
 spaceBase is free to use under the [MIT License](LICENSE.md).
 
-Copyright 2013-2022 [space150](http://www.space150.com)
-
-## SpaceBase for NextJS Development
-- Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be something like  `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
-- To silence deprecation warnings related to the "Legacy JS API", add this to your `next.config.js` file: `sassOptions: { silenceDeprecations: ['legacy-js-api'] }`
+Copyright 2013-2025 [space150](http://www.space150.com)
