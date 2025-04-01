@@ -10,3 +10,6 @@ node_modules
 # Compiled source for deployment
 dist/
 tests/**/*input.css
+
+# Mac OS stuff
+.DS_Store

@@ -12,6 +12,7 @@ The `scss/` directory contains three folders: Base, UI and Vendor.
 ## Compilation
 
 All partials are imported into the `application.scss`. When you add new partials to your project, add them to this import list. Set up your Sass compilation to generate this in the `stylesheets/` directory. Because of the amount of comments, please use minified CSS in production.
+- Note: to make use of your variables, mixins, or variables-based media queries (e.g., `@include media($from: lap)`), you must add this line of code to the top of new files: `@use '/[path-to-your-styles-directory]/globals' as *;`.
 
 ### Styleguide
 

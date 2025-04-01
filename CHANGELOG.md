@@ -1,3 +1,10 @@
+### 5.0.0 (Mar 26, 2025)
+
+* Replace @import rules with @use and @forward.
+* Replace global built-in functions with Sass modules.
+* Create "globals" partial to forward spaceBase variables, mixins, etc.
+
+
 ### 4.3.0 (Jul 16, 2024)
 
 * Add additional island classes.

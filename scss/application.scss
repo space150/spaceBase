@@ -1,20 +1,21 @@
-@import "base/functions";
-@import "vars";
-@import "vendor/normalize";
+@use "base/functions";
+@use "vendor/normalize";
 
-@import "base/mixins";
-@import "base/grids";
-@import "base/widths";
-@import "base/push";
-@import "base/shared";
-@import "base/helpers";
+@use "base/grids";
+@use "base/widths";
+@use "base/push";
+@use "base/shared";
+@use "base/helpers";
 
-@import "ui/fonts";
-@import "ui/typography";
-@import "ui/forms";
-@import "ui/buttons";
-@import "ui/island";
-@import "ui/lists";
-@import "ui/layout";
+@use "ui/fonts";
+@use "ui/typography";
+@use "ui/forms";
+@use "ui/buttons";
+@use "ui/island";
+@use "ui/lists";
+@use "ui/layout";
 
-@import "ui/print";
+@use "ui/print";
+
+// Load your other Sass files with the @use directive
+// @use "path-to-your-file/file-name.scss";

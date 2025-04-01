@@ -2,6 +2,7 @@
 //  $TYPOGRAPHY
 //------------------------------------//
 @use "sass:math";
+@use "../globals" as *;
 
 html {
   font: #{math.div($base-font-size--mobile, 16px)*1em}/#{$line-height-ratio} $font-body;

@@ -1,6 +1,5 @@
-@import "base/functions";
-@import "vars";
-@import "base/mixins";
+@use "sass:list";
+@use "globals" as *;
 
 .sg-landmark {
   margin-bottom: 3 * $base-spacing-unit;
@@ -39,12 +38,12 @@
   }
 }
 
-@for $i from 1 through length($styleguide-colors) {
+@for $i from 1 through list.length($styleguide-colors) {
   .sg-colors li:nth-of-type(#{$i}) .sg-swatch {
-    background: nth($styleguide-colors, $i);
+    background: list.nth($styleguide-colors, $i);
 
     &:after {
-      content: "#{nth($styleguide-colors, $i)}";
+      content: "#{list.nth($styleguide-colors, $i)}";
     }
   }
 }
