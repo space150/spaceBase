@@ -79,4 +79,4 @@ You can remove (if downloaded from Git):
 
 spaceBase is free to use under the [MIT License](LICENSE.md).
 
-Copyright 2013-2025 [space150](http://www.space150.com)
+Copyright 2013-2026 [space150](http://www.space150.com)
