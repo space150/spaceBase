@@ -19,7 +19,8 @@ spaceBase is the front-end starter files for any new web project. It sets up you
 
 ### Customizable Features
 
-* Compatible with any Sass compiler
+* Can be used within Next.js projects
+* Compatible with any Dart Sass compiler
 * Scalable, mobile-first grid - choose how robust you want it
 * Base font size for mobile vs desktop
 * Global variables for breakpoints, colors, fonts and more
@@ -62,8 +63,8 @@ You can remove (if downloaded from Git):
 - `Rakefile`
 - `test/`
 
-## spaceBase for NextJS Development
-- Recommended: set up a custom alias in your NextJS + Typescript configuration for a cleaner path. For example, the import statement could be `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
+## spaceBase for Next.js Development
+- Recommended: set up a custom alias in your Next.js + Typescript configuration for a cleaner path. For example, the import statement could be `@use '@/app/styles/globals' as *;` as long as you include the following in the `compilerOptions` object of your `tsconfig.json` file: `"paths": { "@/*": ["./src/*"] }`
 - To silence deprecation warnings related to the "Legacy JS API", add this to your `next.config.js` file: `sassOptions: { silenceDeprecations: ['legacy-js-api'] }`
 
 ## Credits
